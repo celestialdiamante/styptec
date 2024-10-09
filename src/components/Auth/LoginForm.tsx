@@ -1,6 +1,8 @@
 import { useForm } from 'react-hook-form';
+import { useState } from 'react';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 
 const schema = z.object({
   email: z.string().min(1, "Email is required").email("Invalid email"),
@@ -14,8 +16,13 @@ export default function LoginForm({ onPasswordRecovery }: { onPasswordRecovery: 
     resolver: zodResolver(schema),
   });
 
-  const onSubmit = (data: FormData) => {
+  const [showPassword, setShowPassword] = useState(false);
 
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  const onSubmit = (data: FormData) => {
     console.log(data);
   };
 
@@ -26,19 +33,25 @@ export default function LoginForm({ onPasswordRecovery }: { onPasswordRecovery: 
         <input
           {...register('email')}
           type="email"
-          className="input input-bordered w-full"
+          className="input input-bordered w-full focus:outline-none"
         />
         {errors.email && <p className="text-error text-sm mt-1">{errors.email.message}</p>}
       </div>
 
-      <div className="mb-4">
+      <div className="mb-4 relative">
         <label className="block text-gray-700">Password</label>
         <input
           {...register('password')}
-          type="password"
-          className="input input-bordered w-full"
+          type={showPassword ? 'text' : 'password'}
+          className="input input-bordered w-full pr-10 focus:outline-none"
         />
         {errors.password && <p className="text-error text-sm mt-1">{errors.password.message}</p>}
+        <div
+          className="absolute right-3 top-10 cursor-pointer"
+          onClick={togglePasswordVisibility}
+        >
+          {showPassword ? <FiEyeOff className="text-gray-500" /> : <FiEye className="text-gray-500" />}
+        </div>
       </div>
 
       <div className="flex justify-between items-center">
@@ -53,9 +66,9 @@ export default function LoginForm({ onPasswordRecovery }: { onPasswordRecovery: 
 
       <button
         type="submit"
-        className="btn btn-primary w-full mt-4"
+        className="btn btn-primary text-white w-full mt-4"
       >
-        Login
+        Sign In
       </button>
     </form>
   );

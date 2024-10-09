@@ -16,7 +16,7 @@ const navItems = [
         links: [
             {
                 label: 'How does Styptec work',
-                href: '/how-it-works'
+                href: '/how-does-it-work'
             },
             {
                 label: 'Calculate your payment',
@@ -28,13 +28,13 @@ const navItems = [
         label: 'Entrepreneurs',
         links: [
             {
-                label: 'How does Verloning.nl work',
-                href: '/entrepreneurs/how-it-works'
+                label: 'How does Styptec work',
+                href: '/how-does-it-work-for-entrepreneurs'
 
             },
             {
                 label: 'Game rules',
-                href: '/entrepreneurs/game-rules'
+                href: '/game-rules'
 
             },
         ],
@@ -164,9 +164,9 @@ const Header = () => {
                 </div>
                 <button
                     className={isActive('/login') ? 'btn btn-sm btn-outline btn-primary text-blue-500' : 'btn btn-sm btn-outline btn-primary'}
-                    onClick={() => router.push('/login')}
+                    onClick={() => router.push('/signin')}
                 >
-                    Login <FaUserTie />
+                    Sign In <FaUserTie />
                 </button>
                 <button
                     className={isActive('/register') ? 'btn btn-sm btn-secondary text-white' : 'btn btn-sm btn-secondary text-white'}

@@ -24,7 +24,7 @@ const featuresClients = [
     {
         icon: <FiCheckCircle size={24} />,
         title: "No surprises",
-        description: "Receive an invoice from Verloning.nl, and be assured that everything has been arranged perfectly. We guarantee that all legal obligations and taxes are met. A reassuring feeling and a win-win for all parties."
+        description: "Receive an invoice from Styptec, and be assured that everything has been arranged perfectly. We guarantee that all legal obligations and taxes are met. A reassuring feeling and a win-win for all parties."
     },
     {
         icon: <FaHandshake size={24} />,

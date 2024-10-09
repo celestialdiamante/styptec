@@ -22,6 +22,30 @@ interface CalculatorFormData {
     add_Invoice: boolean;
 }
 
+const membershipOptions = [
+    {
+        value: 'basic',
+        label: 'Basic',
+        icon: <FaRegSmileBeam
+            className="size-6" />,
+        defaultChecked: true
+    },
+    {
+        value: 'premium',
+        label: 'Premium',
+        icon: <FaRegStar
+            className="size-6" />,
+        defaultChecked: false
+    },
+    {
+        value: 'all',
+        label: 'All',
+        icon: <GrDiamond
+            className="size-6 text-yellow-500" />,
+        defaultChecked: false
+    }
+];
+
 const CalculateYourBenefit = () => {
     const { register, handleSubmit } = useForm<CalculatorFormData>();
     const [grossIncome, setGrossIncome] = React.useState(0);
@@ -31,12 +55,12 @@ const CalculateYourBenefit = () => {
     const onSubmit = (data: CalculatorFormData) => {
         console.log('Form data:', data);
 
-        // Calculate gross income and net payout based on form data
-        const calculatedGrossIncome = data.hourly_Rate * data.hours_Worked;
-        const calculatedNetPayout = calculatedGrossIncome * 0.5; // Example calculation for net payout
-        const calculatedInvoiceAmount = data.gross_Invoice; // Use gross invoice directly
 
-        // Update state with calculated values
+        const calculatedGrossIncome = data.hourly_Rate * data.hours_Worked;
+        const calculatedNetPayout = calculatedGrossIncome * 0.5;
+        const calculatedInvoiceAmount = data.gross_Invoice;
+
+
         setGrossIncome(calculatedGrossIncome);
         setNetPayout(calculatedNetPayout);
         setInvoiceAmount(calculatedInvoiceAmount);
@@ -51,43 +75,33 @@ const CalculateYourBenefit = () => {
                         <div className="col-span-3 p-4 bg-base-100 relative rounded-2xl border border-gray-50 shadow-xl">
                             <form onSubmit={handleSubmit(onSubmit)}>
 
-                            <div className="*:text-base *:font-semibold">
+                                <div className="*:text-base *:font-semibold">
                                     <label className="label">Membership</label>
                                     <div className="grid grid-cols-6 gap-2 my-2">
-                                        <div className="col-span-2 flex justify-between rounded-xl py-4 px-3 border border-gray-500">
-                                            <div className="flex flex-col gap-2">
-                                                <FaRegSmileBeam className="size-6" />
-                                                <span>Basic</span>
+                                        {membershipOptions.map((option, index) => (
+                                            <div key={index} className="col-span-2 flex justify-between rounded-xl py-4 px-3 border border-gray-500">
+                                                <div className="flex flex-col gap-2">
+                                                    {option.icon}
+                                                    <span>{option.label}</span>
+                                                </div>
+                                                <label className="cursor-pointer flex items-center">
+                                                    <input
+                                                        type="radio"
+                                                        value={option.value}
+                                                        {...register('membership')}
+                                                        className="radio"
+                                                        defaultChecked={option.defaultChecked}
+                                                    />
+                                                </label>
                                             </div>
-                                            <label className="cursor-pointer flex items-center">
-                                                <input type="radio" value="basic" {...register('membership')} className="radio" defaultChecked />
-                                            </label>
-                                        </div>
-                                        <div className="col-span-2 flex justify-between rounded-xl py-4 px-3 border border-gray-500">
-                                            <div className="flex flex-col gap-2">
-                                                <FaRegStar className="size-6" />
-                                                <span>Premium</span>
-                                            </div>
-                                            <label className="cursor-pointer flex items-center">
-                                                <input type="radio" value="premium" {...register('membership')} className="radio" />
-                                            </label>
-                                        </div>
-                                        <div className="col-span-2 flex justify-between rounded-xl py-4 px-3 border border-gray-500">
-                                            <div className="flex flex-col gap-2">
-                                                <GrDiamond className="size-6 text-yellow-500" />
-                                                <span>All</span>
-                                            </div>
-                                            <label className="cursor-pointer flex items-center">
-                                                <input type="radio" value="all" {...register('membership')} className="radio" />
-                                            </label>
-                                        </div>
+                                        ))}
                                     </div>
                                 </div>
 
                                 <table className="table table-fixed text-base font-semibold">
-                                <tr>
+                                    <tr>
                                         <td className="align-text-top">Earnings</td>
-                                        <td className="flex gap-3">
+                                        <td className="grid grid-cols-2 gap-3">
                                             <div>
                                                 <label className="label">Hourly Rate</label>
                                                 <div className="flex items-center">
@@ -95,7 +109,7 @@ const CalculateYourBenefit = () => {
                                                     <input
                                                         type="number"
                                                         {...register('hourly_Rate', { valueAsNumber: true })}
-                                                        className="lg:w-24 focus:outline-none border border-l-0 border-gray-300 rounded-r-md px-3 py-2"
+                                                        className="lg:w-full focus:outline-none border border-l-0 border-gray-300 rounded-r-md px-3 py-2"
                                                         defaultValue={254.0}
                                                     />
                                                 </div>

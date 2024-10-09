@@ -1,116 +1,240 @@
-"use client"
+"use client";
 import React from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
+import PageHeader from '@/components/Global/PageHeader';
+import { FaChevronLeft, FaChevronRight, FaRegUserCircle, FaUserTie } from 'react-icons/fa';
+import RegisterInfo from '@/components/Auth/RegisterInfo';
 
 
 const schema = z.object({
-  firstName: z.string().min(1, "First name is required"),
-  lastName: z.string().min(1, "Last name is required"),
+  first_Name: z.string().min(1, "First name is required"),
+  last_Name: z.string().min(1, "Last name is required"),
   email: z.string().min(1, "Email is required").email("Invalid email"),
   password: z.string().min(6, "Password must be at least 6 characters"),
   userType: z.enum(['Freelancer', 'Entrepreneur']),
+  private_Person: z.boolean().optional(),
+  located_Abroad: z.boolean().optional(),
+  company_Name: z.string().optional(),
+  postcode: z.string().optional(),
+  house_Number: z.string().optional(),
+  street: z.string().optional(),
+  city: z.string().optional(),
 });
 
 type FormData = z.infer<typeof schema>;
 
 export default function RegisterPage() {
-  const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
+  const [step, setStep] = React.useState(1);
+  const { register, handleSubmit, watch, formState: { errors } } = useForm<FormData>({
     resolver: zodResolver(schema),
   });
-  
-  const [selectedType, setSelectedType] = React.useState<'Freelancer' | 'Entrepreneur'>('Freelancer');
+
+  const userType = watch('userType');
 
   const onSubmit = (data: FormData) => {
     console.log('Registration Data: ', data);
+
+    if (userType === 'Entrepreneur' && step === 1) {
+      setStep(2);
+    } else {
+      console.log("Final Submit", data);
+    }
   };
 
+
   return (
-    <div className="min-h-screen flex justify-center items-center bg-gray-100">
-      <div className="bg-white shadow-lg rounded-lg p-8 max-w-md w-full">
-        <h2 className="text-2xl font-bold text-center mb-6">Register at Styptec</h2>
+    <>
+      <PageHeader title="Register" className="lg:h-[250px]" />
 
-        <form onSubmit={handleSubmit(onSubmit)}>
+      <section className="py-16">
+        <div className="container grid grid-cols-1 lg:grid-cols-10 gap-8">
 
-          <div className="mb-6">
-            <label className="block font-medium mb-2">I want to register as:</label>
-            <div className="flex space-x-4">
-              <div 
-                className={`btn w-full ${selectedType === 'Freelancer' ? 'btn-primary' : 'btn-outline'}`}
-                onClick={() => setSelectedType('Freelancer')}
-              >
-                Freelancer
-              </div>
-              <div 
-                className={`btn w-full ${selectedType === 'Entrepreneur' ? 'btn-primary' : 'btn-outline'}`}
-                onClick={() => setSelectedType('Entrepreneur')}
-              >
-                Entrepreneur
-              </div>
-            </div>
-            <input type="hidden" {...register('userType')} value={selectedType} />
+          <div className="col-span-5 shadow-xl rounded-xl border border-gray-100 p-6">
+            {step === 1 ? (
+              <>
+                <h2 className="text-2xl font-bold mb-6">Register at Styptec</h2>
+
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <div className="mb-6">
+                    <label className="block font-medium mb-2">I want to register as:</label>
+                    <div className="grid grid-cols-6 gap-2 my-2">
+                      <div className="col-span-3 flex justify-between rounded-xl py-5 px-3 border border-gray-500">
+                        <div className="flex flex-col gap-2">
+                          <FaRegUserCircle className="size-6" />
+                          <span>Freelancer</span>
+                        </div>
+                        <label className="cursor-pointer flex items-center">
+                          <input type="radio" value="Freelancer" {...register('userType')} className="radio" defaultChecked />
+                        </label>
+                      </div>
+
+                      <div className="col-span-3 flex justify-between rounded-xl py-5 px-3 border border-gray-500">
+                        <div className="flex flex-col gap-2">
+                          <FaUserTie className="size-6" />
+                          <span>Entrepreneur</span>
+                        </div>
+                        <label className="cursor-pointer flex items-center">
+                          <input type="radio" value="Entrepreneur" {...register('userType')} className="radio" />
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="mb-4">
+                      <label className="block font-medium mb-1">First name</label>
+                      <input
+                        {...register('first_Name')}
+                        type="text"
+                        className="input input-bordered w-full focus:outline-none"
+                        placeholder="First name"
+                      />
+                      {errors.first_Name && <p className="text-red-500 text-sm">{errors.first_Name.message}</p>}
+                    </div>
+
+                    <div className="mb-4">
+                      <label className="block font-medium mb-1">Last name</label>
+                      <input
+                        {...register('last_Name')}
+                        type="text"
+                        className="input input-bordered w-full focus:outline-none"
+                        placeholder="Last name"
+                      />
+                      {errors.last_Name && <p className="text-red-500 text-sm">{errors.last_Name.message}</p>}
+                    </div>
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block font-medium mb-1">E-mail address</label>
+                    <input
+                      {...register('email')}
+                      type="email"
+                      className="input input-bordered w-full focus:outline-none"
+                      placeholder="E-mail address"
+                    />
+                    {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
+                  </div>
+
+                  <div className="mb-6">
+                    <label className="block font-medium mb-1">Password</label>
+                    <input
+                      {...register('password')}
+                      type="password"
+                      className="input input-bordered w-full focus:outline-none"
+                      placeholder="Password"
+                    />
+                    {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
+                  </div>
+
+                  <button type="submit" className="btn btn-primary text-white w-full">
+                    {userType === 'Entrepreneur' ? 'Next Step' : 'Sign Up'}<FaChevronRight />
+                  </button>
+                </form>
+              </>
+            ) : (
+              <>
+                <h2 className="text-2xl font-bold mb-6">Register Your Business</h2>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <div className="mb-4">
+                    <label className="cursor-pointer flex items-center">
+                      <input type="checkbox" {...register('private_Person')} className="checkbox" />
+                      <span className="ml-2">I&apos;m a private person</span>
+                    </label>
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="cursor-pointer flex items-center">
+                      <input type="checkbox" {...register('located_Abroad')} className="checkbox" />
+                      <span className="ml-2">I&apos;m located abroad</span>
+                    </label>
+                  </div>
+
+                  <div className="mb-4">
+                    <label className="block font-medium mb-1">Company Name</label>
+                    <input
+                      {...register('company_Name')}
+                      type="text"
+                      className="input input-bordered w-full focus:outline-none"
+                      placeholder="Company name"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="mb-4">
+                      <label className="block font-medium mb-1">Postcode</label>
+                      <input
+                        {...register('postcode')}
+                        type="number"
+                        className="input input-bordered w-full focus:outline-none"
+                        placeholder="Postcode"
+                      />
+                    </div>
+
+                    <div className="mb-4">
+                      <label className="block font-medium mb-1">House Number</label>
+                      <input
+                        {...register('house_Number')}
+                        type="text"
+                        className="input input-bordered w-full focus:outline-none"
+                        placeholder="House Number"
+                      />
+                    </div>
+                  </div>
+
+
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="mb-4">
+                      <label className="block font-medium mb-1">Street</label>
+                      <input
+                        {...register('street')}
+                        type="text"
+                        className="input input-bordered w-full focus:outline-none"
+                        placeholder="Street"
+                      />
+                    </div>
+
+                    <div className="mb-4">
+                      <label className="block font-medium mb-1">City</label>
+                      <input
+                        {...register('city')}
+                        type="text"
+                        className="input input-bordered w-full focus:outline-none"
+                        placeholder="City"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="mb-4 grid grid-cols-2 gap-2">
+                    <label className="col-span-1 form-control w-full max-w-xs">
+                      <div className="label">
+                        <span className="label-text">Country</span>
+                      </div>
+                      <select className="lg:w-full focus:outline-none bg-white border border-gray-300 rounded-md px-3 py-3">
+                        <option disabled selected>Nederland</option>
+                        <option>India</option>
+                        <option>USA</option>
+                        <option>Iran</option>
+                      </select>
+                    </label>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2 mt-4">
+                    <button onClick={() => setStep(1)} className="btn btn-outline btn-primary !hover:text-white"><FaChevronLeft />Previous Step</button>
+                    <button type="submit" className="btn btn-primary text-white w-full">Sign Up <FaChevronRight /></button>
+                  </div>
+                </form>
+              </>
+            )}
           </div>
 
-          <div className="mb-4">
-            <label className="block font-medium mb-1">First name</label>
-            <input
-              {...register('firstName')}
-              type="text"
-              className="input input-bordered w-full"
-              placeholder="First name"
-            />
-            {errors.firstName && <p className="text-red-500 text-sm">{errors.firstName.message}</p>}
+          <div className="col-span-5">
+            <RegisterInfo />
           </div>
 
-          <div className="mb-4">
-            <label className="block font-medium mb-1">Last name</label>
-            <input
-              {...register('lastName')}
-              type="text"
-              className="input input-bordered w-full"
-              placeholder="Last name"
-            />
-            {errors.lastName && <p className="text-red-500 text-sm">{errors.lastName.message}</p>}
-          </div>
-
-          <div className="mb-4">
-            <label className="block font-medium mb-1">E-mail address</label>
-            <input
-              {...register('email')}
-              type="email"
-              className="input input-bordered w-full"
-              placeholder="E-mail address"
-            />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email.message}</p>}
-          </div>
-
-          <div className="mb-6">
-            <label className="block font-medium mb-1">Password</label>
-            <input
-              {...register('password')}
-              type="password"
-              className="input input-bordered w-full"
-              placeholder="Password"
-            />
-            {errors.password && <p className="text-red-500 text-sm">{errors.password.message}</p>}
-          </div>
-
-          <button type="submit" className="btn btn-primary w-full">Sign Up</button>
-        </form>
-      </div>
-
-      <div className="ml-8 max-w-md">
-        <h3 className="text-xl font-semibold">Register at Verloning.nl</h3>
-        <p className="text-gray-600 mb-4">
-          To work independently via Verloning.nl, we apply a number of conditions and rules. Please also read our framework agreement and terms and conditions carefully.
-        </p>
-        <ul className="list-inside list-disc text-green-600">
-          <li>No administration, Chamber of Commerce or VAT number.</li>
-          <li>We invoice and arrange all mandatory taxes.</li>
-          <li>Our service can be canceled at any time.</li>
-        </ul>
-      </div>
-    </div>
+        </div>
+      </section>
+    </>
   );
 }
