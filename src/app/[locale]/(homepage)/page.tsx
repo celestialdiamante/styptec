@@ -20,7 +20,12 @@ export default function Home() {
       <VideoSection />
       <Pricing />
       <WhyChoose />
-      <CallToAction />
+      <CallToAction
+        title="Check out the options without obligation."
+        subtitle="Register in 10 seconds and see how easy it is. No strings attached."
+        buttonText="Register for free"
+        buttonLink="/register"
+      />
       <div className="hidden">
         <h1>{lang('title')}</h1>
         <Link href="/about">{lang('about')}</Link>

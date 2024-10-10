@@ -1,13 +1,13 @@
 "use client";
-import { usePathname, useRouter } from '@/i18n/routing';
+import { Link, usePathname } from '@/i18n/routing';
 import Image from 'next/image';
 import React from 'react';
-import { FaChevronDown, FaChevronRight, FaUserTie, FaFlagUsa } from 'react-icons/fa';
+import { FaChevronDown, FaChevronRight, FaUserTie } from 'react-icons/fa';
 
 interface Language {
     code: string;
     label: string;
-    icon: React.ReactNode;
+    emoji: string;
 }
 
 const navItems = [
@@ -30,12 +30,10 @@ const navItems = [
             {
                 label: 'How does Styptec work',
                 href: '/how-does-it-work-for-entrepreneurs'
-
             },
             {
                 label: 'Game rules',
                 href: '/game-rules'
-
             },
         ],
     },
@@ -55,16 +53,19 @@ const navItems = [
 ];
 
 const languages: Language[] = [
-    { code: 'en', label: 'English', icon: <FaFlagUsa /> },
-    { code: 'nl', label: 'Dutch', icon: <FaFlagUsa /> },
+    { code: 'en', label: 'English', emoji: '🇺🇸' }, // US Flag Emoji
+    { code: 'nl', label: 'Dutch', emoji: '🇳🇱' },  // Netherlands Flag Emoji
 ];
 
 const Header = () => {
     const [language, setLanguage] = React.useState<Language>(languages[0]);
-    const router = useRouter();
     const pathname = usePathname();
 
     const isActive = (href: string) => pathname === href;
+
+    const isParentActive = (links: { href: string }[]) => {
+        return links.some(link => isActive(link.href));
+    };
 
     return (
         <div className="container navbar bg-base-100 z-50">
@@ -82,26 +83,26 @@ const Header = () => {
                                 <ul className="p-2">
                                     {links.map(link => (
                                         <li key={link.href}>
-                                            <button
-                                                className={isActive(link.href) ? 'text-blue-500' : ''}
-                                                onClick={() => router.push(link.href)}
+                                            <Link
+                                                className={isActive(link.href) ? 'text-primary' : ''}
+                                                href={link.href}
                                             >
                                                 {link.label}
-                                            </button>
+                                            </Link>
                                         </li>
                                     ))}
                                 </ul>
                             </li>
                         ))}
                         <li>
-                            <button className={isActive('/pricing') ? 'text-blue-500' : ''} onClick={() => router.push('/pricing')}>
+                            <Link className={isActive('/pricing') ? 'text-primary' : ''} href="/pricing">
                                 Pricing
-                            </button>
+                            </Link>
                         </li>
                         <li>
-                            <button className={isActive('/contact-us') ? 'text-blue-500' : ''} onClick={() => router.push('/contact-us')}>
+                            <Link className={isActive('/contact-us') ? 'text-primary' : ''} href="/contact-us">
                                 Contact Us
-                            </button>
+                            </Link>
                         </li>
                     </ul>
                 </div>
@@ -113,67 +114,67 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navItems.map(({ label, links }) => (
-                        <li key={label} className="dropdown dropdown-hover">
-                            <div tabIndex={0} className="hover:bg-base-200 cursor-pointer flex items-center">
+                        <li key={label} className="dropdown dropdown-hover hover:bg-none">
+                            <div tabIndex={0} className={isParentActive(links) ? 'text-primary' : 'hover:text-primary  hover:bg-white focus:bg-white cursor-pointer flex items-center'}>
                                 {label}
                                 <FaChevronDown className="ml-1" />
                             </div>
                             <ul className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
                                 {links.map(link => (
                                     <li key={link.href}>
-                                        <button
-                                            className={isActive(link.href) ? 'text-blue-500' : ''}
-                                            onClick={() => router.push(link.href)}
+                                        <Link
+                                            className={isActive(link.href) ? 'text-primary' : ''}
+                                            href={link.href}
                                         >
                                             {link.label}
-                                        </button>
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
                         </li>
                     ))}
                     <li>
-                        <button className={isActive('/pricing') ? 'text-blue-500' : ''} onClick={() => router.push('/pricing')}>
+                        <Link className={isActive('/pricing') ? 'text-primary hover:bg-white focus:bg-white' : 'hover:text-primary hover:bg-white focus:bg-white'} href="/pricing">
                             Pricing
-                        </button>
+                        </Link>
                     </li>
                     <li>
-                        <button className={isActive('/contact-us') ? 'text-blue-500' : ''} onClick={() => router.push('/contact-us')}>
+                        <Link className={isActive('/contact-us') ? 'text-primary hover:bg-white focus:bg-white' : 'hover:text-primary hover:bg-white focus:bg-white'} href="/contact-us">
                             Contact Us
-                        </button>
+                        </Link>
                     </li>
                 </ul>
             </div>
 
             <div className="navbar-end gap-4 hidden md:flex">
                 <div className="dropdown dropdown-hover">
-                    <button className="btn btn-ghost flex items-center">
-                        <span className="mr-1">{language.icon}</span>
+                    <Link href="#" className="btn btn-ghost flex items-center">
+                        <span className="mr-1">{language.emoji}</span>
                         <FaChevronDown className="ml-1" />
-                    </button>
+                    </Link>
                     <ul className="dropdown-content menu bg-base-100 rounded-box z-50 p-2 shadow">
                         {languages.map((lang) => (
                             <li key={lang.code}>
-                                <button onClick={() => setLanguage(lang)} className="flex items-center">
-                                    <span className="mr-2">{lang.icon}</span>
+                                <Link href="#" onClick={() => setLanguage(lang)} className="flex items-center">
+                                    <span className="mr-2">{lang.emoji}</span>
                                     {lang.label}
-                                </button>
+                                </Link>
                             </li>
                         ))}
                     </ul>
                 </div>
-                <button
-                    className={isActive('/login') ? 'btn btn-sm btn-outline btn-primary text-blue-500' : 'btn btn-sm btn-outline btn-primary'}
-                    onClick={() => router.push('/signin')}
+                <Link
+                    className="btn btn-sm btn-outline btn-primary"
+                    href="/signin"
                 >
                     Sign In <FaUserTie />
-                </button>
-                <button
-                    className={isActive('/register') ? 'btn btn-sm btn-secondary text-white' : 'btn btn-sm btn-secondary text-white'}
-                    onClick={() => router.push('/register')}
+                </Link>
+                <Link
+                    className="btn btn-sm btn-secondary text-white"
+                    href="/register"
                 >
                     Register <FaChevronRight />
-                </button>
+                </Link>
             </div>
         </div>
     );
