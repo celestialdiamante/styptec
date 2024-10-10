@@ -2,6 +2,7 @@
 import React from 'react';
 import { z } from 'zod';
 
+// Define the Zod schema
 const contactSchema = z.object({
   name: z.string().min(1, { message: 'Name is required' }),
   email: z.string().email({ message: 'Email is invalid' }),
@@ -11,6 +12,14 @@ const contactSchema = z.object({
   message: z.string().min(1, { message: 'Message is required' }),
 });
 
+// Define the shape of the error object
+interface FormErrors {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+}
+
 const ContactForm = () => {
   const [formData, setFormData] = React.useState({
     name: '',
@@ -19,7 +28,7 @@ const ContactForm = () => {
     message: '',
   });
 
-  const [errors, setErrors] = React.useState({
+  const [errors, setErrors] = React.useState<FormErrors>({
     name: '',
     email: '',
     phone: '',
@@ -37,17 +46,24 @@ const ContactForm = () => {
     e.preventDefault();
 
     try {
-    
+      // Validate data
       await contactSchema.parseAsync(formData);
       console.log('Form Data:', formData);
-  
+      // Reset errors
       setErrors({ name: '', email: '', phone: '', message: '' });
     } catch (error) {
       if (error instanceof z.ZodError) {
-        const newErrors: any = {};
+        const newErrors: FormErrors = {
+          name: '',
+          email: '',
+          phone: '',
+          message: '',
+        };
+
         error.errors.forEach((err) => {
-          newErrors[err.path[0]] = err.message; 
+          newErrors[err.path[0] as keyof FormErrors] = err.message; // Use type assertion
         });
+
         setErrors(newErrors);
       }
     }
@@ -56,7 +72,7 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div>
-        <label className="block text-black font-semibold" htmlFor="name">
+        <label className="block text-gray-700" htmlFor="name">
           Name
         </label>
         <input
@@ -70,7 +86,7 @@ const ContactForm = () => {
         {errors.name && <p className="text-red-500">{errors.name}</p>}
       </div>
       <div>
-        <label className="block text-black font-semibold" htmlFor="email">
+        <label className="block text-gray-700" htmlFor="email">
           E-mail address
         </label>
         <input
@@ -84,7 +100,7 @@ const ContactForm = () => {
         {errors.email && <p className="text-red-500">{errors.email}</p>}
       </div>
       <div>
-        <label className="block text-black font-semibold" htmlFor="phone">
+        <label className="block text-gray-700" htmlFor="phone">
           Phone number
         </label>
         <div className="flex items-center">
@@ -101,7 +117,7 @@ const ContactForm = () => {
         {errors.phone && <p className="text-red-500">{errors.phone}</p>}
       </div>
       <div>
-        <label className="block text-black font-semibold" htmlFor="message">
+        <label className="block text-gray-700" htmlFor="message">
           Message
         </label>
         <textarea
