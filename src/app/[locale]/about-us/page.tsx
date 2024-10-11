@@ -20,7 +20,7 @@ const AboutUs = () => {
       />
 
       <section>
-        <div className="container grid grid-cols-2 gap-6">
+        <div className="container grid md:grid-cols-2 grid-cols-1 gap-6">
           <div className="bg-gradient-to-l from-teal-300 via-green-200 to-amber-200 p-0.5 rounded-xl shadow-lg">
             <div className="flex gap-2 bg-white px-8 py-4 rounded-xl">
               <div className="">

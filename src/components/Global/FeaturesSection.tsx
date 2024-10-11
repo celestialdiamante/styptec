@@ -15,10 +15,10 @@ interface FeaturesSectionProps {
 
 const FeaturesSection = ({ subtitle, title, description, listItem1, listItem2, imageUrl, imageLeft = false, IconComponent }: FeaturesSectionProps) => {
     return (
-        <section>
-            <div className="container relative md:my-24 py-20">
+        <section className="py-6 md:py-10">
+            <div className="container relative">
                 <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-8">
-                    <div className={`col-span-6 relative order-first ${imageLeft ? 'md:order-last' : 'md:order-first'}`}>
+                    <div className={`col-span-6 relative order-last ${imageLeft ? 'md:order-last' : 'md:order-first'}`}>
                         <Image
                             src={imageUrl}
                             className="rounded-3xl shadow-md"
@@ -27,7 +27,7 @@ const FeaturesSection = ({ subtitle, title, description, listItem1, listItem2, i
                             width={1000} />
                     </div>
 
-                    <div className={`col-span-6 order-last ${imageLeft ? 'md:order-first' : 'md:order-last'}`}>
+                    <div className={`col-span-6 order-first ${imageLeft ? 'md:order-first' : 'md:order-last'}`}>
                         <div className="flex justify-between border-b mb-2">
                             <div>
                                {subtitle && ( <p className="text-base text-primary font-semibold">{subtitle}</p> )}
