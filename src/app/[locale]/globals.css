@@ -8,50 +8,9 @@
   padding: 10px;
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 1336px) {
   .container {
     max-width: 1220px !important;
   }
 }
-  .react-player {
-    @apply lg:rounded-3xl 
-  }
   
-
-/* Keyframe for vertical scroll (upwards movement) */
-@keyframes scrollUp {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
-/* Keyframe for the spinning animation */
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Class for the vertical scrolling effect */
-.scroll-up {
-  animation: scrollUp 20s linear infinite;
-}
-
-/* Class for individual icons to rotate slowly */
-.icon-spin {
-  animation: spin 8s linear infinite; /* Slower spin, adjust duration if needed */
-}
-
-/* Absolute positioning for the icons (customized for random positions) */
-.icon-random {
-  position: absolute;
-  animation-timing-function: linear;
-  will-change: transform;
-}
-

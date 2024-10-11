@@ -9,9 +9,12 @@ interface CallToActionProps {
     buttonLink: string;
 }
 
-const CallToAction: React.FC<CallToActionProps> = ({ title, subtitle, buttonText, buttonLink }) => {
+const CallToAction = ({ title, subtitle, buttonText, buttonLink }:CallToActionProps) => {
     return (
-        <section className="py-16 bg-gradient-to-b from-teal-300 via-green-200 to-amber-200 relative">
+        <section className="py-16 bg-[url('/images/Bg-01.jpg')] bg-cover bg-no-repeat relative">
+
+        {/* bg-gradient-to-b from-teal-300 via-green-200 to-amber-200 */}
+
             <div className="container mx-auto text-center">
                 <div className="space-y-4 lg:px-24 2xl:px-64">
                     <p className="font-sans text-[32px] leading-[40px] lg:text-[40px] lg:leading-[48px] font-bold text-gray-950">

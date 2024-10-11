@@ -48,7 +48,7 @@ const FeatureCard = ({ icon, title, description }: { icon: React.ReactNode, titl
 );
 
 const WhyChoose = () => (
-    <section className="py-16 bg-[url('/images/SKYPTEC_Banner02.jpg')] bg-cover bg-no-repeat">
+    <section className="py-6 md:py-16 bg-[url('/images/SKYPTEC_Banner02.jpg')] bg-cover bg-no-repeat">
         <div className="container mx-auto px-4">
             <h2 className="text-center text-3xl lg:text-4xl font-bold text-gray-800 mb-12">Why freelancers should use Styptec</h2>
             <div className="grid gap-8 lg:grid-cols-3 mb-16">

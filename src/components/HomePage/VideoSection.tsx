@@ -4,7 +4,7 @@ import ReactPlayer from 'react-player/vimeo'
 
 const VideoSection = () => {
     return (
-        <section className="py-16">
+        <section className="py-2 md:py-16">
             <div>
                 <p className="text-3xl leading-10 lg:text-[40px] lg:leading-[48px] font-bold text-gray-700 hidden text-center mb-12 lg:block">
                     Learn here how we can help you!

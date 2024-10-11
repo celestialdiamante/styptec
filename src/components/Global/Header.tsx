@@ -53,8 +53,8 @@ const navItems = [
 ];
 
 const languages: Language[] = [
-    { code: 'en', label: 'English', emoji: '🇺🇸' }, // US Flag Emoji
-    { code: 'nl', label: 'Dutch', emoji: '🇳🇱' },  // Netherlands Flag Emoji
+    { code: 'en', label: 'English', emoji: '🇺🇸' },
+    { code: 'nl', label: 'Dutch', emoji: '🇳🇱' },  
 ];
 
 const Header = () => {
@@ -68,7 +68,7 @@ const Header = () => {
     };
 
     return (
-        <div className="container navbar bg-base-100 z-50">
+        <div className="container navbar bg-base-100 z-[99999]">
             <div className="navbar-start">
                 <div className="dropdown">
                     <button tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -106,7 +106,7 @@ const Header = () => {
                         </li>
                     </ul>
                 </div>
-                <a href="/" className="text-xl">
+                <a href="/">
                     <Image src="/STYPTEC_Logo-01.png" alt="STYPTEC_Logo" height={150} width={150} />
                 </a>
             </div>

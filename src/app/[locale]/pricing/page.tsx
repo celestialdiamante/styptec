@@ -1,10 +1,11 @@
 import FeaturesSection from '@/components/Global/FeaturesSection'
 import PageHeader from '@/components/Global/PageHeader'
 import CallToAction from '@/components/HomePage/CallToAction'
+import Pricing from '@/components/HomePage/Pricing'
 import React from 'react'
 import { FaArrowsUpDownLeftRight } from 'react-icons/fa6'
 
-const Pricing = () => {
+const PricingPage = () => {
   return (
     <>
       <PageHeader title="Prices and memberships" />
@@ -17,6 +18,9 @@ const Pricing = () => {
         imageLeft={true}
         IconComponent={FaArrowsUpDownLeftRight}
       />
+
+      <Pricing />
+
       <CallToAction
         title="Create an account now without obligation and for free"
         subtitle="Register in 10 seconds and discover our unique dashboard and all the benefits and experience for yourself how easy it works."
@@ -27,4 +31,4 @@ const Pricing = () => {
   )
 }
 
-export default Pricing
+export default PricingPage

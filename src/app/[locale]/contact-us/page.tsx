@@ -10,21 +10,26 @@ const ContactUs = () => {
       <section className="py-16">
         <div className="container mx-auto">
           <div className="grid md:grid-cols-10 grid-cols-1 gap-6">
-           <div className="md:col-span-5 p-6 border border-gray-50 rounded-xl shadow-xl">
-           <ContactForm />
-           </div>
+            <div className="md:col-span-5 p-6 border border-gray-50 rounded-xl shadow-xl">
+              <ContactForm />
+            </div>
             <div className="md:col-span-5 p-6">
               <h3 className="text-lg font-bold">Contact details</h3>
-              <p>Kiotoweg 157</p>
-              <p>3047BG Rotterdam</p>
-              <p>
-                <a href="tel:0102610266" className="text-blue-500">
-                  010-2610266
-                </a>
+
+              <p className="my-2">
+                STYPTEC B.V. <br />
+                <span className="font-bold">Hoofdvestiging:</span> KVK 81188803 <br />
+                Rokin 92, 1012 KZ  Amsterdam <br />
               </p>
+
+              <p className="my-2">
+                <span className="font-bold">Bezoekadres:</span> Laan van Zuidhoorn 41,<br />
+               2289 DC  Rijswijk
+               </p>
+
               <p>
-                <a href="mailto:contact@verloning.nl" className="text-blue-500">
-                  contact@verloning.nl
+                <a href="mailto:info@styptec.nl" className="text-primary">
+                  info@styptec.nl
                 </a>
               </p>
               <h4 className="text-lg font-bold mt-6">Opening hours</h4>
@@ -33,7 +38,7 @@ const ContactUs = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section >
     </>
   );
 };

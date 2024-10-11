@@ -52,7 +52,7 @@ const membershipData = [
 ];
 
 const Pricing = () => (
-    <section>
+    <section className="py-6 md:py-16">
         <div className="py-8 px-4 container mx-auto lg:py-16 lg:px-6">
             <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
                 <h2 className="mb-4 text-4xl leading-9 font-bold">Carefree freelancing with our memberships!</h2>
