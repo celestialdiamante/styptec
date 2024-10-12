@@ -4,39 +4,45 @@ import Pricing from "@/components/HomePage/Pricing";
 import Stats from "@/components/HomePage/Stats";
 import VideoSection from "@/components/HomePage/VideoSection";
 import WhyChoose from "@/components/HomePage/WhyChoose";
-import { Link } from "@/i18n/routing";
-// import { Metadata } from "next";
-import { useTranslations } from "next-intl";
+import getPageMetadata from "@/helpers/getPageMetadata";
+import { URLS } from "@/helpers/URLs";
+import { Metadata } from "next";
 import React from "react";
 
-// async function fetchMetadata() {
-//   const response = await fetch('/api/metadata');
-//   if (!response.ok) {
-//     throw new Error('Failed to fetch metadata');
-//   }
-//   return await response.json();
-// }
+export async function generateMetadata(): Promise<Metadata> {
+
+  const metaData = await getPageMetadata('home');
+  console.log('metaData: ', metaData)
+
+  const title = metaData?.title_en ?? 'Styptec';
+  const description = metaData?.description_en ?? 'Styptec';
+  const keywords = metaData?.keywords_en ?? 'Styptec';
+  
+  return {
+    title: title,
+    description: description,
+    keywords: keywords,
+    openGraph: {
+      title: title,
+      description: description,
+      url: process.env.SITE_URL ?? 'https://www.styptec.nl',
+      siteName: process.env.SITE_NAME ??'Styptec',
+      type: 'website',
+      images: [URLS.STORAGE + metaData.seo_image],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: title,
+      description: description,
+      images: [URLS.STORAGE + metaData.seo_image],
+    },
+
+  }
+}
 
 
-// export async function getServerSideProps() {
-//   try {
-//     const metadata = await fetchMetadata();
-//     return { props: { metadata } };
-//   } catch (error) {
-//     console.error(error);
-//     return { props: { metadata: { title: 'Default Title', description: 'Default Description' } } };
-//   }
-// }
 
-// export const metadata: Metadata = {
-//   title: 'Default Title',
-//   description: 'Default Description',
-// };
-
-
-export default function Home() {
-  const lang = useTranslations('HomePage');
-
+export default async function Home() {
   return (
     <>
       <HeroSection />
@@ -51,11 +57,6 @@ export default function Home() {
         buttonText="Register for free"
         buttonLink="/register"
       />
-
-      <div className="hidden">
-        <h1>{lang('title')}</h1>
-        <Link href="/about">{lang('about')}</Link>
-      </div>
     </>
   );
 }
