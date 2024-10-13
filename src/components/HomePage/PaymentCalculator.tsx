@@ -20,8 +20,8 @@ const PaymentCalculator = () => {
 
     return (
 
-        <div className="grid lg:grid-cols-12 grid-cols-1 Z-10 ">
-            <div className="lg:col-span-10">
+        <div className="grid md:grid-cols-12 grid-cols-1 Z-10 ">
+            <div className="md:col-span-full lg:col-span-11 ">
 
                 <div className="lg:flex flex-col lg:flex-row justify-center gap-4 bg-white p-4 lg:p-6 rounded-3xl shadow-lg">
                     <div className="flex flex-col mb-4 lg:mb-0">

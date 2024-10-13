@@ -7,7 +7,7 @@ const HeroSection = () => {
 
     return (
         <section
-            className="bg-gradient-to-r from-teal-300 via-green-200 to-amber-200 relative md:h-[600px] py-8 h-auto flex items-center overflow-hidden bg-cover bg-center rounded-3xl md:rounded-[40px] mx-2"
+            className="bg-gradient-to-r from-teal-300 via-green-200 to-amber-200 relative lg:h-[600px] py-8 h-auto flex items-center overflow-hidden bg-cover bg-center rounded-3xl md:rounded-[40px] mx-2"
         >
             {/* bg-[url('/images/hero/bg_styptec.png')]  */}
 
