@@ -58,6 +58,13 @@ const membershipOptions = [
     },
 ];
 
+type deviceType = {
+    appCodeName?: string,
+    appName?: string,
+    appVersion?: string,
+    userAgent?: string
+}
+
 
 const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoiceAmount: number; grossIncome: number; netPayable: number; }) => void; }) => {
     const {
@@ -78,6 +85,25 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
     const [invoiceAmount, setInvoiceAmount] = React.useState<number>(0);
     const [grossIncome, setGrossIncome] = React.useState<number>(0);
     const [netPayable, setNetPayable] = React.useState<number>(0);
+
+    const [device, setDevice] = React.useState<deviceType>({})
+
+
+    React.useEffect(() => {
+        setTimeout(() => {
+            const navigator = window?.navigator
+            setDevice({
+                appCodeName: navigator.appCodeName ?? '',
+                appName: navigator.appName ?? '',
+                appVersion: navigator.appVersion ?? '',
+                userAgent: navigator.userAgent ?? ''
+            });
+        }, 1000);
+    }, [])
+
+    React.useEffect(()=>{
+        console.log('userAgent: ', device)
+    },[device])
 
     React.useEffect(() => {
         if (
@@ -255,7 +281,7 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
                     {expense !== undefined && expense < 0 && (
                         <p className="text-red-500">Expenses must be at least 0.00</p>
                     )}
-                </div>s
+                </div>
             </div>
         </form>
     );
