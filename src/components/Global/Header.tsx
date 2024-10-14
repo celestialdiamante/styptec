@@ -106,9 +106,9 @@ const Header = () => {
                         </li>
                     </ul>
                 </div>
-                <a href="/">
+                <Link href="/">
                     <Image src="/STYPTEC_Logo-01.png" alt="STYPTEC_Logo" height={150} width={150} />
-                </a>
+                </Link>
             </div>
 
             <div className="navbar-center hidden lg:flex">
