@@ -38,7 +38,7 @@ const PayoutSection = ({ payoutValues }: { payoutValues: { grossInvoice: string,
                         95,761 workers already preceded you.
                     </p>
                     <div className="flex gap-4 mt-4">
-                        <button
+                        <button type='submit'
                             className="btn btn-primary text-white"
                             onClick={() => {
                                 const modal = document?.getElementById('my_modal');

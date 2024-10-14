@@ -7,6 +7,7 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CiTimer } from 'react-icons/ci';
 import { LuEuro } from 'react-icons/lu';
+import { submitEstimationForm } from '@/helpers/postData';
 
 const percents = {
     premium: 3,
@@ -39,7 +40,6 @@ const calculatorSchema = z.object({
     add_Invoice: z.boolean().optional(),
 });
 
-// interface CalculatorFormData extends z.infer<typeof calculatorSchema> { }
 
 const membershipOptions = [
     {
@@ -68,10 +68,26 @@ type deviceType = {
 
 const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoiceAmount: number; grossIncome: number; netPayable: number; }) => void; }) => {
     const {
-        register, handleSubmit, watch, formState: {} } = useForm<z.infer<typeof calculatorSchema>>({
+        register, watch, formState: { } } = useForm<z.infer<typeof calculatorSchema>>({
             resolver: zodResolver(calculatorSchema),
             mode: "onChange",
         });
+    const [estimationFormData] = React.useState({
+        "membership_type": '',
+        "hourly_rate": '',
+        "hours_worked": '',
+        "age": '',
+        "pension": '',
+        "social_charges": '',
+        "paid_fast_forward": '',
+        "expenses": '',
+        "name": '',
+        "email": '',
+        "phone_number": '',
+        "country_id": '',
+        "device": ''
+    });
+
 
     const hourlyRate = watch("hourly_Rate");
     const hoursWorked = watch("hours_Worked");
@@ -101,9 +117,9 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
         }, 1000);
     }, [])
 
-    React.useEffect(()=>{
+    React.useEffect(() => {
         console.log('userAgent: ', device)
-    },[device])
+    }, [device])
 
     React.useEffect(() => {
         if (
@@ -151,6 +167,42 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
             });
         }
     }, [hourlyRate, hoursWorked, membershipType, pension, pff, socialCharges, onCalculate]);
+
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        try {
+            const data = await calculatorSchema.parseAsync(estimationFormData);
+
+            console.log("Form data:", data);
+
+            const response = await submitEstimationForm({
+                membership: data.membership,
+                hourly_Rate: data.hourly_Rate,
+                hours_Worked: data.hours_Worked,
+                gross_Invoice: data.gross_Invoice,
+                age: data.age,
+                payroll_Tax_Credit: data.payroll_Tax_Credit,
+                socially_Insured: data.socially_Insured,
+                disability: data.disability,
+                holiday_Allowance: data.holidays,
+                holidays: data.holidays,
+                flexible_Savings: data.flexible_Savings,
+                factoring: data.factoring,
+                expense: data.expense,
+                add_Invoice: data.add_Invoice,
+            });
+
+            if (response.ok) {
+                alert("Form calculation successfully!");
+            } else {
+                alert("Failed to calculate");
+            }
+        } catch (error) {
+            console.error("Error calculating:", error);
+            alert("Error calculating, please try again.");
+        }
+    };
 
 
     return (
@@ -221,7 +273,7 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
                                     className="lg:w-full focus:outline-none border border-l-0 border-gray-300 rounded-r-lg px-3 py-2"
                                 />
                             </div>
-                            
+
                             {hoursWorked !== undefined && hoursWorked < 1 && (
                                 <p className="text-red-500">Hours worked must be at least 1</p>
                             )}
@@ -237,7 +289,7 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
                         {...register("age", { valueAsNumber: true })}
                         className="lg:w-full focus:outline-none border border-gray-300 rounded-lg px-3 py-2"
                     />
-                    
+
                     {age !== undefined && age < 18 && (
                         <p className="text-red-500">Age must be at least 18</p>
                     )}
@@ -283,8 +335,9 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
                     )}
                 </div>
             </div>
+
         </form>
     );
 };
 
-export default CalculateBenefit;
+export default CalculateBenefit;    
