@@ -57,5 +57,5 @@ export async function submitEstimationForm(request: estimationFormType) {
     if (response && response.success) {
         return response;
     }
-    return null;
+    return response;
 }
