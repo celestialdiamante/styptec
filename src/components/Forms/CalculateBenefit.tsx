@@ -2,7 +2,9 @@
 import React from 'react';
 import { FaRegStar, FaSmile, FaStar } from 'react-icons/fa';
 import { FaRegFaceSmile } from 'react-icons/fa6';
-import { useForm } from 'react-hook-form';
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { CiTimer } from 'react-icons/ci';
 import { LuEuro } from 'react-icons/lu';
 
@@ -14,22 +16,30 @@ const percents = {
     serviceCharge: 10,
 };
 
-interface CalculatorFormData {
-    membership: string;
-    hourly_Rate: number;
-    hours_Worked: number;
-    gross_Invoice: number;
-    age: number;
-    payroll_Tax_Credit: boolean;
-    socially_Insured: boolean;
-    disability: boolean;
-    holiday_Allowance: boolean;
-    holidays: boolean;
-    flexible_Savings: boolean;
-    factoring: boolean;
-    expense: number;
-    add_Invoice: boolean;
-}
+const calculatorSchema = z.object({
+    membership: z.string(),
+    hourly_Rate: z
+        .number({ required_error: "Hourly rate is required" })
+        .min(1, "Hourly rate must be at least 1.00"),
+    hours_Worked: z
+        .number({ required_error: "Hours worked are required" })
+        .min(1, "Hours worked must be at least 1"),
+    gross_Invoice: z.number().optional(),
+    age: z
+        .number({ required_error: "Age is required" })
+        .min(18, "Age must be at least 18"),
+    payroll_Tax_Credit: z.boolean().optional(),
+    socially_Insured: z.boolean().optional(),
+    disability: z.boolean().optional(),
+    holiday_Allowance: z.boolean().optional(),
+    holidays: z.boolean().optional(),
+    flexible_Savings: z.boolean().optional(),
+    factoring: z.boolean().optional(),
+    expense: z.number().min(0, "Expenses must be at least 0.00").optional(),
+    add_Invoice: z.boolean().optional(),
+});
+
+// interface CalculatorFormData extends z.infer<typeof calculatorSchema> { }
 
 const membershipOptions = [
     {
@@ -49,23 +59,33 @@ const membershipOptions = [
 ];
 
 
-const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoiceAmount: number, grossIncome: number, netPayable: number }) => void }) => {
-    const { register, handleSubmit, watch } = useForm<CalculatorFormData>();
+const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoiceAmount: number; grossIncome: number; netPayable: number; }) => void; }) => {
+    const {
+        register, handleSubmit, watch, formState: {} } = useForm<z.infer<typeof calculatorSchema>>({
+            resolver: zodResolver(calculatorSchema),
+            mode: "onChange",
+        });
 
-    const hourlyRate = watch('hourly_Rate');
-    const hoursWorked = watch('hours_Worked');
-    const membershipType = watch('membership');
-    const pension = watch('disability');
-    const pff = watch('socially_Insured');
-    const socialCharges = watch('payroll_Tax_Credit');
+    const hourlyRate = watch("hourly_Rate");
+    const hoursWorked = watch("hours_Worked");
+    const age = watch("age");
+    const membershipType = watch("membership");
+    const pension = watch("disability");
+    const pff = watch("socially_Insured");
+    const socialCharges = watch("payroll_Tax_Credit");
+    const expense = watch("expense");
 
     const [invoiceAmount, setInvoiceAmount] = React.useState<number>(0);
     const [grossIncome, setGrossIncome] = React.useState<number>(0);
     const [netPayable, setNetPayable] = React.useState<number>(0);
 
-
     React.useEffect(() => {
-        if (typeof hourlyRate === 'number' && typeof hoursWorked === 'number' && hourlyRate > 0 && hoursWorked > 0) {
+        if (
+            typeof hourlyRate === "number" &&
+            typeof hoursWorked === "number" &&
+            hourlyRate > 0 &&
+            hoursWorked > 0
+        ) {
             const newInvoiceAmount = hourlyRate * hoursWorked;
             const percent = newInvoiceAmount / 100;
             const serviceCharge = percents.serviceCharge * percent;
@@ -89,7 +109,7 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
 
             let newNetPayable = newGrossIncome - otherDeductions;
 
-            if (membershipType === 'premium') {
+            if (membershipType === "premium") {
                 const premiumDiscount = percents.premium * grossPercent;
                 newNetPayable += premiumDiscount;
             }
@@ -109,6 +129,7 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
 
     return (
         <form onSubmit={handleSubmit(() => { })}>
+
             <div className="*:text-base *:font-semibold">
                 <label className="label">Membership</label>
                 <div className="flex flex-row gap-2 my-2">
@@ -152,12 +173,16 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
                                 </div>
                                 <input
                                     type="number"
-                                    {...register('hourly_Rate', { valueAsNumber: true })}
+                                    {...register("hourly_Rate", { valueAsNumber: true })}
                                     className="lg:w-full focus:outline-none border border-l-0 border-gray-300 rounded-r-lg px-3 py-2"
                                     step={0.01}
                                 />
                             </div>
+                            {hourlyRate !== undefined && hourlyRate < 1 && (
+                                <p className="text-red-500">Hourly rate must be at least 1.00</p>
+                            )}
                         </div>
+
                         <div>
                             <label className="label text-sm">Hours Worked</label>
                             <div className="flex items-center">
@@ -166,22 +191,30 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
                                 </div>
                                 <input
                                     type="number"
-                                    {...register('hours_Worked', { valueAsNumber: true })}
+                                    {...register("hours_Worked", { valueAsNumber: true })}
                                     className="lg:w-full focus:outline-none border border-l-0 border-gray-300 rounded-r-lg px-3 py-2"
                                 />
                             </div>
+                            
+                            {hoursWorked !== undefined && hoursWorked < 1 && (
+                                <p className="text-red-500">Hours worked must be at least 1</p>
+                            )}
                         </div>
+
                     </div>
                 </div>
 
                 <div className="items-center">
-                    <div className="">Age</div>
+                    <label className="label text-sm">Age</label>
                     <input
                         type="number"
-                        {...register('age', { valueAsNumber: true })}
+                        {...register("age", { valueAsNumber: true })}
                         className="lg:w-full focus:outline-none border border-gray-300 rounded-lg px-3 py-2"
-                        defaultValue={19}
                     />
+                    
+                    {age !== undefined && age < 18 && (
+                        <p className="text-red-500">Age must be at least 18</p>
+                    )}
                 </div>
 
                 <div className="items-center">
@@ -207,19 +240,22 @@ const CalculateBenefit = ({ onCalculate }: { onCalculate: (payoutValues: { invoi
                 </div>
 
                 <div className="items-center">
-                    <div className="">Expenses</div>
+                    <label className="label text-sm">Expenses</label>
                     <div className="flex items-center">
                         <div className="text-gray-500 border border-gray-300 rounded-l-lg px-1 py-2">
                             <LuEuro size={24} className="py-1" />
                         </div>
                         <input
                             type="number"
-                            {...register('expense', { valueAsNumber: true })}
+                            {...register("expense", { valueAsNumber: true })}
                             className="lg:w-full focus:outline-none border border-l-0 border-gray-300 rounded-r-lg px-3 py-2"
                             step={0.01}
                         />
                     </div>
-                </div>
+                    {expense !== undefined && expense < 0 && (
+                        <p className="text-red-500">Expenses must be at least 0.00</p>
+                    )}
+                </div>s
             </div>
         </form>
     );
