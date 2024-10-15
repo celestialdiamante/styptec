@@ -1,3 +1,4 @@
+
 import PageHeader from '@/components/Global/PageHeader'
 import React from 'react'
 import { IoIosStar } from 'react-icons/io'
@@ -7,7 +8,7 @@ const page = () => {
     <>
 
       <PageHeader title="Our reviews " />
-
+      
       <section className="py-6 md:py-16">
         <div className="container grid md:grid-cols-12 grid-cols-1 p-6 gap-6">
           <div className="col-span-6">

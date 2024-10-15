@@ -73,7 +73,7 @@ type deviceType = {
     userAgent?: string
 }
 
-const EstimationForm = ({form_settings}:{form_settings: typeOfFormSettings}) => {
+const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }) => {
 
     const percents = form_settings;
 
@@ -94,14 +94,14 @@ const EstimationForm = ({form_settings}:{form_settings: typeOfFormSettings}) => 
         country_id: '156'
     });
 
-    function updateUserFormInputs(event:any){
+    function updateUserFormInputs(event: any) {
         const inputName = event.target.name;
         const inputValue = event.target.value;
 
-        setUserForm((prevFormValue)=> {
+        setUserForm((prevFormValue) => {
             return {
                 ...prevFormValue,
-                [inputName]:inputValue
+                [inputName]: inputValue
             }
         })
     }
@@ -131,7 +131,7 @@ const EstimationForm = ({form_settings}:{form_settings: typeOfFormSettings}) => 
     const hourlyRate = watch("hourly_Rate");
     const hoursWorked = watch("hours_Worked");
     const age = watch("age");
-    const membershipType:any = watch("membership");
+    const membershipType: any = watch("membership");
     const pension = watch("disability");
     const pff = watch("socially_Insured");
     const socialCharges = watch("payroll_Tax_Credit");
@@ -143,64 +143,64 @@ const EstimationForm = ({form_settings}:{form_settings: typeOfFormSettings}) => 
 
 
     React.useEffect(() => {
-        if (parseInt(hourlyRate+'') > 0 && parseInt(hoursWorked+'') > 0) {
-          // get invoice amount
-          const newInvoiceAmount = hourlyRate * hoursWorked;
-          setInvoiceAmount(newInvoiceAmount);
-          const percent = newInvoiceAmount / 100;
-          // console.log('percent: ', percent)
-    
-          const deduction = percents.service_charge * percent;
-          // console.log('deduction: ', deduction)
-    
-          const newGrossIncome = newInvoiceAmount - deduction
-          setGrossIncome(newGrossIncome);
-          setNetPayable(newGrossIncome);
-    
-          const grossPercent = newGrossIncome / 100;
-    
-          let otherDeductions = 0;
-          if (pension) {
-            const pensionCharges = grossPercent * percents.pension;
-            otherDeductions += pensionCharges;
-          }
-    
-          if (pff) {
-            const pffCharges = grossPercent * percents.paid_fast_forward;
-            otherDeductions += pffCharges;
-          }
-    
-          if (socialCharges) {
-            const socialCharge = grossPercent * percents.social_charges;
-            otherDeductions += socialCharge;
-          }
-    
-          let newNetPayable = newGrossIncome - otherDeductions;
-    
-          if (membershipType?.toLowerCase() == 'premium' && hoursWorked >= 130) {
-            const discount = grossPercent * percents.premium_discount;
-            newNetPayable += discount;
-          }
-    
-          setNetPayable(newNetPayable);
-    
+        if (parseInt(hourlyRate + '') > 0 && parseInt(hoursWorked + '') > 0) {
+            // get invoice amount
+            const newInvoiceAmount = hourlyRate * hoursWorked;
+            setInvoiceAmount(newInvoiceAmount);
+            const percent = newInvoiceAmount / 100;
+            // console.log('percent: ', percent)
+
+            const deduction = percents.service_charge * percent;
+            // console.log('deduction: ', deduction)
+
+            const newGrossIncome = newInvoiceAmount - deduction
+            setGrossIncome(newGrossIncome);
+            setNetPayable(newGrossIncome);
+
+            const grossPercent = newGrossIncome / 100;
+
+            let otherDeductions = 0;
+            if (pension) {
+                const pensionCharges = grossPercent * percents.pension;
+                otherDeductions += pensionCharges;
+            }
+
+            if (pff) {
+                const pffCharges = grossPercent * percents.paid_fast_forward;
+                otherDeductions += pffCharges;
+            }
+
+            if (socialCharges) {
+                const socialCharge = grossPercent * percents.social_charges;
+                otherDeductions += socialCharge;
+            }
+
+            let newNetPayable = newGrossIncome - otherDeductions;
+
+            if (membershipType?.toLowerCase() == 'premium' && hoursWorked >= 130) {
+                const discount = grossPercent * percents.premium_discount;
+                newNetPayable += discount;
+            }
+
+            setNetPayable(newNetPayable);
+
         }
-    
-      }, [
+
+    }, [
         hourlyRate,
         hoursWorked,
         pension,
         pff,
         socialCharges,
         membershipType,
-      ])
+    ])
 
 
-      const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-    
+
         try {
-            const formData:any = {
+            const formData: any = {
                 membership_type: membershipType,
                 hourly_rate: hourlyRate.toFixed(2),
                 hours_worked: hoursWorked,
@@ -208,28 +208,46 @@ const EstimationForm = ({form_settings}:{form_settings: typeOfFormSettings}) => 
                 pension: pension,
                 social_charges: socialCharges,
                 paid_fast_forward: pff,
-                expenses: (parseInt(expense+'') || 0).toFixed(2),
+                expenses: (parseInt(expense + '') || 0).toFixed(2),
                 name: userForm.name,
                 email: userForm.email,
                 phone_number: userForm.phone_number,
                 country_id: userForm.country_id,
                 device: device
             };
-          console.log('form data: ', formData);
-          const response = await submitEstimationForm({...formData })
-          console.log('form data response: ', response);
-        //   if(response && response.success) {
-        //     alert('Form successfully submitted, we will get back to you');
-        //     window.location.reload();
-        //   } else {
-        //     alert('Server error, please try after some time.')
-        //   }
-          // console.log('form response: ', response)
+            console.log('form data: ', formData);
+            const response = await submitEstimationForm({ ...formData })
+            console.log('form data response: ', response);
+            //   if(response && response.success) {
+            //     alert('Form successfully submitted, we will get back to you');
+            //     window.location.reload();
+            //   } else {
+            //     alert('Server error, please try after some time.')
+            //   }
+            // console.log('form response: ', response)
         } catch (error) {
-          console.log('form error: ', error)
-        }    
-      };
-    
+            console.log('form error: ', error)
+        }
+    };
+
+    const openModal = (e: any) => {
+        e.preventDefault();
+
+        if (
+            !membershipType ||
+            hourlyRate === undefined || hourlyRate < 1 ||
+            hoursWorked === undefined || hoursWorked < 1 ||
+            age === undefined || age < 18
+        ) {
+            alert('Please fill in all required fields correctly before proceeding.');
+            return;
+        }
+
+        const modal = document?.getElementById('my_modal');
+        if (modal instanceof HTMLDialogElement) {
+            modal.showModal();
+        }
+    };
 
 
 
@@ -378,6 +396,9 @@ const EstimationForm = ({form_settings}:{form_settings: typeOfFormSettings}) => 
                     <p className="text-base lg:text-lg text-black mb-2 last:mb-0">
                         See immediately what you earn net? Select all options and decide for yourself what is important to you.
                     </p>
+                    <p className="text-base lg:text-lg text-black mb-2 last:mb-0">
+                        3% Extra discount is applicable on premium membership whose working hours 130 or above.
+                    </p>
 
                     <div className="flex flex-col mt-6 bg-white rounded-2xl shadow-xl border border-gray-200">
                         <div className="flex justify-between p-6 lg:p-6 lg:!pb-4">
@@ -404,14 +425,11 @@ const EstimationForm = ({form_settings}:{form_settings: typeOfFormSettings}) => 
                                 95,761 workers already preceded you.
                             </p>
                             <div className="flex gap-4 mt-4">
-                                <button type='submit'
+                                <button
+                                    type='submit'
                                     className="btn btn-primary text-white"
-                                    onClick={() => {
-                                        const modal = document?.getElementById('my_modal');
-                                        if (modal instanceof HTMLDialogElement) {
-                                            modal.showModal();
-                                        }
-                                    }}>
+                                    onClick={openModal}
+                                >
                                     Calculate Paycheck
                                     <FaChevronRight />
                                 </button>

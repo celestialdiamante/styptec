@@ -1,0 +1,92 @@
+"use client"
+import React from 'react'
+import { IoMdQuote, IoMdStar } from 'react-icons/io'
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
+
+const responsive = {
+    superLargeDesktop: {
+        breakpoint: { max: 4000, min: 3000 },
+        items: 3
+    },
+    desktop: {
+        breakpoint: { max: 3000, min: 1024 },
+        items: 3
+    },
+    tablet: {
+        breakpoint: { max: 1024, min: 464 },
+        items: 2
+    },
+    mobile: {
+        breakpoint: { max: 464, min: 0 },
+        items: 1
+    }
+};
+
+const testimonials = [
+    {
+        quote: "The most well-known dummy text is the Lorem Ipsum, which is said to have originated in the 16th century.",
+        name: "Christa Smith",
+        position: "Manager",
+    },
+    {
+        quote: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.  which is said to have originated in the 16th century.",
+        name: "John Doe",
+        position: "CEO",
+    },
+    {
+        quote: "When an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        name: "Jane Doe",
+        position: "Developer",
+    },
+    {
+        quote: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
+        name: "Michael Roe",
+        position: "Designer",
+    },
+    {
+        quote: "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.",
+        name: "Chris Lee",
+        position: "Marketer",
+    }
+];
+
+export default function Testimonial() {
+    return (
+        <section className="py-6 md:py-16">
+            <div className="container mx-auto text-center mt-10 mb-10 lg:mb-14">
+                <h3 className="text-center text-3xl lg:text-4xl font-bold text-gray-800 mb-12">
+                    What our customers say
+                </h3>
+                <div>
+                    <Carousel
+                        responsive={responsive}
+                        removeArrowOnDeviceType={["tablet", "mobile", "desktop", "superLargeDesktop"]}
+                        showDots={false}
+                        autoPlay={true}
+                        autoPlaySpeed={3000}
+                        infinite={true}
+                    >
+                        {testimonials.map((testimonial, index) => (
+                            <div key={index} className="rounded-xl border border-gray-50 shadow-lg m-6 p-6 bg-white space-y-3">
+                                <IoMdQuote className="text-5xl text-primary mx-auto" />
+                                <p className="text-gray-600 text-center line-clamp-3"> &quot;{testimonial.quote}&quot;</p>
+                                <div className="flex justify-center *:text-amber-400">
+                                    {[...Array(5)].map((_, starIndex) => (
+                                        <IoMdStar key={starIndex} />
+                                    ))}
+                                </div>
+
+                                <div className="text-center mt-5">
+                                    <h6 className="mt-2 font-semibold">{testimonial.name}</h6>
+                                    <span className="text-slate-400 text-sm">{testimonial.position}</span>
+                                </div>
+                            </div>
+                        ))}
+                    </Carousel>
+                </div>
+
+            </div>
+        </section >
+    )
+}

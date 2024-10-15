@@ -1,7 +1,118 @@
 {
-    "HomePage": {
-      "title": "Hallo wereld!",
-      "about": "Ga naar de over-pagina"
+  "heroSection": {
+    "heading": "We combineren je inkomsten tot",
+    "subheading": "optimale resultaten met",
+    "highlight": "ultieme vrijheid.",
+    "description": "Bij elke baan helpt Verloning.nl je met facturering en aftrek van alle verplichte belastingen en biedt je verzekering, training en vele extra voordelen. Je krijgt de beste deals, zonder de rompslomp van administratie, KvK-nummer of btw-nummer. Kortom, werken zonder gedoe."
+  },
+
+  "paymentCalculator": {
+    "hourlyRateLabel": "Uw uurtarief",
+    "hoursWorkedLabel": "Gewerkte uren",
+    "grossAmountLabel": "Bruto factuurbedrag",
+    "netAmountLabel": "Netto bedrag",
+    "calculateButton": "Bereken betaling"
+  },
+
+  "stats": {
+    "trustedBy": "Vertrouwd door",
+    "customers": "klanten",
+    "recommend": "zou ons aanbevelen",
+    "basedOn": "gebaseerd op",
+    "customerInterviews": "klantinterviews",
+    "satisfaction": "Onze klanttevredenheid op",
+    "klantenvertellen": "Klantenvertellen"
+  },
+
+  "videoSection": {
+    "title": "Leer hier hoe we u kunnen helpen!"
+  },
+  "pricing": {
+        "title": "Zorgeloos freelancen met onze lidmaatschappen!",
+        "description": "Ontdek onze exclusieve lidmaatschappen...",
+        "memberships": {
+            "basic": {
+                "title": "Basis",
+                "subtitle": "— Geen cure, geen pay",
+                "price": "€ 0,-",
+                "features": [
+                    "Uw facturering en belastingen geregeld",
+                    "U betaalt 6% commissie per vergoeding",
+                    "Uitstekend en betaalbaar",
+                    "Groepszorgverzekering bij ONVZ",
+                    "Klantverhalen geven ons een 9,6"
+                ],
+                "button": "Bekijk alle voordelen"
+            },
+            "premium": {
+                "title": "Premium",
+                "subtitle": "— Zorgeloos geregeld",
+                "price": "€ 39,95,-",
+                "features": [
+                    "Alle voordelen van het basislidmaatschap",
+                    "U betaalt 3% commissie per betaling",
+                    "Aansprakelijkheidsverzekering en meer",
+                    "€25 per maand cashback op zorgverzekering",
+                    "Onbeperkt trainen bij GoodHabitz",
+                    "Uw lidmaatschap wordt belastingvrij vergoed"
+                ],
+                "badge": "Meest gekozen",
+                "button": "Bekijk alle voordelen"
+            },
+            "all_in": {
+                "title": "All-in",
+                "subtitle": "— Perfect geregeld",
+                "price": "€ 99,95,-",
+                "features": [
+                    "Alle voordelen van het premiummembership",
+                    "U betaalt geen commissie per betaling",
+                    "Professionele aansprakelijkheidsverzekering",
+                    "€350 budget voor coaching en training",
+                    "Uitnodigingen voor exclusieve uitjes"
+                ],
+                "button": "Bekijk alle voordelen"
+            }
+        }
+    },
+
+    "whyChoose": {
+        "freelancersTitle": "Waarom freelancers Styptec moeten gebruiken",
+        "freelancers": [
+            {
+                "icon": "clock",
+                "title": "Snel en eenvoudig",
+                "description": "Een eenvoudig, duidelijk en snel systeem dat al uw belastingen en verzekeringen onmiddellijk regelt. En als u problemen heeft, staat onze klantenservice voor u klaar."
+            },
+            {
+                "icon": "money",
+                "title": "Veel GRATIS voordelen",
+                "description": "Wij zoeken altijd naar de beste aanbiedingen voor u als vaste klant. Onbeperkt trainen bij GoodHabitz, ongevallenverzekering tot € 100.000. En 24/7 virtuele zorg met onbeperkte medische of psychologische ondersteuning."
+            },
+            {
+                "icon": "shield",
+                "title": "Goede regeling",
+                "description": "Na betaling, netto betaald binnen één werkdag en geen verrassingen achteraf. Bekijk alle voordelen in uw account zoals verzekeringen, VOG, facturering en nog veel meer."
+            }
+        ],
+        "clientsTitle": "Waarom klanten Styptec moeten gebruiken",
+        "clients": [
+            {
+                "icon": "check-circle",
+                "title": "Geen verrassingen",
+                "description": "Ontvang een factuur van Styptec en wees gerust dat alles perfect is geregeld. We garanderen dat aan alle wettelijke verplichtingen en belastingen is voldaan. Een geruststellend gevoel en een win-win voor alle partijen."
+            },
+            {
+                "icon": "handshake",
+                "title": "Betrouwbaar",
+                "description": "Natuurlijk hebben we een G-rekening en een belastingaangifte van de betalingsgeschiedenis. Met meer dan 10 jaar ervaring met meer dan 95.681 freelancers kunt u er zeker van zijn dat alles zorgvuldig en goed is geregeld."
+            },
+            {
+                "icon": "thumbs-up",
+                "title": "Aanbevelen",
+                "description": "Heeft u het echt goed geregeld voor uw opdrachtnemers? Aanbevelen, zodat u er zeker van kunt zijn dat uw opdrachtnemers het echt goed hebben geregeld. U ontvangt een duidelijke factuur van ons en u heeft nooit verrassingen achteraf."
+            }
+        ],
+        "buttonText": "Benieuwd naar ons?"
     }
-  }
-  
+
+}

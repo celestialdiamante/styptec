@@ -2,6 +2,7 @@ import CallToAction from "@/components/HomePage/CallToAction";
 import HeroSection from "@/components/HomePage/HeroSection";
 import Pricing from "@/components/HomePage/Pricing";
 import Stats from "@/components/HomePage/Stats";
+import Testimonial from "@/components/HomePage/Testimonial";
 import VideoSection from "@/components/HomePage/VideoSection";
 import WhyChoose from "@/components/HomePage/WhyChoose";
 import getPageMetadata from "@/helpers/getPageMetadata";
@@ -48,7 +49,7 @@ export default async function Home() {
       <VideoSection />
       <Pricing />
       <WhyChoose />
-
+      <Testimonial />
       <CallToAction
         title="Check out the options without obligation."
         subtitle="Register in 10 seconds and see how easy it is. No strings attached."
