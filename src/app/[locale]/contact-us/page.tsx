@@ -1,8 +1,46 @@
 import React from 'react';
 import PageHeader from '@/components/Global/PageHeader';
 import ContactForm from '@/components/ContactForm';
+import { contactInfoType, getContactData } from '@/helpers/getData';
+import getPageMetadata from '@/helpers/getPageMetadata';
+import { Metadata } from 'next';
+import { URLS } from '@/helpers/URLs';
 
-const ContactUs = () => {
+export async function generateMetadata(): Promise<Metadata> {
+
+  const metaData = await getPageMetadata('contact');
+  console.log('metaData: ', metaData)
+
+  const title = metaData?.title_en ?? 'Styptec';
+  const description = metaData?.description_en ?? 'Styptec';
+  const keywords = metaData?.keywords_en ?? 'Styptec';
+  
+  return {
+    title: title,
+    description: description,
+    keywords: keywords,
+    openGraph: {
+      title: title,
+      description: description,
+      url: process.env.SITE_URL ?? 'https://www.styptec.nl',
+      siteName: process.env.SITE_NAME ??'Styptec',
+      type: 'website',
+      images: [URLS.STORAGE + metaData.seo_image],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: title,
+      description: description,
+      images: [URLS.STORAGE + metaData.seo_image],
+    },
+
+  }
+}
+
+const ContactUs = async () => {
+
+  const contactInfo : contactInfoType = await getContactData();
+
 
   return (
     <>
@@ -19,20 +57,26 @@ const ContactUs = () => {
 
               <p className="my-2">
                 STYPTEC B.V. <br />
-                <span className="font-bold">Hoofdvestiging:</span> KVK 81188803 <br />
-                Rokin 92, 1012 KZ  Amsterdam <br />
+                <span className="font-bold">Hoofdvestiging:</span> {contactInfo?.address} <br />
               </p>
 
               <p className="my-2">
-                <span className="font-bold">Bezoekadres:</span> Laan van Zuidhoorn 41,<br />
-               2289 DC  Rijswijk
-               </p>
+                <span className="font-bold">Bezoekadres:</span> {contactInfo?.address_2}
+              </p>
 
               <p>
-                <a href="mailto:info@styptec.nl" className="text-primary">
-                  info@styptec.nl
+                <a href={`mailto:${contactInfo?.email}`} className="text-primary">
+                  {contactInfo?.email}
                 </a>
               </p>
+              {
+                contactInfo?.email_2 &&
+                <p>
+                  <a href={`mailto:${contactInfo.email_2}`} className="text-primary">
+                    {contactInfo.email_2}
+                  </a>
+                </p>
+              }
               <h4 className="text-lg font-bold mt-6">Opening hours</h4>
               <p>Monday - Friday: 09:00 - 17:30</p>
               <p>Saturday - Sunday: Closed</p>

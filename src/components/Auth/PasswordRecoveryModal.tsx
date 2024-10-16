@@ -33,7 +33,7 @@ export default function PasswordRecoveryModal({ isOpen, onClose }: ModalProps) {
           <Dialog.Title className="text-xl font-semibold mb-4">Password Recovery</Dialog.Title>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="mb-4">
-              <label className="block text-gray-700">Email</label>
+              <label className="block  ">Email</label>
               <input
                 {...register('email')}
                 type="email"

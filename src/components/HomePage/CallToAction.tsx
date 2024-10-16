@@ -17,10 +17,10 @@ const CallToAction = ({ title, subtitle, buttonText, buttonLink }:CallToActionPr
 
             <div className="container mx-auto text-center">
                 <div className="space-y-4 lg:px-24 2xl:px-64">
-                    <p className="font-sans text-[32px] leading-[40px] lg:text-[40px] lg:leading-[48px] font-bold text-gray-950">
+                    <p className="text-2xl md:text-3xl font-bold">
                         {title}
                     </p>
-                    <h5 className="font-sans text-base text-gray-950 mb-2 last:mb-0">
+                    <h5 className="font-sans text-base mb-2 last:mb-0">
                         {subtitle}
                     </h5>
                     <Link href={buttonLink} className="btn btn-primary text-white">

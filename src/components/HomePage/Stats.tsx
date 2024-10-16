@@ -7,18 +7,21 @@ const Stats = () => {
 
     return (
         <section className="py-6 md:py-16">
-            <div className="container grid lg:grid-cols-12 grid-cols-1 ">
-                <div className="lg:col-span-4 flex items-start md:items-center md:justify-center gap-2">
-                    <FcApproval className="size-16" />
+            <div className="container grid lg:grid-cols-12 grid-cols-1 gap-2 ">
+                <div className="lg:col-span-4 border border-gray-100 rounded-xl sm:rounded-none sm:rounded-l-2xl py-3 px-3 md:px-0 shadow-md flex items-start md:items-center md:justify-center gap-2">
+                    <div className="flex items-center">
+                        <FcApproval className="size-16" />
+                        <p className="font-bold text-3xl text-center">95.57</p>
+                    </div>
                     <div>
-                        <p>{lang('trustedBy')} <span className="font-semibold ">95.571</span><br />
+                        <p>{lang('trustedBy')} 
                             {lang('customers')}</p>
                     </div>
                 </div>
-                <div className="lg:col-span-4 flex items-start md:items-center md:justify-center gap-2">
-                    <div className="flex flex-col items-center md:flex-row">
+                <div className="lg:col-span-4 border border-gray-100 rounded-xl sm:rounded-none py-3 px-3 md:px-0 shadow-md flex items-start md:items-center md:justify-center gap-2">
+                    <div className="flex items-center">
                         <FcApproval className="size-16" />
-                        <p className="font-bold text-base text-center lg:text-3xl">97%</p>
+                        <p className="font-bold text-3xl text-center">97%</p>
                     </div>
                     <div>
                         <p>{lang('recommend')} <br /> {lang('basedOn')}
@@ -26,10 +29,10 @@ const Stats = () => {
                         </p>
                     </div>
                 </div>
-                <div className="lg:col-span-4 flex items-start md:items-center md:justify-center gap-2">
-                    <div className="flex flex-col items-center md:flex-row">
+                <div className="lg:col-span-4 border border-gray-100 rounded-xl sm:rounded-none sm:rounded-r-2xl py-3 px-3 md:px-0 shadow-md flex items-start md:items-center md:justify-center gap-2">
+                    <div className="flex items-center">
                         <FcApproval className="size-16" />
-                        <p className="font-bold text-base text-center lg:text-3xl">9.8</p>
+                        <p className="font-bold text-3xl text-center">9.8</p>
                     </div>
                     <div>
                         <p>{lang('satisfaction')} <br />

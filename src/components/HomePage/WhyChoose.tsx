@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 
 const WhyChoose = () => {
     const lang = useTranslations('whyChoose');
-    
+
     const featuresFreelancers = [
         {
             icon: <FiClock size={24} />,
@@ -52,21 +52,29 @@ const WhyChoose = () => {
     );
 
     return (
-        <section className="py-6 md:py-16 bg-[url('/images/SKYPTEC_Banner02.jpg')] bg-cover bg-no-repeat">
-            <div className="container mx-auto px-4">
-                <h3 className="text-center text-3xl lg:text-4xl font-bold text-gray-800 mb-12">{lang('freelancersTitle')}</h3>
-                <div className="grid gap-8 lg:grid-cols-3 mb-16">
-                    {featuresFreelancers.map((feature, idx) => <FeatureCard key={idx} {...feature} />)}
+        <section className="py-6 md:py-16">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 px-4">
+                <div className="col-span-6 p-4 bg-[url('/images/SKYPTEC_Banner02.jpg')] bg-no-repeat bg-cover border border-gray-50 shadow-lg rounded-xl">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-12">{lang('freelancersTitle')}</h3>
+                    <div className="flex flex-col gap-6 ">
+                        {featuresFreelancers.map((feature, idx) => <FeatureCard key={idx} {...feature} />)}
+                    </div>
+                    {/* <div className="text-center mt-12">
+                        <button className="btn btn-primary text-white">{lang('buttonText')}</button>
+                    </div> */}
                 </div>
 
-                <h3 className="text-center text-3xl lg:text-4xl font-bold text-gray-800 mb-12">{lang('clientsTitle')}</h3>
-                <div className="grid gap-8 lg:grid-cols-3">
-                    {featuresClients.map((feature, idx) => <FeatureCard key={idx} {...feature} />)}
+                <div className="col-span-6 p-4 bg-[url('/images/SKYPTEC_Banner02.jpg')] bg-no-repeat bg-cover border border-gray-50 shadow-lg rounded-xl">
+                    <h3 className="text-2xl md:text-3xl font-bold mb-12">{lang('clientsTitle')}</h3>
+                    <div className="flex flex-col gap-6">
+                        {featuresClients.map((feature, idx) => <FeatureCard key={idx} {...feature} />)}
+                    </div>
+                    {/* <div className="text-center mt-12">
+                        <button className="btn btn-primary text-white">{lang('buttonText')}</button>
+                    </div> */}
                 </div>
 
-                <div className="text-center mt-12">
-                    <button className="btn btn-primary text-white">{lang('buttonText')}</button>
-                </div>
+
             </div>
         </section>
     );

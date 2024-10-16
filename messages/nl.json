@@ -76,7 +76,7 @@
     },
 
     "whyChoose": {
-        "freelancersTitle": "Waarom freelancers Styptec moeten gebruiken",
+        "freelancersTitle": "Waarom freelancers Styptec moeten gebruiken?",
         "freelancers": [
             {
                 "icon": "clock",
@@ -94,7 +94,7 @@
                 "description": "Na betaling, netto betaald binnen één werkdag en geen verrassingen achteraf. Bekijk alle voordelen in uw account zoals verzekeringen, VOG, facturering en nog veel meer."
             }
         ],
-        "clientsTitle": "Waarom klanten Styptec moeten gebruiken",
+        "clientsTitle": "Waarom klanten Styptec moeten gebruiken?",
         "clients": [
             {
                 "icon": "check-circle",

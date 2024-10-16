@@ -55,7 +55,7 @@ export default function Testimonial() {
     return (
         <section className="py-6 md:py-16">
             <div className="container mx-auto text-center mt-10 mb-10 lg:mb-14">
-                <h3 className="text-center text-3xl lg:text-4xl font-bold text-gray-800 mb-12">
+                <h3 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-12">
                     What our customers say
                 </h3>
                 <div>

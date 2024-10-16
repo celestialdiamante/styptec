@@ -167,14 +167,14 @@ const SecondPricing = () => {
                     <p className="font-sans text-[24px] leading-[32px] font-bold text-black">
                       {plan.name}
                     </p>
-                    <p className="font-sans text-sm text-gray-700 mb-2 last:mb-0">
+                    <p className="font-sans text-sm   mb-2 last:mb-0">
                       {plan.features[0]}
                     </p>
                     <div className="block space-x-1 mt-2 mb-4">
                       <p className="font-sans text-[24px] leading-[32px] font-bold text-black inline">
                         {plan.price}
                       </p>
-                      <p className="font-sans text-sm text-gray-700 mb-2 last:mb-0 inline">
+                      <p className="font-sans text-sm   mb-2 last:mb-0 inline">
                         per month
                       </p>
                     </div>
@@ -198,7 +198,7 @@ const SecondPricing = () => {
                         {plan.name}
                       </p>
                     </div>
-                    <p className="font-sans text-base text-gray-700">
+                    <p className="font-sans text-base  ">
                       {plan.features[0]}
                     </p>
                     <p className="my-6 flex items-baseline gap-x-1">
@@ -237,7 +237,7 @@ const SecondPricing = () => {
                       <FaRegCircleQuestion />
                     </div>
                     <div className="mx-auto">
-                      <p className="font-sans text-base text-gray-700 mb-2 last:mb-0">
+                      <p className="font-sans text-base   mb-2 last:mb-0">
                         {plan.finance.contractPeriod}
                       </p>
                     </div>
@@ -249,7 +249,7 @@ const SecondPricing = () => {
                       <FaRegCircleQuestion />
                     </div>
                     <div className="mx-auto">
-                      <p className="font-sans text-base text-gray-700 mb-2 last:mb-0">
+                      <p className="font-sans text-base   mb-2 last:mb-0">
                         {plan.finance.commissionVerloning}
                       </p>
                     </div>
@@ -262,7 +262,7 @@ const SecondPricing = () => {
                       <FaRegCircleQuestion />
                     </div>
                     <div className="mx-auto">
-                      <p className="font-sans text-base text-gray-700 mb-2 last:mb-0">
+                      <p className="font-sans text-base   mb-2 last:mb-0">
                         {plan.finance.commissionPrae}
                       </p>
                     </div>
@@ -273,7 +273,7 @@ const SecondPricing = () => {
                       <FaRegCircleQuestion />
                     </div>
                     <div className="mx-auto">
-                      <p className="font-sans text-base text-gray-700 mb-2 last:mb-0">
+                      <p className="font-sans text-base   mb-2 last:mb-0">
                         {plan.finance.expenses}
                       </p>
                     </div>
@@ -286,7 +286,7 @@ const SecondPricing = () => {
                       <FaRegCircleQuestion />
                     </div>
                     <div className="mx-auto">
-                      <p className="font-sans text-base text-gray-700 mb-2 last:mb-0">
+                      <p className="font-sans text-base   mb-2 last:mb-0">
                         {plan.finance.taxBenefit}
                       </p>
                     </div>
@@ -299,7 +299,7 @@ const SecondPricing = () => {
                       <FaRegCircleQuestion />
                     </div>
                     <div className="mx-auto">
-                      <p className="font-sans text-base text-gray-700 mb-2 last:mb-0">
+                      <p className="font-sans text-base   mb-2 last:mb-0">
                         {plan.finance.invoicePrepaid}
                       </p>
                     </div>

@@ -390,7 +390,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
             </div>
             <div className="col-span-3 p-4 rounded-lg">
                 <div>
-                    <h3 className="lg:text-[40px] lg:leading-[48px] font-bold text-gray-700 mb-4">
+                    <h3 className="lg:text-[40px] lg:leading-[48px] font-bold   mb-4">
                         Because you deserve more
                     </h3>
                     <p className="text-base lg:text-lg text-black mb-2 last:mb-0">
@@ -403,16 +403,16 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                     <div className="flex flex-col mt-6 bg-white rounded-2xl shadow-xl border border-gray-200">
                         <div className="flex justify-between p-6 lg:p-6 lg:!pb-4">
                             <div className="flex flex-col">
-                                <p className="text-sm text-gray-700 mb-2">Invoice amount</p>
-                                <p className="text-base font-semibold text-gray-700">€ {invoiceAmount.toFixed(2)}</p>
+                                <p className="text-sm   mb-2">Invoice amount</p>
+                                <p className="text-base font-semibold  ">€ {invoiceAmount.toFixed(2)}</p>
                             </div>
                             <div className="flex flex-col">
-                                <p className="text-sm text-gray-700 mb-2">Gross Income</p>
-                                <p className="text-base font-semibold text-gray-700">€ {grossIncome.toFixed(2)}</p>
+                                <p className="text-sm   mb-2">Gross Income</p>
+                                <p className="text-base font-semibold  ">€ {grossIncome.toFixed(2)}</p>
                             </div>
                             <div className="flex flex-col">
-                                <p className="text-sm text-gray-700 mb-2">Net payout</p>
-                                <p className="text-[24px] leading-[32px] font-bold text-gray-700">€ {netPayable.toFixed(2)}</p>
+                                <p className="text-sm   mb-2">Net payout</p>
+                                <p className="text-[24px] leading-[32px] font-bold  ">€ {netPayable.toFixed(2)}</p>
                             </div>
                         </div>
 

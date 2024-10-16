@@ -2,7 +2,7 @@
 import { Link, usePathname } from '@/i18n/routing';
 import Image from 'next/image';
 import React from 'react';
-import { FaChevronDown, FaChevronRight, FaUserTie } from 'react-icons/fa';
+import { FaChevronDown } from 'react-icons/fa';
 
 interface Language {
     code: string;
@@ -12,41 +12,15 @@ interface Language {
 
 const navItems = [
     {
-        label: 'Freelancers',
+        label: 'HOW STYPTEC WORKS',
         links: [
             {
-                label: 'How does Styptec work',
+                label: 'For Freelancer',
                 href: '/how-does-it-work'
             },
             {
-                label: 'Calculate your payment',
-                href: '/calculate-your-benefit'
-            },
-        ],
-    },
-    {
-        label: 'Entrepreneurs',
-        links: [
-            {
-                label: 'How does Styptec work',
+                label: 'For Entrepreneurs',
                 href: '/how-does-it-work-for-entrepreneurs'
-            },
-            {
-                label: 'Game rules',
-                href: '/game-rules'
-            },
-        ],
-    },
-    {
-        label: 'About Us',
-        links: [
-            {
-                label: 'About Us',
-                href: '/about-us'
-            },
-            {
-                label: 'Reviews',
-                href: '/reviews'
             },
         ],
     },
@@ -54,7 +28,7 @@ const navItems = [
 
 const languages: Language[] = [
     { code: 'en', label: 'English', emoji: '🇺🇸' },
-    { code: 'nl', label: 'Dutch', emoji: '🇳🇱' },  
+    { code: 'nl', label: 'Dutch', emoji: '🇳🇱' },
 ];
 
 const Header = () => {
@@ -77,6 +51,16 @@ const Header = () => {
                         </svg>
                     </button>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        <li>
+                            <Link className={isActive('/') ? 'text-primary' : ''} href="/">
+                                Home
+                            </Link>
+                        </li>
+                        <li>
+                            <Link className={isActive('/about-us') ? 'text-primary' : ''} href="/about-us">
+                                About Us
+                            </Link>
+                        </li>
                         {navItems.map(({ label, links }) => (
                             <li key={label}>
                                 <span>{label}</span>
@@ -95,13 +79,23 @@ const Header = () => {
                             </li>
                         ))}
                         <li>
+                            <Link className={isActive('/calculate-your-benefit') ? 'text-primary' : ''} href="/calculate-your-benefit">
+                                GET YOUR PAYCHECK
+                            </Link>
+                        </li>
+                        <li>
+                            <Link className={isActive('/reviews') ? 'text-primary' : ''} href="/reviews">
+                                REVIEWS
+                            </Link>
+                        </li>
+                        <li>
                             <Link className={isActive('/pricing') ? 'text-primary' : ''} href="/pricing">
-                                Pricing
+                                PRICING
                             </Link>
                         </li>
                         <li>
                             <Link className={isActive('/contact-us') ? 'text-primary' : ''} href="/contact-us">
-                                Contact Us
+                                CONTACT US
                             </Link>
                         </li>
                     </ul>
@@ -113,9 +107,19 @@ const Header = () => {
 
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
+                    <li>
+                        <Link className={isActive('/') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/">
+                            HOME
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className={isActive('/about-us') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/about-us">
+                            ABOUT US
+                        </Link>
+                    </li>
                     {navItems.map(({ label, links }) => (
                         <li key={label} className="dropdown dropdown-hover hover:bg-none">
-                            <div tabIndex={0} className={isParentActive(links) ? 'text-primary' : 'hover:text-primary  hover:bg-white focus:bg-white cursor-pointer flex items-center'}>
+                            <div tabIndex={0} className={isParentActive(links) ? 'text-primary font-semibold' : 'hover:text-primary font-semibold  hover:bg-white focus:bg-white cursor-pointer flex items-center'}>
                                 {label}
                                 <FaChevronDown className="ml-1" />
                             </div>
@@ -123,7 +127,7 @@ const Header = () => {
                                 {links.map(link => (
                                     <li key={link.href}>
                                         <Link
-                                            className={isActive(link.href) ? 'text-primary' : ''}
+                                            className={isActive(link.href) ? 'text-primary font-semibold' : ''}
                                             href={link.href}
                                         >
                                             {link.label}
@@ -134,19 +138,46 @@ const Header = () => {
                         </li>
                     ))}
                     <li>
-                        <Link className={isActive('/pricing') ? 'text-primary hover:bg-white focus:bg-white' : 'hover:text-primary hover:bg-white focus:bg-white'} href="/pricing">
-                            Pricing
+                        <Link className={isActive('/calculate-your-benefit') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/calculate-your-benefit">
+                            GET YOUR PAYCHECK
                         </Link>
                     </li>
                     <li>
-                        <Link className={isActive('/contact-us') ? 'text-primary hover:bg-white focus:bg-white' : 'hover:text-primary hover:bg-white focus:bg-white'} href="/contact-us">
-                            Contact Us
+                        <Link className={isActive('/reviews') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/reviews">
+                            REVIEWS
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className={isActive('/pricing') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/pricing">
+                            PRICING
+                        </Link>
+                    </li>
+                    <li>
+                        <Link className={isActive('/contact-us') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/contact-us">
+                            CONTACT US
                         </Link>
                     </li>
                 </ul>
+
+                <div className="dropdown dropdown-hover hidden md:flex">
+                    <Link href="#" className="btn btn-ghost flex items-center">
+                        <span className="mr-1">{language.emoji}</span>
+                        <FaChevronDown className="ml-1" />
+                    </Link>
+                    <ul className="dropdown-content menu bg-base-100 rounded-box z-50 p-2 shadow">
+                        {languages.map((lang) => (
+                            <li key={lang.code}>
+                                <Link href="#" onClick={() => setLanguage(lang)} className="flex items-center">
+                                    <span className="mr-2">{lang.emoji}</span>
+                                    {lang.label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
             </div>
 
-            <div className="navbar-end gap-4">
+            {/* <div className="navbar-end gap-4">
                 <div className="dropdown dropdown-hover hidden md:flex">
                     <Link href="#" className="btn btn-ghost flex items-center">
                         <span className="mr-1">{language.emoji}</span>
@@ -176,7 +207,7 @@ const Header = () => {
                 >
                     Register <FaChevronRight />
                 </Link>
-            </div>
+            </div> */}
         </div>
     );
 };

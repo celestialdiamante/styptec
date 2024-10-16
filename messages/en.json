@@ -76,7 +76,7 @@
     },
 
     "whyChoose": {
-      "freelancersTitle": "Why freelancers should use Styptec",
+      "freelancersTitle": "Why freelancers should use Styptec?",
       "freelancers": [
           {
               "icon": "clock",
@@ -94,7 +94,7 @@
               "description": "After payment, paid net within one working day and no more surprises afterwards. View all benefits in your account such as insurance, VOG, invoice factoring and much more."
           }
       ],
-      "clientsTitle": "Why clients should use Styptec",
+      "clientsTitle": "Why clients should use Styptec?",
       "clients": [
           {
               "icon": "check-circle",

@@ -20,14 +20,14 @@ const HeroSection = () => {
                     height={1000}
                     width={600} 
                 />
-                <h1 className="text-2xl lg:text-5xl font-bold text-black mb-2">
+                <h1 className="text-2xl md:text-5xl font-bold mb-2">
                     {lang('heading')}
                     <br />
                     {lang('subheading')}
                     <br />
                     <span className="text-secondary">{lang('highlight')}</span>
                 </h1>
-                <p className="text-lg lg:max-w-2xl text-gray-600 mb-10">
+                <p className="text-base md:text-lg lg:max-w-2xl  mb-10">
                     {lang('description')}
                 </p>
 

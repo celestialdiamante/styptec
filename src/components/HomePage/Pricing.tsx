@@ -6,7 +6,7 @@ import { FiCheck } from 'react-icons/fi'
 
 const membershipData = [
     {
-        icon: <FaRegSmileBeam className="size-12" />,
+        icon: <FaRegSmileBeam className="size-8" />,
         title: "Basic",
         subtitle: "— No cure no pay",
         // price: "€ 0,-",
@@ -15,12 +15,13 @@ const membershipData = [
             "You pay 6% commission per remuneration",
             "Excellent and affordable",
             "Group health insurance with ONVZ",
+            "Customer storytelling gives us a 9,6",
             "Customer storytelling gives us a 9,6"
         ],
         buttonClass: "btn-outline border-gray-300 hover:border-gray-300 hover:text-gray-900 hover:bg-gray-50"
     },
     {
-        icon: <FaRegStar className="size-12 text-primary" />,
+        icon: <FaRegStar className="size-8 text-primary" />,
         title: "Premium",
         subtitle: "— Arranged carefree",
         // price: "€ 39,95,-",
@@ -55,24 +56,26 @@ const Pricing = () => (
     <section className="py-6 md:py-16">
         <div className="py-8 px-4 container mx-auto lg:py-16 lg:px-6">
             <div className="mx-auto max-w-screen-md text-center mb-8 lg:mb-12">
-                <h2 className="mb-4 text-4xl leading-9 font-bold">Carefree freelancing with our memberships!</h2>
-                <p className="text-base text-gray-700 mb-2 last:mb-0">Discover our exclusive memberships...</p>
+                <h2 className="mb-4 text-2xl md:text-3xl font-bold">Carefree freelancing with our memberships!</h2>
             </div>
-            <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 md:px-48 lg:px-0 2xl:px-20">
+            <div className="mt-10 flex flex-wrap gap-6 justify-center md:px-48 lg:px-0 2xl:px-20">
                 {membershipData.map(({ icon, title, subtitle, features, buttonClass }, idx) => (
                     <div key={idx} className="flex flex-col rounded-2xl shadow-md p-8 lg:p-6 ring-1 ring-gray-200">
-                        <div className="flex justify-between">
-
-                            <h3 className="text-[24px] leading-[32px] font-bold text-black mt-2">{title}</h3>
-                            {icon}
+                        <div className="flex justify-between pb-2 border-b border-gray-300">
+                            <div className="flex gap-2">
+                                {icon}
+                                <h3 className="text-2xl font-bold mt-2">{title}</h3>
+                            </div>
+                            <div>
+                                <p className="text-gray-500 mt-4">{subtitle}</p>
+                            </div>
 
                         </div>
-                        <p className="text-gray-500 sm:text-base mb-3">{subtitle}</p>
                         {/* <p className="my-6 flex items-baseline gap-x-1">
                             <span className="text-4xl font-bold tracking-tight text-gray-900">{price}</span>
                             <span className="text-sm font-semibold leading-6 text-gray-600"> / month</span>
                         </p> */}
-                        <ul className="mb-8 space-y-4 text-sm text-left">
+                        <ul className="mb-8 space-y-4 text-sm text-left mt-3">
                             {features.map((feature, i) => (
                                 <li key={i} className="flex items-center space-x-3">
                                     <FiCheck className="text-green-600" />

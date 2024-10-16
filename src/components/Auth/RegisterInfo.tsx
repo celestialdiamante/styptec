@@ -9,7 +9,7 @@ const features: Array<string> = [
 
 const RegisterInfo = () => {
     return (
-        <div><h3 className="lg:text-[40px] lg:leading-[48px] font-bold text-gray-700 mb-4">Register at Styptec</h3>
+        <div><h3 className="lg:text-[40px] lg:leading-[48px] font-bold   mb-4">Register at Styptec</h3>
             <p className="text-base lg:text-lg text-black mb-2">
                 To work independently via Styptec, we apply a number of conditions and rules. Please also read our framework agreement and
                 <span className="text-blue-600 font-semibold"> terms and conditions </span>

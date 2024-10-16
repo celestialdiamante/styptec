@@ -29,7 +29,7 @@ export default function LoginForm({ onPasswordRecovery }: { onPasswordRecovery: 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="mb-4">
-        <label className="block text-gray-700">Email</label>
+        <label className="block  ">Email</label>
         <input
           {...register('email')}
           type="email"
@@ -39,7 +39,7 @@ export default function LoginForm({ onPasswordRecovery }: { onPasswordRecovery: 
       </div>
 
       <div className="mb-4 relative">
-        <label className="block text-gray-700">Password</label>
+        <label className="block  ">Password</label>
         <input
           {...register('password')}
           type={showPassword ? 'text' : 'password'}

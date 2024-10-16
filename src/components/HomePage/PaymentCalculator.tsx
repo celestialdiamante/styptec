@@ -23,9 +23,9 @@ const PaymentCalculator = () => {
             <div className="md:col-span-full lg:col-span-11">
                 <div className="lg:flex flex-col lg:flex-row justify-center gap-4 bg-white p-4 lg:p-6 rounded-3xl shadow-lg">
                     <div className="flex flex-col mb-4 lg:mb-0">
-                        <label className="text-gray-700 font-semibold mb-1">{lang('hourlyRateLabel')}</label>
+                        <label className="font-semibold mb-1">{lang('hourlyRateLabel')}</label>
                         <div className="flex items-center">
-                            <div className="text-gray-500 border border-gray-300 rounded-l-md px-3 py-2.5">
+                            <div className="border border-gray-300 rounded-l-md px-3 py-2.5">
                                 €
                             </div>
                             <input
@@ -38,7 +38,7 @@ const PaymentCalculator = () => {
                     </div>
 
                     <div className="flex flex-col mb-4 lg:mb-0">
-                        <label className="text-gray-700 font-semibold mb-1">{lang('hoursWorkedLabel')}</label>
+                        <label className="font-semibold mb-1">{lang('hoursWorkedLabel')}</label>
                         <input
                             type="number"
                             value={hoursWorked}
@@ -48,9 +48,9 @@ const PaymentCalculator = () => {
                     </div>
 
                     <div className="flex flex-col mb-4 lg:mb-0">
-                        <label className="text-gray-700 font-semibold mb-1">{lang('grossAmountLabel')}</label>
+                        <label className="font-semibold mb-1">{lang('grossAmountLabel')}</label>
                         <div className="flex items-center">
-                            <div className="text-gray-500 border border-gray-300 rounded-l-md px-3 py-2.5">
+                            <div className="border border-gray-300 rounded-l-md px-3 py-2.5">
                                 €
                             </div>
                             <input
@@ -63,9 +63,9 @@ const PaymentCalculator = () => {
                     </div>
 
                     <div className="flex flex-col mb-4 lg:mb-0">
-                        <label className="text-gray-700 font-semibold mb-1">{lang('netAmountLabel')}</label>
+                        <label className="font-semibold mb-1">{lang('netAmountLabel')}</label>
                         <div className="flex items-center">
-                            <div className="text-gray-500 border border-gray-300 rounded-l-md px-3 py-2.5">
+                            <div className="border border-gray-300 rounded-l-md px-3 py-2.5">
                                 €
                             </div>
                             <input

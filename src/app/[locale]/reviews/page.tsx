@@ -36,7 +36,7 @@ const page = () => {
                     </div>
                   </div>
                   <div className="py-2 px-3 block flex-1 sm:block sm:basis-full sm:max-w-full lg:block lg:flex-1 lg:max-w-full">
-                    <p className="font-sans text-base text-gray-700 mb-2 last:mb-0 whitespace-pre-line">
+                    <p className="font-sans text-base   mb-2 last:mb-0 whitespace-pre-line">
                       ******* ****** ****  ******* ******** ******
                     </p>
                   </div>
@@ -48,7 +48,7 @@ const page = () => {
                     </p>
                   </div>
                   <div className="py-2 px-3 block flex-1 sm:hidden lg:block lg:flex-none">
-                    <p className="font-sans text-base text-gray-700">
+                    <p className="font-sans text-base  ">
                       ******* ***** **
                     </p>
                   </div>
@@ -83,7 +83,7 @@ const page = () => {
                     </div>
                   </div>
                   <div className="py-2 px-3 block flex-1 sm:block sm:basis-full sm:max-w-full lg:block lg:flex-1 lg:max-w-full">
-                    <p className="font-sans text-base text-gray-700 mb-2 last:mb-0 whitespace-pre-line">
+                    <p className="font-sans text-base   mb-2 last:mb-0 whitespace-pre-line">
                       ******* ****** ****  ******* ******** ******
                     </p>
                   </div>
@@ -95,7 +95,7 @@ const page = () => {
                     </p>
                   </div>
                   <div className="py-2 px-3 block flex-1 sm:hidden lg:block lg:flex-none">
-                    <p className="font-sans text-base text-gray-700">
+                    <p className="font-sans text-base  ">
                       ******* ***** **
                     </p>
                   </div>
