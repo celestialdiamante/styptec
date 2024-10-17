@@ -12,7 +12,7 @@ const GameRules = () => {
       <FeaturesSection
         subtitle="Administration taken care of"
         title="From an employment relationship"
-        description="Verloning.nl takes care of the administration for contractors but is not involved in the terms and conditions that the contractor agrees with you as the client. However, the registered person does appear on Verloning.nl’s payroll via the figure of notional employment whereby the (wage) tax and income-related (health insurance) contribution (ZVW) due is deducted via withholding tax."
+        description="Styptec takes care of the administration for contractors but is not involved in the terms and conditions that the contractor agrees with you as the client. However, the registered person does appear on Styptec’s payroll via the figure of notional employment whereby the (wage) tax and income-related (health insurance) contribution (ZVW) due is deducted via withholding tax."
         imageUrl="/images/13655.jpg"
         imageLeft={false}
         IconComponent={FaArrowsUpDownLeftRight}
@@ -21,7 +21,7 @@ const GameRules = () => {
       <FeaturesSection
         subtitle="Technical explanation"
         title="Fictitious employment"
-        description="The contractor chooses to perform work for one or more clients outside employment (i.e. not as an employee) and to enter into a notional employment relationship with Verloning.nl and to have the invoicing of the fees run via Verloning.nl.
+        description="The contractor chooses to perform work for one or more clients outside employment (i.e. not as an employee) and to enter into a notional employment relationship with Styptec and to have the invoicing of the fees run via Styptec.
         Technical: Decree of 24 December 1986, laying down a general order in Council as referred to in Article 5 of the Occupational Disability Insurance Act (Arbeidsongeschiktheidsverzekering), Article 5 of the Sickness Benefits Act (Ziektewet) and Article 5 of the Unemployment Insurance Act (Werkloosheidswet) Dutch Official Paper 1986,655, as last amended on 14 June 2017 Dutch Official Paper 2017,270"
         imageUrl="/images/13655.jpg"
         imageLeft={true}

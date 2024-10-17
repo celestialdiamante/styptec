@@ -5,7 +5,7 @@ import { MdKeyboardArrowRight } from 'react-icons/md';
 
 const featuresVideo = [
         " Before it is on your account, everything is paid.So what do you really deserve? It starts with your gross salary.You pay wage tax on this.",
-        " You have no control over all these costs. Isn't that crazy? Verloning.nl is for modern workers who themselves take control of their income.",
+        " You have no control over all these costs. Isn't that crazy? Styptec is for modern workers who themselves take control of their income.",
         " Two important things are always well organized with us. Your taxes have been paid properly. And any long-term illness is covered.",
         " So no more surprises afterwards. Are you already an entrepreneur? Then this is also something for you. Because you don't have to do any administration with us.",
         " As an employee you receive a salary every month. But your net salary is not the amount that you cost. Because you don't have to do any administration with us."

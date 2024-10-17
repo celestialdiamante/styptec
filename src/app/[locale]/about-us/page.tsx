@@ -48,7 +48,7 @@ const AboutUs = async () => {
 
       <FeaturesSection
         title="Our story"
-        description="Verloning.nl was founded in 2012 by Edward Belgraver () to support the growing group of self-employed persons who want to work on an assignment-based basis, short-term or long-term, without any hassle. With a team of highly committed colleagues, we work to provide an optimal service and a platform that supports our clients to work without a Commercial Registration number or VAT number. In recent years, we have grown to 95.913 customers whom we are delighted to support with professional partners and high service levels."
+        description="Styptec was founded in 2012 by Edward Belgraver () to support the growing group of self-employed persons who want to work on an assignment-based basis, short-term or long-term, without any hassle. With a team of highly committed colleagues, we work to provide an optimal service and a platform that supports our clients to work without a Commercial Registration number or VAT number. In recent years, we have grown to 95.913 customers whom we are delighted to support with professional partners and high service levels."
         imageUrl="/images/13655.jpg"
         imageLeft={false}
         IconComponent={FaArrowsUpDownLeftRight}
@@ -67,7 +67,7 @@ const AboutUs = async () => {
               <div>
                 <h4 className="text-2xl md:text-3xl text-center font-bold">Mission</h4>
                 <p className="text-center mb-2">
-                  Styptec wants to be there for everyone who wants to have full control, insight in and control over their income, where Verloning.nl is the partner in working autonomously from job to job.
+                  Styptec wants to be there for everyone who wants to have full control, insight in and control over their income, where Styptec is the partner in working autonomously from job to job.
                 </p>
               </div>
             </div>
@@ -93,7 +93,7 @@ const AboutUs = async () => {
 
       <FeaturesSection
         title="Our solution"
-        description="Verloning.nl helps self-employed persons by invoicing their job and taking care of the social and fiscal obligations and securities in advance. This way, administration is taken care of and there are no surprises afterwards.In addition, with carefully selected partners, we offer many extra benefits. For instance, we have our own mutuality savings scheme (schenkkring), you save easily for your holidays and we have collective deals with insurers for e.g. disability and your health insurance. We also have great partnership with training provider GoodHabitz.We do this transparently and honestly where our commission is fixed. We only look for the best deal for our clients."
+        description="Styptec helps self-employed persons by invoicing their job and taking care of the social and fiscal obligations and securities in advance. This way, administration is taken care of and there are no surprises afterwards.In addition, with carefully selected partners, we offer many extra benefits. For instance, we have our own mutuality savings scheme (schenkkring), you save easily for your holidays and we have collective deals with insurers for e.g. disability and your health insurance. We also have great partnership with training provider GoodHabitz.We do this transparently and honestly where our commission is fixed. We only look for the best deal for our clients."
         imageUrl="/images/13655.jpg"
         imageLeft={true}
       />

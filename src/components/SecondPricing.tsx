@@ -22,7 +22,7 @@ const SecondPricing = () => {
       ],
       finance: {
         contractPeriod: '—',
-        commissionVerloning: '6%',
+        commissionStyptec: '6%',
         commissionPrae: '6%',
         expenses: 'Travel expenses',
         taxBenefit: '—',
@@ -75,7 +75,7 @@ const SecondPricing = () => {
       ],
       finance: {
         contractPeriod: '1 year',
-        commissionVerloning: '3%',
+        commissionStyptec: '3%',
         commissionPrae: 'Free',
         expenses: 'Targeted expenses',
         taxBenefit: '€ 40,-',
@@ -122,7 +122,7 @@ const SecondPricing = () => {
       ],
       finance: {
         contractPeriod: '1 year',
-        commissionVerloning: 'Free',
+        commissionStyptec: 'Free',
         commissionPrae: 'Free',
         expenses: 'All expenses',
         taxBenefit: '€ 100,-',
@@ -244,13 +244,13 @@ const SecondPricing = () => {
                     <div className="flex my-auto space-x-2 items-center justify-between">
                       <div className="[overflow-wrap:anywhere]">
                         <p className="font-sans text-sm text-gray-900">
-                          Commission Verloning.nl </p>
+                          Commission Styptec </p>
                       </div>
                       <FaRegCircleQuestion />
                     </div>
                     <div className="mx-auto">
                       <p className="font-sans text-base   mb-2 last:mb-0">
-                        {plan.finance.commissionVerloning}
+                        {plan.finance.commissionStyptec}
                       </p>
                     </div>
                     <div className="flex my-auto space-x-2 items-center justify-between">

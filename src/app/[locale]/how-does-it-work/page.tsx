@@ -47,7 +47,7 @@ const HowItWork = async () => {
             <FeaturesSection
                 subtitle="Take control"
                 title="Become a BOSS"
-                description="Who doesn’t dream of being a freelancer? Being free and choosing only the jobs you like. Nobody likes blue envelopes of the Dutch Tax Authority and what does working for your own account and at your own risk mean? At Verloning.nl, we help you work for the jobs you want, without the hassle of these blue envelopes. All your affairs arranged in one place."
+                description="Who doesn’t dream of being a freelancer? Being free and choosing only the jobs you like. Nobody likes blue envelopes of the Dutch Tax Authority and what does working for your own account and at your own risk mean? At Styptec, we help you work for the jobs you want, without the hassle of these blue envelopes. All your affairs arranged in one place."
                 imageUrl="/images/13655.jpg"
                 imageLeft={false}
             />
@@ -55,7 +55,7 @@ const HowItWork = async () => {
             <FeaturesSection
                 subtitle="Carefree work"
                 title="No strings attached"
-                description="We want you to be able to work without worries. See our video where we explain what we can expect from each other. You can use our services as long as you like. Verloning.nl provides total peace of mind: apart from your taxes, your social securities are also well arranged. You will never face any surprises."
+                description="We want you to be able to work without worries. See our video where we explain what we can expect from each other. You can use our services as long as you like. Styptec provides total peace of mind: apart from your taxes, your social securities are also well arranged. You will never face any surprises."
                 imageUrl="/images/13655.jpg"
                 imageLeft={true}
             />
@@ -63,7 +63,7 @@ const HowItWork = async () => {
             <FeaturesSection
                 subtitle="Model agreement"
                 title="Make sound agreements"
-                description="At Verloning.nl, we think it is important to make good agreements with your client. In your account you can easily create and sign our standard model. Of course, you can also work with your own agreement, which you can add online. Our standard model is based on the approved “No authority” model agreement of the Dutch Tax Authority."
+                description="At Styptec, we think it is important to make good agreements with your client. In your account you can easily create and sign our standard model. Of course, you can also work with your own agreement, which you can add online. Our standard model is based on the approved “No authority” model agreement of the Dutch Tax Authority."
                 imageUrl="/images/13655.jpg"
                 imageLeft={false}
             />
@@ -79,7 +79,7 @@ const HowItWork = async () => {
             <FeaturesSection
                 subtitle="Completely carefree"
                 title="Payment"
-                description="With Verloning.nl, we take care of all the hassle. We make sure your administration and all legally required taxes are paid in advance. The best known is income tax. We also take care of the VAT and healthcare law (Zvw). In your account, you can set everything up the way you like it, including retirement savings and reserves. At the beginning of the year, you will receive a clear annual statement from us. Make unlimited free calculations and see what you can earn!"
+                description="With Styptec, we take care of all the hassle. We make sure your administration and all legally required taxes are paid in advance. The best known is income tax. We also take care of the VAT and healthcare law (Zvw). In your account, you can set everything up the way you like it, including retirement savings and reserves. At the beginning of the year, you will receive a clear annual statement from us. Make unlimited free calculations and see what you can earn!"
                 imageUrl="/images/13655.jpg"
                 imageLeft={false}
             />

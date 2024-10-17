@@ -1,4 +1,4 @@
-"use client";
+"use client"
 import { submitContactForm } from '@/helpers/postData';
 import React from 'react';
 import { FaChevronRight } from 'react-icons/fa';
@@ -20,7 +20,10 @@ interface FormErrors {
   message: string;
 }
 
+
+
 const ContactForm = () => {
+
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
@@ -28,7 +31,7 @@ const ContactForm = () => {
     message: '',
   });
 
-  const [errors, setErrors] = React.useState<FormErrors>({
+  const [errors] = React.useState<FormErrors>({
     name: '',
     email: '',
     phone_number: '',
@@ -36,10 +39,13 @@ const ContactForm = () => {
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { id, value } = e.target;
-    setFormData((prev) => ({ ...prev, [id]: value }));
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value,
+    });
 
-    setErrors((prev) => ({ ...prev, [id]: '' }));
+    // const { id, value } = e.target;
+    // setFormData((prev) => ({ ...prev, [id]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -47,43 +53,48 @@ const ContactForm = () => {
 
     try {
       const data = await contactSchema.parseAsync(formData);
+      // console.log('form data: ', data);
       const response = await submitContactForm({
         name: data.name,
         email: data.email,
         phone_number: data.phone_number,
         message: data.message,
-      });
-      if (response && response.success) {
+      })
+      if(response && response.success) {
         alert('Form successfully submitted, we will get back to you');
-        // Reset form data after successful submission
-        setFormData({
-          name: '',
-          email: '',
-          phone_number: '',
-          message: '',
-        });
+        window.location.reload();
       } else {
-        alert('Server error, please try after some time.');
+        alert('Server error, please try after some time.')
       }
+      // console.log('form response: ', response)
     } catch (error) {
-      if (error instanceof z.ZodError) {
-        const newErrors: FormErrors = {
-          name: '',
-          email: '',
-          phone_number: '',
-          message: '',
-        };
-
-        error.errors.forEach((err) => {
-          newErrors[err.path[0] as keyof FormErrors] = err.message;
-        });
-
-        setErrors(newErrors);
-      } else {
-        console.log('form error: ', error);
-      }
+      console.log('form error: ', error)
     }
+
+    // try {
+
+    //   await contactSchema.parseAsync(formData);
+    //   console.log('Form Data:', formData);
+
+    //   setErrors({ name: '', email: '', phone_number: '', message: '' });
+    // } catch (error) {
+    //   if (error instanceof z.ZodError) {
+    //     const newErrors: FormErrors = {
+    //       name: '',
+    //       email: '',
+    //       phone_number: '',
+    //       message: '',
+    //     };
+
+    //     error.errors.forEach((err) => {
+    //       newErrors[err.path[0] as keyof FormErrors] = err.message;
+    //     });
+
+    //     setErrors(newErrors);
+    //   }
+    // }
   };
+
 
   return (
     <div>
@@ -97,7 +108,6 @@ const ContactForm = () => {
           <input
             type="text"
             id="name"
-            name="name"
             value={formData.name}
             onChange={handleChange}
             className={`w-full border border-gray-300 p-2 rounded-lg ${errors.name ? 'border-red-500' : ''}`}
@@ -112,7 +122,6 @@ const ContactForm = () => {
           <input
             type="email"
             id="email"
-            name="email"
             value={formData.email}
             onChange={handleChange}
             className={`w-full border border-gray-300 p-2 rounded-lg ${errors.email ? 'border-red-500' : ''}`}
@@ -125,15 +134,17 @@ const ContactForm = () => {
           <label className="mb-1" htmlFor="phone_number">
             Phone number
           </label>
-          <input
-            type="tel"
-            id="phone_number"
-            name="phone_number"
-            value={formData.phone_number}
-            onChange={handleChange}
-            className={`w-full border border-gray-300  p-2 rounded-lg ${errors.phone_number ? 'border-red-500' : ''}`}
-            placeholder="Your Phone Number"
-          />
+          <div className="flex items-center">
+            {/* <div className="p-2 lg:w-20 border border-gray-300 rounded-l-lg">🇳🇱 +31</div> */}
+            <input
+              type="tel"
+              id="phone_number"
+              value={formData.phone_number}
+              onChange={handleChange}
+              className={`w-full border border-gray-300  p-2 rounded-lg ${errors.phone_number ? 'border-red-500' : ''}`}
+              placeholder="Your Phone Number"
+            />
+          </div>
           {errors.phone_number && <p className="text-red-500">{errors.phone_number}</p>}
         </div>
 
@@ -143,7 +154,6 @@ const ContactForm = () => {
           </label>
           <textarea
             id="message"
-            name="message"
             value={formData.message}
             onChange={handleChange}
             rows={4}
@@ -157,6 +167,7 @@ const ContactForm = () => {
           <FaChevronRight />
         </button>
       </form>
+
     </div>
   );
 };
