@@ -141,6 +141,13 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
     const [grossIncome, setGrossIncome] = React.useState<any>(0.00);
     const [netPayable, setNetPayable] = React.useState<any>(0.00);
 
+    // React.useEffect(() => {
+    //     const storedHourlyRate = localStorage.getItem('hourlyRate') || '0.00';
+    //     const storedHoursWorked = localStorage.getItem('hoursWorked') || '0.00';
+        
+    //     setHourlyRate(storedHourlyRate);
+    //     setHoursWorked(storedHoursWorked);
+    // }, []);
 
     React.useEffect(() => {
         if (parseInt(hourlyRate + '') > 0 && parseInt(hoursWorked + '') > 0) {

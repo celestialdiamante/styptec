@@ -1,25 +1,61 @@
-"use client"
-import React from 'react';
+"use client";
+import React, { useEffect } from 'react';
 import { FaChevronRight } from 'react-icons/fa';
 import { useTranslations } from 'next-intl';
+import { useRouter } from '@/i18n/routing';
 
 const PaymentCalculator = () => {
     const lang = useTranslations('paymentCalculator');
+    const router = useRouter();
 
-    const [hourlyRate, setHourlyRate] = React.useState<number>(0);
-    const [hoursWorked, setHoursWorked] = React.useState<number>(0);
-    const [grossAmount, setGrossAmount] = React.useState<number>(0);
-    const [netAmount, setNetAmount] = React.useState<number>(0);
+    const [hourlyRate, setHourlyRate] = React.useState<string>('30.00');
+    const [hoursWorked, setHoursWorked] = React.useState<string>('10.00');
+    const [grossAmount, setGrossAmount] = React.useState<number>(300.00);
+    const [netAmount, setNetAmount] = React.useState<number>(267.00);
 
-    const calculatePayment = () => {
-        const gross = hourlyRate * hoursWorked;
-        const net = gross * 0.693; // Assuming 69.3% is the net amount.
+    const calculateAmounts = () => {
+        const rate = parseFloat(hourlyRate) || 0;
+        const hours = parseFloat(hoursWorked) || 0;
+        const gross = rate * hours;
+        const net = gross * 0.90; 
         setGrossAmount(gross);
         setNetAmount(Number(net.toFixed(2)));
     };
 
+    useEffect(() => {
+        calculateAmounts();
+    }, [hourlyRate, hoursWorked]);
+
+    const handleHourlyRateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setHourlyRate(e.target.value);
+    };
+
+    const handleHoursWorkedChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setHoursWorked(e.target.value);
+    };
+
+    const handleHourlyRateBlur = () => {
+        setHourlyRate((prevRate) => (parseFloat(prevRate) || 0).toFixed(2));
+    };
+
+    const handleHoursWorkedBlur = () => {
+        setHoursWorked((prevHours) => (parseFloat(prevHours) || 0).toFixed(2));
+    };
+
+    
+    const handleCalculateClick = () => {
+        
+        localStorage.setItem('hourlyRate', hourlyRate);
+        localStorage.setItem('hoursWorked', hoursWorked);
+        localStorage.setItem('grossAmount', grossAmount.toString());
+        localStorage.setItem('netAmount', netAmount.toString());
+
+        
+        router.push('/calculate-your-benefit');
+    };
+
     return (
-        <div className="grid md:grid-cols-12 grid-cols-1 Z-10">
+        <div className="grid md:grid-cols-12 grid-cols-1 z-10">
             <div className="md:col-span-full lg:col-span-11">
                 <div className="lg:flex flex-col lg:flex-row justify-center gap-4 bg-white p-4 lg:p-6 rounded-3xl shadow-lg">
                     <div className="flex flex-col mb-4 lg:mb-0">
@@ -29,9 +65,10 @@ const PaymentCalculator = () => {
                                 €
                             </div>
                             <input
-                                type="number"
+                                type="text"
                                 value={hourlyRate}
-                                onChange={(e) => setHourlyRate(Number(e.target.value))}
+                                onChange={handleHourlyRateChange}
+                                onBlur={handleHourlyRateBlur}
                                 className="w-full lg:w-40 focus:outline-none border border-l-0 border-gray-300 rounded-r-md px-3 py-2.5"
                             />
                         </div>
@@ -40,9 +77,10 @@ const PaymentCalculator = () => {
                     <div className="flex flex-col mb-4 lg:mb-0">
                         <label className="font-semibold mb-1">{lang('hoursWorkedLabel')}</label>
                         <input
-                            type="number"
+                            type="text"
                             value={hoursWorked}
-                            onChange={(e) => setHoursWorked(Number(e.target.value))}
+                            onChange={handleHoursWorkedChange}
+                            onBlur={handleHoursWorkedBlur}
                             className="w-full lg:w-32 border border-gray-300 rounded-md px-3 py-2.5 focus:outline-none"
                         />
                     </div>
@@ -54,8 +92,8 @@ const PaymentCalculator = () => {
                                 €
                             </div>
                             <input
-                                type="number"
-                                value={grossAmount}
+                                type="text"
+                                value={grossAmount.toFixed(2)}
                                 readOnly
                                 className="w-full lg:w-40 focus:outline-none border border-l-0 border-gray-300 rounded-r-md px-3 py-2.5"
                             />
@@ -69,8 +107,8 @@ const PaymentCalculator = () => {
                                 €
                             </div>
                             <input
-                                type="number"
-                                value={netAmount}
+                                type="text"
+                                value={netAmount.toFixed(2)}
                                 readOnly
                                 className="w-full lg:w-40 focus:outline-none border border-l-0 border-gray-300 rounded-r-md px-3 py-2.5"
                             />
@@ -78,12 +116,12 @@ const PaymentCalculator = () => {
                     </div>
 
                     <div className="flex justify-center lg:items-end">
-                        <a href='#'
-                            onClick={calculatePayment}
+                        <button
+                            onClick={handleCalculateClick}
                             className="btn btn-secondary w-full lg:w-auto hover:bg-teal-500 hover:border-0 text-white"
                         >
                             {lang('calculateButton')} <FaChevronRight />
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
