@@ -1,4 +1,22 @@
 {
+    "header": {
+        "home": "Home",
+        "aboutUs": "About Us",
+        "howItWorks": {
+            "main": "HOW STYPTEC WORKS",
+            "freelancer": "For Freelancer",
+            "entrepreneur": "For Entrepreneurs"
+        },
+        "getPaycheck": "GET YOUR PAYCHECK",
+        "reviews": "REVIEWS",
+        "pricing": "PRICING",
+        "contactUs": "CONTACT US",
+        "language": {
+            "label": "Language",
+            "english": "English",
+            "dutch": "Dutch"
+        }
+    },
     "home": {
         "aboutUsSection": {
             "title": "Styptec helps you with invoicing",

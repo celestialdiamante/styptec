@@ -1,5 +1,6 @@
 "use client";
 import { Link, usePathname } from '@/i18n/routing';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react';
 import { FaChevronDown } from 'react-icons/fa';
@@ -10,29 +11,12 @@ interface Language {
     emoji: string;
 }
 
-const navItems = [
-    {
-        label: 'HOW STYPTEC WORKS',
-        links: [
-            {
-                label: 'For Freelancer',
-                href: '/how-does-it-work'
-            },
-            {
-                label: 'For Entrepreneurs',
-                href: '/how-does-it-work-for-entrepreneurs'
-            },
-        ],
-    },
-];
 
-const languages: Language[] = [
-    { code: 'en', label: 'English', emoji: '🇺🇸' },
-    { code: 'nl', label: 'Dutch', emoji: '🇳🇱' },
-];
 
 const Header = () => {
-    const [language, setLanguage] = React.useState<Language>(languages[0]);
+
+      const lang = useTranslations('header');
+
     const pathname = usePathname();
 
     const isActive = (href: string) => pathname === href;
@@ -40,6 +24,39 @@ const Header = () => {
     const isParentActive = (links: { href: string }[]) => {
         return links.some(link => isActive(link.href));
     };
+
+    const languages: Language[] = [
+        {
+            code: 'en',
+            label: lang('language.english'),
+            emoji: '🇺🇸'
+        },
+        {
+            code: 'nl',
+            label: lang('language.dutch'),
+            emoji: '🇳🇱'
+        },
+    ];
+
+    const [language, setLanguage] = React.useState<Language>(languages[0]);
+
+    const navItems = [
+        {
+            label: lang('howItWorks.main'),
+            links: [
+                {
+                    label: lang('howItWorks.freelancer'),
+                    href: '/how-does-it-work'
+                },
+                {
+                    label: lang('howItWorks.entrepreneur'),
+                    href: '/how-does-it-work-for-entrepreneurs'
+                },
+            ],
+        },
+    ];
+
+
 
     return (
         <div className="container navbar bg-base-100 z-[99999]">
@@ -53,12 +70,12 @@ const Header = () => {
                     <ul tabIndex={0} className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
                         <li>
                             <Link className={isActive('/') ? 'text-primary' : ''} href="/">
-                                Home
+                                {lang('home')}
                             </Link>
                         </li>
                         <li>
                             <Link className={isActive('/about-us') ? 'text-primary' : ''} href="/about-us">
-                                About Us
+                                {lang('aboutUs')}
                             </Link>
                         </li>
                         {navItems.map(({ label, links }) => (
@@ -80,22 +97,22 @@ const Header = () => {
                         ))}
                         <li>
                             <Link className={isActive('/get-your-paycheck') ? 'text-primary' : ''} href="/get-your-paycheck">
-                                GET YOUR PAYCHECK
+                                {lang('getPaycheck')}
                             </Link>
                         </li>
                         <li>
                             <Link className={isActive('/reviews') ? 'text-primary' : ''} href="/reviews">
-                                REVIEWS
+                                {lang('reviews')}
                             </Link>
                         </li>
                         <li>
                             <Link className={isActive('/pricing') ? 'text-primary' : ''} href="/pricing">
-                                PRICING
+                                {lang('pricing')}
                             </Link>
                         </li>
                         <li>
                             <Link className={isActive('/contact-us') ? 'text-primary' : ''} href="/contact-us">
-                                CONTACT US
+                                {lang('contactUs')}
                             </Link>
                         </li>
                     </ul>
@@ -109,12 +126,12 @@ const Header = () => {
                 <ul className="menu menu-horizontal px-1">
                     <li>
                         <Link className={isActive('/') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/">
-                            HOME
+                            {lang('home')}
                         </Link>
                     </li>
                     <li>
                         <Link className={isActive('/about-us') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/about-us">
-                            ABOUT US
+                            {lang('aboutUs')}
                         </Link>
                     </li>
                     {navItems.map(({ label, links }) => (
@@ -139,22 +156,22 @@ const Header = () => {
                     ))}
                     <li>
                         <Link className={isActive('/get-your-paycheck') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/get-your-paycheck">
-                            GET YOUR PAYCHECK
+                            {lang('getPaycheck')}
                         </Link>
                     </li>
                     <li>
                         <Link className={isActive('/reviews') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/reviews">
-                            REVIEWS
+                            {lang('reviews')}
                         </Link>
                     </li>
                     <li>
                         <Link className={isActive('/pricing') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/pricing">
-                            PRICING
+                            {lang('pricing')}
                         </Link>
                     </li>
                     <li>
                         <Link className={isActive('/contact-us') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/contact-us">
-                            CONTACT US
+                            {lang('contactUs')}
                         </Link>
                     </li>
                 </ul>
@@ -173,41 +190,13 @@ const Header = () => {
                                 </Link>
                             </li>
                         ))}
+                        
                     </ul>
+                   
                 </div>
             </div>
 
-            {/* <div className="navbar-end gap-4">
-                <div className="dropdown dropdown-hover hidden md:flex">
-                    <Link href="#" className="btn btn-ghost flex items-center">
-                        <span className="mr-1">{language.emoji}</span>
-                        <FaChevronDown className="ml-1" />
-                    </Link>
-                    <ul className="dropdown-content menu bg-base-100 rounded-box z-50 p-2 shadow">
-                        {languages.map((lang) => (
-                            <li key={lang.code}>
-                                <Link href="#" onClick={() => setLanguage(lang)} className="flex items-center">
-                                    <span className="mr-2">{lang.emoji}</span>
-                                    {lang.label}
-                                </Link>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-
-                <Link
-                    className="btn btn-sm btn-outline btn-primary"
-                    href="/signin"
-                >
-                    Sign In <FaUserTie />
-                </Link>
-                <Link
-                    className="btn btn-sm btn-secondary text-white hidden md:flex lg:hidden xl:flex"
-                    href="/register"
-                >
-                    Register <FaChevronRight />
-                </Link>
-            </div> */}
+            {/*  */}
         </div>
     );
 };

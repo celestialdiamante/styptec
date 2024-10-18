@@ -1,4 +1,22 @@
 {
+    "header": {
+        "home": "Home",
+        "aboutUs": "Over ons",
+        "howItWorks": {
+            "main": "HOE WERKT STYPTEC",
+            "freelancer": "Voor Freelancer",
+            "entrepreneur": "Voor Ondernemers"
+        },
+        "getPaycheck": "ONTDEK JE LOONSTROOK",
+        "reviews": "BEOORDELINGEN",
+        "pricing": "PRIJZEN",
+        "contactUs": "CONTACT ONS",
+        "language": {
+            "label": "Taal",
+            "english": "Engels",
+            "dutch": "Nederlands"
+        }
+    },
     "home": {
         "aboutUsSection": {
             "title": "Styptec helpt je met facturering",

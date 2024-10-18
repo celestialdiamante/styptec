@@ -156,6 +156,39 @@ const Header = () => {
                     Register <FaChevronRight />
                 </Link> */}
             </div>
+
+ {/* <div className="navbar-end gap-4">
+                <div className="dropdown dropdown-hover hidden md:flex">
+                    <Link href="#" className="btn btn-ghost flex items-center">
+                        <span className="mr-1">{language.emoji}</span>
+                        <FaChevronDown className="ml-1" />
+                    </Link>
+                    <ul className="dropdown-content menu bg-base-100 rounded-box z-50 p-2 shadow">
+                        {languages.map((lang) => (
+                            <li key={lang.code}>
+                                <Link href="#" onClick={() => setLanguage(lang)} className="flex items-center">
+                                    <span className="mr-2">{lang.emoji}</span>
+                                    {lang.label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <Link
+                    className="btn btn-sm btn-outline btn-primary"
+                    href="/signin"
+                >
+                    Sign In <FaUserTie />
+                </Link>
+                <Link
+                    className="btn btn-sm btn-secondary text-white hidden md:flex lg:hidden xl:flex"
+                    href="/register"
+                >
+                    Register <FaChevronRight />
+                </Link>
+            </div> */}
+
         </div>
     );
 };
