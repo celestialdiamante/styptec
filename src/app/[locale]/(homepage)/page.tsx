@@ -16,7 +16,7 @@ import { getTranslations } from "next-intl/server";
 export async function generateMetadata(): Promise<Metadata> {
 
   const metaData = await getPageMetadata('home');
-  console.log('metaData: ', metaData)
+  // console.log('metaData: ', metaData)
 
   const title = metaData?.title_en ?? 'Styptec';
   const description = metaData?.description_en ?? 'Styptec';
@@ -44,12 +44,13 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default async function Home() {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function Home({ params }: any) {
   const lang = await getTranslations('home');
 
   return (
     <>
-      <HeroSection />
+      <HeroSection params={params} />
       <Stats />
      
       <section className="py-6 md:py-10">

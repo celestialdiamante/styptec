@@ -9,5 +9,6 @@ export const URLS = {
     CONTACT_SUBMIT: apiUrl + '/contact-submit', // post
     ESTIMATION_FORM_SUBMIT: apiUrl + '/estimation-form', //post 
     POLICY_PAGES: apiUrl + '/get-policy-pages',
-    POLICY_PAGE: apiUrl + '/get-policy-page'
+    POLICY_PAGE: apiUrl + '/get-policy-page',
+    DOWNLOAD_PDF: apiUrl + '/pdf/'
 }

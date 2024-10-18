@@ -3,7 +3,8 @@ import PaymentCalculatorWrapper from './PaymentCalculatorWrapper';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
-const HeroSection = () => {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const HeroSection = ({ params }: any) => {
     const lang = useTranslations('heroSection');
 
     return (
@@ -31,7 +32,7 @@ const HeroSection = () => {
                     {lang('description')}
                 </p>
 
-                <PaymentCalculatorWrapper />
+                <PaymentCalculatorWrapper params={params} />
             </div>
         </section>
     );
