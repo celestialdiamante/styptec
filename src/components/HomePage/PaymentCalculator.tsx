@@ -5,11 +5,12 @@ import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/routing';
 import { typeOfFormSettings } from '@/helpers/getData';
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const PaymentCalculator = ({form_settings}:{form_settings:typeOfFormSettings}) => {
     const lang = useTranslations('paymentCalculator');
     const router = useRouter();
 
-    let percents = form_settings;
+    // let percents = form_settings;
 
     const [hourlyRate, setHourlyRate] = React.useState<number>(30);
     const [hoursWorked, setHoursWorked] = React.useState<number>(10);
@@ -30,19 +31,21 @@ const PaymentCalculator = ({form_settings}:{form_settings:typeOfFormSettings}) =
     }, [hourlyRate, hoursWorked]);
 
     const handleHourlyRateChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setHourlyRate(e.target.value);
+        const value = parseFloat(e.target.value) || 0;
+        setHourlyRate(value);
     };
 
     const handleHoursWorkedChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setHoursWorked(e.target.value);
+        const value = parseFloat(e.target.value) || 0;
+        setHoursWorked(value);
     };
 
     const handleHourlyRateBlur = () => {
-        setHourlyRate((prevRate) => (parseFloat(prevRate) || 0).toFixed(2));
+        setHourlyRate(prevRate => parseFloat(prevRate.toFixed(2)));
     };
 
     const handleHoursWorkedBlur = () => {
-        setHoursWorked((prevHours) => (parseFloat(prevHours) || 0).toFixed(2));
+        setHoursWorked(prevHours => parseFloat(prevHours.toFixed(2)));
     };
 
     
