@@ -5,7 +5,7 @@ import Pricing from '@/components/HomePage/Pricing'
 import getPageMetadata from '@/helpers/getPageMetadata'
 import { URLS } from '@/helpers/URLs'
 import { Metadata } from 'next'
-import { useTranslations } from 'next-intl'
+import { getTranslations } from 'next-intl/server'
 import React from 'react'
 import { FaArrowsUpDownLeftRight } from 'react-icons/fa6'
 
@@ -42,7 +42,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function PricingPage() {
 
-  const lang = useTranslations('pricesMemberships');
+  const lang = await getTranslations('pricesMemberships');
 
   return (
     <>

@@ -4,7 +4,7 @@ import CallToAction from '@/components/HomePage/CallToAction'
 import getPageMetadata from '@/helpers/getPageMetadata';
 import { URLS } from '@/helpers/URLs';
 import { Metadata } from 'next';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import React from 'react'
 
 
@@ -39,10 +39,10 @@ export async function generateMetadata(): Promise<Metadata> {
     }
   }
   
-  
+
   export default async function HowItWork() {
     
-    const lang = useTranslations('howItWorks');
+    const lang = await getTranslations('howItWorks');
 
     return (
       <>

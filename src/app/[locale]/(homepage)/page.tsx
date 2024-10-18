@@ -11,7 +11,7 @@ import { Metadata } from "next";
 import Image from "next/image";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
-import { useTranslations } from 'next-intl';
+import { getTranslations } from "next-intl/server";
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -44,8 +44,8 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-export default function Home() {
-  const lang = useTranslations('home');
+export default async function Home() {
+  const lang = await getTranslations('home');
 
   return (
     <>

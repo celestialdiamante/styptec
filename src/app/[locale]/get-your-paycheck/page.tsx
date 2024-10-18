@@ -2,13 +2,13 @@ import PageHeader from '@/components/Global/PageHeader';
 import React from 'react';
 import EstimationForm from './EstimationForm';
 import { getFormData } from '@/helpers/getData';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 
 export default async function GetYourPaycheck() {
 
 
-    const lang = useTranslations('getYourPaycheck');
+    const lang = await getTranslations('getYourPaycheck');
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const form_settings:any = await getFormData();
 

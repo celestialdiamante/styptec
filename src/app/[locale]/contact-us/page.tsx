@@ -5,7 +5,7 @@ import { contactInfoType, getContactData } from '@/helpers/getData';
 import getPageMetadata from '@/helpers/getPageMetadata';
 import { Metadata } from 'next';
 import { URLS } from '@/helpers/URLs';
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -41,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
   export default async function ContactUs () {
 
-  const lang = await useTranslations('contactUs');
+  const lang = await getTranslations('contactUs');
 
   const contactInfo : contactInfoType = await getContactData();
 
