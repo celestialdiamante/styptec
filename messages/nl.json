@@ -256,7 +256,8 @@
                 "label": "Sociale kosten"
             },
             "pff": {
-                "label": "PFF"
+                "label": "PFF",
+                "description": "Snel vooruit betaald (in 3 dagen)"
             },
             "pension": {
                 "label": "Pensioen"

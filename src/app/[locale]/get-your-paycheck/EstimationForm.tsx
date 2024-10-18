@@ -291,10 +291,10 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
 
                     <div className="text-base font-semibold grid grid-cols-1 gap-5 *:grid *:grid-cols-2 mt-4">
                         <div className="items-center">
-                            <div className="">{lang('earning.label')}</div>
+                            <div className="">{lang('features.earning.label')}</div>
                             <div className="flex flex-grow gap-3">
                                 <div>
-                                    <label className="label text-sm">{lang('hourlyRate.label')}</label>
+                                    <label className="label text-sm">{lang('features.hourlyRate.label')}</label>
                                     <div className="flex items-center">
                                         <div className="text-gray-500 border border-gray-300 rounded-l-lg px-1 py-2">
                                             <LuEuro size={24} className="py-1" />
@@ -314,7 +314,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                 </div>
 
                                 <div>
-                                    <label className="label text-sm">{lang('hoursWorked.label')}</label>
+                                    <label className="label text-sm">{lang('features.hoursWorked.label')}</label>
                                     <div className="flex items-center">
                                         <div className="text-gray-500 border border-gray-300 rounded-l-lg px-1 py-2">
                                             <CiTimer size={24} className="py-1" />
@@ -337,7 +337,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         </div>
 
                         <div className="items-center">
-                            <label className="label text-sm">{lang('age.label')}</label>
+                            <label className="label text-sm">{lang('features.age.label')}</label>
                             <div>
                                 <input
                                     type="number"
@@ -354,7 +354,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         </div>
 
                         <div className="items-center">
-                            <div className="">{lang('socialCharge.label')}</div>
+                            <div className="">{lang('features.socialCharge.label')}</div>
                             <label className="cursor-pointer flex items-center">
                                 <input type="checkbox" className="checkbox"
                                     name="social_charges"
@@ -365,19 +365,19 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         </div>
 
                         <div className="items-center">
-                            <div className="">{lang('pff.label')}</div>
+                            <div className="">{lang('features.pff.label')}</div>
                             <label className="cursor-pointer flex items-center">
                                 <input type="checkbox"
                                     // checked={estForm.paid_fast_forward} 
                                     className="checkbox"
                                     name="paid_fast_forward"
                                     onChange={updateEstForm} />
-                                <small className="ml-2 font-normal">Paid Fast Forward (In 3 Days)</small>
+                                <small className="ml-2 font-normal">{lang('features.pff.description')}</small>
                             </label>
                         </div>
 
                         <div className="items-center">
-                            <div className="">{lang('pension.label')}</div>
+                            <div className="">{lang('features.pension.label')}</div>
                             <label className="cursor-pointer flex items-center">
                                 <input type="checkbox" checked={estForm.pension} className="checkbox"
                                     name="pension"
@@ -386,7 +386,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         </div>
 
                         <div className="items-center">
-                            <label className="label text-sm">{lang('expenses.label')}</label>
+                            <label className="label text-sm">{lang('features.expenses.label')}</label>
                             <div className="flex items-center">
                                 <div className="text-gray-500 border border-gray-300 rounded-l-lg px-1 py-2">
                                     <LuEuro size={24} className="py-1" />

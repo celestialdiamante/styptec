@@ -6,6 +6,7 @@ import { URLS } from '@/helpers/URLs';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
 import React from 'react'
+import { BsBoxArrowInUpRight } from 'react-icons/bs';
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -54,6 +55,7 @@ export async function generateMetadata(): Promise<Metadata> {
           description={lang('features.takeControl.description')}
           imageUrl="/images/13655.jpg"
           imageLeft={false}
+          IconComponent={BsBoxArrowInUpRight}
         />
   
         <FeaturesSection
@@ -62,6 +64,7 @@ export async function generateMetadata(): Promise<Metadata> {
           description={lang('features.carefreeWork.description')}
           imageUrl="/images/13655.jpg"
           imageLeft={true}
+          IconComponent={BsBoxArrowInUpRight}
         />
   
         <FeaturesSection
@@ -70,6 +73,7 @@ export async function generateMetadata(): Promise<Metadata> {
           description={lang('features.modelAgreement.description')}
           imageUrl="/images/13655.jpg"
           imageLeft={false}
+          IconComponent={BsBoxArrowInUpRight}
         />
   
         <FeaturesSection
@@ -78,6 +82,7 @@ export async function generateMetadata(): Promise<Metadata> {
           description={lang('features.sendInvoice.description')}
           imageUrl="/images/13655.jpg"
           imageLeft={true}
+          IconComponent={BsBoxArrowInUpRight}
         />
   
         <FeaturesSection
@@ -86,6 +91,7 @@ export async function generateMetadata(): Promise<Metadata> {
           description={lang('features.completelyCarefree.description')}
           imageUrl="/images/13655.jpg"
           imageLeft={false}
+          IconComponent={BsBoxArrowInUpRight}
         />
   
         <FeaturesSection
@@ -94,6 +100,7 @@ export async function generateMetadata(): Promise<Metadata> {
           description={lang('features.noSurprises.description')}
           imageUrl="/images/13655.jpg"
           imageLeft={true}
+          IconComponent={BsBoxArrowInUpRight}
         />
   
         <CallToAction

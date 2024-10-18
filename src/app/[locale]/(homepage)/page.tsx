@@ -106,7 +106,7 @@ export default async function Home() {
         title={lang('callToAction.title')}
         subtitle={lang('callToAction.subtitle')}
         buttonText={lang('callToAction.buttonText')}
-        buttonLink="/register"
+        buttonLink="/contact-us"
       />
     </>
   );

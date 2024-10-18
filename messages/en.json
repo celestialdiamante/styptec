@@ -12,7 +12,7 @@
         "callToAction": {
             "title": "Check out the options without obligation.",
             "subtitle": "Register in 10 seconds and see how easy it is. No strings attached.",
-            "buttonText": "Register for free"
+            "buttonText": "Contact Us"
         }
     },
     "heroSection": {
@@ -154,7 +154,7 @@
         "callToAction": {
             "title": "Check out the options without obligation.",
             "subtitle": "Register in 10 seconds and see how easy it is. No strings attached.",
-            "buttonText": "Register for free"
+            "buttonText": "Contact Us"
         }
     },
     "howItWorks": {
@@ -194,7 +194,7 @@
         "callToAction": {
             "title": "Check out the options without obligation.",
             "subtitle": "Register in 10 seconds and see how easy it is. No strings attached.",
-            "buttonText": "Register for free"
+            "buttonText": "Contact Us"
         }
     },
     "forEntrepreneurs": {
@@ -236,7 +236,7 @@
         "callToAction": {
             "title": "Check out the options without obligation.",
             "subtitle": "Register in 10 seconds and see how easy it is. No strings attached.",
-            "buttonText": "Register for free"
+            "buttonText": "Contact Us"
         }
     },
     "getYourPaycheck": {
@@ -263,7 +263,8 @@
                 "label": "Social Charge"
             },
             "pff": {
-                "label": "PFF"
+                "label": "PFF",
+                "description": "Paid Fast Forward (In 3 Days)"
             },
             "pension": {
                 "label": "Pension"

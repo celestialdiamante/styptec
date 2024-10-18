@@ -3,7 +3,7 @@ import PageHeader from '@/components/Global/PageHeader'
 import CallToAction from '@/components/HomePage/CallToAction'
 import { useTranslations } from 'next-intl'
 import React from 'react'
-import { FaArrowsUpDownLeftRight } from 'react-icons/fa6'
+import { BsBoxArrowInUpRight } from 'react-icons/bs'
 
 
 export default function Entrepreneurs() {
@@ -20,7 +20,7 @@ export default function Entrepreneurs() {
         description={lang('features.hiringSolution.description')}
         imageUrl="/images/13655.jpg"
         imageLeft={false}
-        IconComponent={FaArrowsUpDownLeftRight}
+        IconComponent={BsBoxArrowInUpRight}
       />
 
       <FeaturesSection
@@ -29,6 +29,7 @@ export default function Entrepreneurs() {
         description={lang('features.guaranteedWellArranged.description')}
         imageUrl="/images/13655.jpg"
         imageLeft={true}
+        IconComponent={BsBoxArrowInUpRight}
       />
 
       <FeaturesSection
@@ -37,6 +38,7 @@ export default function Entrepreneurs() {
         description={lang('features.modelAgreement.description')}
         imageUrl="/images/13655.jpg"
         imageLeft={false}
+        IconComponent={BsBoxArrowInUpRight}
       />
 
       <FeaturesSection
@@ -45,6 +47,7 @@ export default function Entrepreneurs() {
         description={lang('features.payment.description')}
         imageUrl="/images/13655.jpg"
         imageLeft={true}
+        IconComponent={BsBoxArrowInUpRight}
       />
 
       <FeaturesSection
@@ -53,6 +56,7 @@ export default function Entrepreneurs() {
         description={lang('features.noSurprises.description')}
         imageUrl="/images/13655.jpg"
         imageLeft={false}
+        IconComponent={BsBoxArrowInUpRight}
       />
 
       <FeaturesSection
@@ -63,6 +67,7 @@ export default function Entrepreneurs() {
         listItem2={lang('features.recommendation.listItem2')}
         imageUrl="/images/13655.jpg"
         imageLeft={true}
+        IconComponent={BsBoxArrowInUpRight}
       />
 
       <CallToAction
