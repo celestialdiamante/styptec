@@ -1,5 +1,5 @@
 import React from 'react';
-import PaymentCalculator from './PaymentCalculator';
+import PaymentCalculatorWrapper from './PaymentCalculatorWrapper';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 
@@ -31,7 +31,7 @@ const HeroSection = () => {
                     {lang('description')}
                 </p>
 
-                <PaymentCalculator />
+                <PaymentCalculatorWrapper />
             </div>
         </section>
     );

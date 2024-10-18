@@ -1,33 +1,35 @@
 {
-  "heroSection": {
-    "heading": "We combineren je inkomsten tot",
-    "subheading": "optimale resultaten met",
-    "highlight": "ultieme vrijheid.",
-    "description": "Bij elke baan helpt Styptec je met facturering en aftrek van alle verplichte belastingen en biedt je verzekering, training en vele extra voordelen. Je krijgt de beste deals, zonder de rompslomp van administratie, KvK-nummer of btw-nummer. Kortom, werken zonder gedoe."
-  },
-
-  "paymentCalculator": {
-    "hourlyRateLabel": "Uw uurtarief",
-    "hoursWorkedLabel": "Gewerkte uren",
-    "grossAmountLabel": "Bruto factuurbedrag",
-    "netAmountLabel": "Netto bedrag",
-    "calculateButton": "Bereken betaling"
-  },
-
-  "stats": {
-    "trustedBy": "Vertrouwd door",
-    "customers": "klanten",
-    "recommend": "zou ons aanbevelen",
-    "basedOn": "gebaseerd op",
-    "customerInterviews": "klantinterviews",
-    "satisfaction": "Onze klanttevredenheid op",
-    "klantenvertellen": "Klantenvertellen"
-  },
-
-  "videoSection": {
-    "title": "Leer hier hoe we u kunnen helpen!"
-  },
-  "pricing": {
+    "heroSection": {
+        "heading": "We combineren je inkomsten tot",
+        "subheading": "optimale resultaten met",
+        "highlight": "ultieme vrijheid.",
+        "description": "Bij elke baan helpt Styptec je met facturering en aftrek van alle verplichte belastingen en biedt je verzekering, training en vele extra voordelen. Je krijgt de beste deals, zonder de rompslomp van administratie, KvK-nummer of btw-nummer. Kortom, werken zonder gedoe."
+    },
+    "paymentCalculator": {
+        "hourlyRateLabel": "Uw uurtarief",
+        "hoursWorkedLabel": "Gewerkte uren",
+        "grossAmountLabel": "Bruto factuurbedrag",
+        "netAmountLabel": "Netto bedrag",
+        "calculateButton": "Bereken betaling"
+    },
+    "aboutUsSection": {
+        "title": "Styptec helpt je met facturering",
+        "description": "Styptec is in 2012 opgericht door Edward Belgraver om de groeiende groep zelfstandigen te ondersteunen die op basis van opdrachten, kort- of langetermijn, zonder gedoe willen werken. Met een team van hooggeëngageerde collega's werken we aan het bieden van een optimale service en een platform dat onze klanten ondersteunt om zonder een Handelsregistratienummer of btw-nummer te werken. In de afgelopen jaren zijn we gegroeid naar 95.913 klanten die we graag ondersteunen met professionele partners en hoge serviceniveaus.",
+        "buttonText": "Verken Meer"
+    },
+    "stats": {
+        "trustedBy": "Vertrouwd door",
+        "customers": "klanten",
+        "recommend": "zou ons aanbevelen",
+        "basedOn": "gebaseerd op",
+        "customerInterviews": "klantinterviews",
+        "satisfaction": "Onze klanttevredenheid op",
+        "klantenvertellen": "Klantenvertellen"
+    },
+    "videoSection": {
+        "title": "Leer hier hoe we u kunnen helpen!"
+    },
+    "pricing": {
         "title": "Zorgeloos freelancen met onze lidmaatschappen!",
         "description": "Ontdek onze exclusieve lidmaatschappen...",
         "memberships": {
@@ -74,7 +76,10 @@
             }
         }
     },
-
+    "bannerSection": {
+        "title": "Bekijk de opties zonder verplichtingen.",
+        "description": "Styptec helpt je met facturering en het inhouden van alle verplichte belastingen en biedt je verzekering, training en vele extra voordelen. Je krijgt de beste aanbiedingen."
+    },
     "whyChoose": {
         "freelancersTitle": "Waarom freelancers Styptec moeten gebruiken?",
         "freelancers": [
@@ -113,6 +118,10 @@
             }
         ],
         "buttonText": "Benieuwd naar ons?"
+    },
+    "callToAction": {
+        "title": "Bekijk de opties zonder verplichtingen.",
+        "subtitle": "Registreer binnen 10 seconden en ontdek hoe eenvoudig het is. Geen verplichtingen.",
+        "buttonText": "Registreer gratis"
     }
-
 }

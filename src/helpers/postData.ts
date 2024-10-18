@@ -28,8 +28,8 @@ type deviceType = {
     appVersion?: string,
     userAgent?: string
 }
-type membershipType = 'Premium' | 'Basic';
-type estimationFormType = {
+export type membershipType = 'Premium' | 'Basic';
+export type estimationFormType = {
     "membership_type": membershipType,
     "hourly_rate": string,
     "hours_worked": number,

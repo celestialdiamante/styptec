@@ -1,33 +1,35 @@
 {
-  "heroSection": {
-    "heading": "We combine your earnings to",
-    "subheading": "optimal results with",
-    "highlight": "ultimate freedom.",
-    "description": "In each job, Styptec helps you with invoicing and deduction of all compulsory taxes and offers you insurance, training and many extra benefits. You get the best deals, without the hassle of administration, Commercial Registration number or VAT number. In short, work hassle-free."
-  },
-  
-  "paymentCalculator": {
-    "hourlyRateLabel": "Your hourly rate",
-    "hoursWorkedLabel": "Hours worked",
-    "grossAmountLabel": "Gross invoice amount",
-    "netAmountLabel": "Net amount",
-    "calculateButton": "Calculate payment"
-  },
-
-  "stats": {
-    "trustedBy": "Trusted by",
-    "customers": "customers",
-    "recommend": "would recommend us",
-    "basedOn": "based on",
-    "customerInterviews": "customer interviews",
-    "satisfaction": "Our customer satisfaction on",
-    "klantenvertellen": "Klantenvertellen"
-  },
-
-  "videoSection": {
-    "title": "Learn here how we can help you!"
-  },
-  "pricing": {
+    "heroSection": {
+        "heading": "We combine your earnings to",
+        "subheading": "optimal results with",
+        "highlight": "ultimate freedom.",
+        "description": "In each job, Styptec helps you with invoicing and deduction of all compulsory taxes and offers you insurance, training and many extra benefits. You get the best deals, without the hassle of administration, Commercial Registration number or VAT number. In short, work hassle-free."
+    },
+    "paymentCalculator": {
+        "hourlyRateLabel": "Your hourly rate",
+        "hoursWorkedLabel": "Hours worked",
+        "grossAmountLabel": "Gross invoice amount",
+        "netAmountLabel": "Net amount",
+        "calculateButton": "Calculate payment"
+    },
+    "stats": {
+        "trustedBy": "Trusted by",
+        "customers": "customers",
+        "recommend": "would recommend us",
+        "basedOn": "based on",
+        "customerInterviews": "customer interviews",
+        "satisfaction": "Our customer satisfaction on",
+        "klantenvertellen": "Klantenvertellen"
+    },
+    "aboutUsSection": {
+        "title": "Styptec helps you with invoicing",
+        "description": "Styptec was founded in 2012 by Edward Belgraver to support the growing group of self-employed persons who want to work on an assignment-based basis, short-term or long-term, without any hassle. With a team of highly committed colleagues, we work to provide an optimal service and a platform that supports our clients to work without a Commercial Registration number or VAT number. In recent years, we have grown to 95.913 customers whom we are delighted to support with professional partners and high service levels.",
+        "buttonText": "Explore More"
+    },
+    "videoSection": {
+        "title": "Learn here how we can help you!"
+    },
+    "pricing": {
         "title": "Carefree freelancing with our memberships!",
         "description": "Discover our exclusive memberships...",
         "memberships": {
@@ -74,48 +76,52 @@
             }
         }
     },
-
+    "bannerSection": {
+        "title": "Check out the options without obligation.",
+        "description": "Styptec helps you with invoicing and deduction of all compulsory taxes and offers you insurance, training, and many extra benefits. You get the best deals."
+    },
     "whyChoose": {
-      "freelancersTitle": "Why freelancers should use Styptec?",
-      "freelancers": [
-          {
-              "icon": "clock",
-              "title": "Quick and easy",
-              "description": "A simple, clear and fast system that takes care of all your taxes and securities immediately. And if you have any issues, our customer service will be happy to advise and assist you."
-          },
-          {
-              "icon": "money",
-              "title": "Lots of FREE benefits",
-              "description": "We always look for the best deals for you as a regular customer. Unlimited training at GoodHabitz, accident insurance up to € 100,000. And 24/7 virtual care with unlimited medical or psychological support."
-          },
-          {
-              "icon": "shield",
-              "title": "Proper regulation",
-              "description": "After payment, paid net within one working day and no more surprises afterwards. View all benefits in your account such as insurance, VOG, invoice factoring and much more."
-          }
-      ],
-      "clientsTitle": "Why clients should use Styptec?",
-      "clients": [
-          {
-              "icon": "check-circle",
-              "title": "No surprises",
-              "description": "Receive an invoice from Styptec, and be assured that everything has been arranged perfectly. We guarantee that all legal obligations and taxes are met. A reassuring feeling and a win-win for all parties."
-          },
-          {
-              "icon": "handshake",
-              "title": "Reliable",
-              "description": "Naturally, we have a G-account and a tax declaration of payment history. With more than 10 years of experience with over 95.681 freelancers you can be assured that everything is carefully and properly regulated."
-          },
-          {
-              "icon": "thumbs-up",
-              "title": "Recommend us",
-              "description": "Have you really arranged it well for your contractors? Recommend us, so you can be assured that your contractors have arranged it really well. You will receive a clear invoice from us and you will never have any surprises afterwards."
-          }
-      ],
-      "buttonText": "Curious about us?"
-  }
-
-
-
-
+        "freelancersTitle": "Why freelancers should use Styptec?",
+        "freelancers": [
+            {
+                "icon": "clock",
+                "title": "Quick and easy",
+                "description": "A simple, clear and fast system that takes care of all your taxes and securities immediately. And if you have any issues, our customer service will be happy to advise and assist you."
+            },
+            {
+                "icon": "money",
+                "title": "Lots of FREE benefits",
+                "description": "We always look for the best deals for you as a regular customer. Unlimited training at GoodHabitz, accident insurance up to € 100,000. And 24/7 virtual care with unlimited medical or psychological support."
+            },
+            {
+                "icon": "shield",
+                "title": "Proper regulation",
+                "description": "After payment, paid net within one working day and no more surprises afterwards. View all benefits in your account such as insurance, VOG, invoice factoring and much more."
+            }
+        ],
+        "clientsTitle": "Why clients should use Styptec?",
+        "clients": [
+            {
+                "icon": "check-circle",
+                "title": "No surprises",
+                "description": "Receive an invoice from Styptec, and be assured that everything has been arranged perfectly. We guarantee that all legal obligations and taxes are met. A reassuring feeling and a win-win for all parties."
+            },
+            {
+                "icon": "handshake",
+                "title": "Reliable",
+                "description": "Naturally, we have a G-account and a tax declaration of payment history. With more than 10 years of experience with over 95.681 freelancers you can be assured that everything is carefully and properly regulated."
+            },
+            {
+                "icon": "thumbs-up",
+                "title": "Recommend us",
+                "description": "Have you really arranged it well for your contractors? Recommend us, so you can be assured that your contractors have arranged it really well. You will receive a clear invoice from us and you will never have any surprises afterwards."
+            }
+        ],
+        "buttonText": "Curious about us?"
+    },
+    "callToAction": {
+        "title": "Check out the options without obligation.",
+        "subtitle": "Register in 10 seconds and see how easy it is. No strings attached.",
+        "buttonText": "Register for free"
+    }
 }

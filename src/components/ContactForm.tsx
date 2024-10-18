@@ -55,7 +55,7 @@ const ContactForm = () => {
       });
       if (response && response.success) {
         alert('Form successfully submitted, we will get back to you');
-        // Reset form data after successful submission
+        
         setFormData({
           name: '',
           email: '',

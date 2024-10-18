@@ -1,28 +1,31 @@
 "use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import { FaChevronRight } from 'react-icons/fa';
 import { useTranslations } from 'next-intl';
 import { useRouter } from '@/i18n/routing';
+import { typeOfFormSettings } from '@/helpers/getData';
 
-const PaymentCalculator = () => {
+const PaymentCalculator = ({form_settings}:{form_settings:typeOfFormSettings}) => {
     const lang = useTranslations('paymentCalculator');
     const router = useRouter();
 
-    const [hourlyRate, setHourlyRate] = React.useState<string>('30.00');
-    const [hoursWorked, setHoursWorked] = React.useState<string>('10.00');
-    const [grossAmount, setGrossAmount] = React.useState<number>(300.00);
-    const [netAmount, setNetAmount] = React.useState<number>(267.00);
+    let percents = form_settings;
+
+    const [hourlyRate, setHourlyRate] = React.useState<number>(30);
+    const [hoursWorked, setHoursWorked] = React.useState<number>(10);
+    const [grossAmount, setGrossAmount] = React.useState<number>(300);
+    const [netAmount, setNetAmount] = React.useState<number>(267);
 
     const calculateAmounts = () => {
-        const rate = parseFloat(hourlyRate) || 0;
-        const hours = parseFloat(hoursWorked) || 0;
+        const rate = parseFloat(hourlyRate+'') || 0;
+        const hours = parseFloat(hoursWorked+'') || 0;
         const gross = rate * hours;
         const net = gross * 0.90; 
         setGrossAmount(gross);
         setNetAmount(Number(net.toFixed(2)));
     };
 
-    useEffect(() => {
+    React.useEffect(() => {
         calculateAmounts();
     }, [hourlyRate, hoursWorked]);
 
@@ -45,13 +48,9 @@ const PaymentCalculator = () => {
     
     const handleCalculateClick = () => {
         
-        localStorage.setItem('hourlyRate', hourlyRate);
-        localStorage.setItem('hoursWorked', hoursWorked);
-        localStorage.setItem('grossAmount', grossAmount.toString());
-        localStorage.setItem('netAmount', netAmount.toString());
-
+        const urlToGo = '/calculate-your-benefit?hourly_rate='+hourlyRate+'&hours_worked='+hoursWorked;
         
-        router.push('/calculate-your-benefit');
+        router.push(urlToGo);
     };
 
     return (

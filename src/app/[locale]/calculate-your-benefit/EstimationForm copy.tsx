@@ -3,13 +3,15 @@
 import React from 'react';
 import { FaChevronRight, FaRegStar, FaSmile, FaStar } from 'react-icons/fa';
 import { FaRegFaceSmile } from 'react-icons/fa6';
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { CiTimer } from 'react-icons/ci';
 import { LuEuro } from 'react-icons/lu';
-import { submitEstimationForm, estimationFormType } from '@/helpers/postData';
+import { submitEstimationForm } from '@/helpers/postData';
 import { countries } from '@/Lib/countries';
 import { MdOutlineSimCardDownload } from 'react-icons/md';
 import { typeOfFormSettings } from '@/helpers/getData';
-import { useSearchParams } from 'next/navigation';
 
 interface Country {
     id: number;
@@ -17,6 +19,46 @@ interface Country {
     flag: string;
 }
 
+
+const calculatorSchema = z.object({
+    membership: z.enum(['Premium', 'Basic']),
+    hourly_Rate: z
+        .number({ required_error: "Hourly rate is required" })
+        .min(1, "Hourly rate must be at least 1.00"),
+    hours_Worked: z
+        .number({ required_error: "Hours worked are required" })
+        .min(1, "Hours worked must be at least 1"),
+    gross_Invoice: z.number().optional(),
+    age: z
+        .number({ required_error: "Age is required" })
+        .min(18, "Age must be at least 18"),
+    payroll_Tax_Credit: z.boolean().optional(),
+    socially_Insured: z.boolean().optional(),
+    disability: z.boolean().optional(),
+    holiday_Allowance: z.boolean().optional(),
+    holidays: z.boolean().optional(),
+    flexible_Savings: z.boolean().optional(),
+    factoring: z.boolean().optional(),
+    expense: z.number().min(0, "Expenses must be at least 0.00").optional()
+});
+
+
+const membershipOptions = [
+    {
+        value: 'Basic',
+        label: 'Basic',
+        icon: <FaRegFaceSmile className="size-6" />,
+        iconSelected: <FaSmile className="size-6 text-teal-500" />,
+        defaultChecked: true,
+    },
+    {
+        value: 'Premium',
+        label: 'Premium',
+        icon: <FaRegStar className="size-6" />,
+        iconSelected: <FaStar className="size-6 text-teal-500" />,
+        defaultChecked: false,
+    },
+];
 
 type deviceType = {
     appCodeName?: string,
@@ -26,77 +68,87 @@ type deviceType = {
 }
 
 const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }) => {
-    const searchParams = useSearchParams();
 
     const percents = form_settings;
 
-    const [membershipOptions, setMembershipOptions] = React.useState([
-        {
-            value: 'Basic',
-            label: 'Basic',
-            icon: <FaRegFaceSmile className="size-6" />,
-            iconSelected: <FaSmile className="size-6 text-teal-500" />,
-            disabled: false,
-        },
-        {
-            value: 'Premium',
-            label: 'Premium',
-            icon: <FaRegStar className="size-6" />,
-            iconSelected: <FaStar className="size-6 text-teal-500" />,
-            disabled: true,
-        },
-    ]);
+    // React.useEffect(()=>{
+    //     console.log('form_settings: ', form_settings)
+    // }, [form_settings])
 
+    type userFormType = {
+        name: string,
+        email: string,
+        phone_number: string,
+        country_id: string
+    };
+    const [userForm, setUserForm] = React.useState<userFormType>({
+        name: '',
+        email: '',
+        phone_number: '',
+        country_id: '156'
+    });
+
+    function updateUserFormInputs(event: any) {
+        const inputName = event.target.name;
+        const inputValue = event.target.value;
+
+        setUserForm((prevFormValue) => {
+            return {
+                ...prevFormValue,
+                [inputName]: inputValue
+            }
+        })
+    }
+
+
+    const [device, setDevice] = React.useState<deviceType>({})
+    React.useEffect(() => {
+        setTimeout(() => {
+            const navigator = window?.navigator
+            setDevice({
+                appCodeName: navigator.appCodeName ?? '',
+                appName: navigator.appName ?? '',
+                appVersion: navigator.appVersion ?? '',
+                userAgent: navigator.userAgent ?? ''
+            });
+        }, 1000);
+    }, [])
+
+    const {
+        register, watch, formState: { } } = useForm<z.infer<typeof calculatorSchema>>({
+            resolver: zodResolver(calculatorSchema),
+            mode: "onChange",
+        });
+
+
+    // const hourlyRate = watch("hourly_Rate");
+    // const hoursWorked = watch("hours_Worked");
+    const age = watch("age");
+    const membershipType: any = watch("membership");
+    const pension = watch("disability");
+    const pff = watch("socially_Insured");
+    const socialCharges = watch("payroll_Tax_Credit");
+    const expense = watch("expense");
+
+    const [hourlyRate, setHourlyRate] = React.useState<any>(0.00);
+    const [hoursWorked, setHoursWorked] = React.useState<any>(0.00);
 
     const [invoiceAmount, setInvoiceAmount] = React.useState<any>(0.00);
     const [grossIncome, setGrossIncome] = React.useState<any>(0.00);
     const [netPayable, setNetPayable] = React.useState<any>(0.00);
 
-    const [estForm, setestForm] = React.useState<estimationFormType>({
-        membership_type: 'Basic',
-        hourly_rate: searchParams.get('hourly_rate')?.toString() ?? '',
-        hours_worked: parseInt(searchParams.get('hours_worked') ?? ''),
-        age: 0,
-        pension: false,
-        social_charges: false,
-        paid_fast_forward: false,
-        expenses: '',
-        name: '',
-        email: '',
-        phone_number: '',
-        country_id: 156,
-        device: {}
-    });
+    React.useEffect(() => {
+        const storedHourlyRate = localStorage.getItem('hourlyRate') || '0.00';
+        const storedHoursWorked = localStorage.getItem('hoursWorked') || '0.00';
+
+        setHourlyRate(storedHourlyRate);
+        setHoursWorked(storedHoursWorked);
+    }, []);
 
     React.useEffect(() => {
-        
-        if (estForm.hours_worked < 130) {
-            setMembershipOptions((prevData) => {
-                return [
-                    { ...prevData[0] },
-                    {
-                        ...prevData[1],
-                        disabled: true
-                    }
-                ]
-            })
-        } else {
-            setMembershipOptions((prevData) => {
-                return [
-                    { ...prevData[0] },
-                    {
-                        ...prevData[1],
-                        disabled: false
-                    }
-                ]
-            })
-        }
-    }, [estForm.hours_worked])
-
-    React.useEffect(() => {
-        if (parseInt(estForm.hourly_rate + '') > 0 && parseInt(estForm.hours_worked + '') > 0) {
-
-            const newInvoiceAmount = parseInt(estForm.hourly_rate) * parseInt(estForm.hours_worked + '');
+        if (parseInt(hourlyRate + '') > 0 && parseInt(hoursWorked + '') > 0) {
+            
+            const newInvoiceAmount = hourlyRate * hoursWorked;
             setInvoiceAmount(newInvoiceAmount);
             const percent = newInvoiceAmount / 100;
             // console.log('percent: ', percent)
@@ -111,24 +163,24 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
             const grossPercent = newGrossIncome / 100;
 
             let otherDeductions = 0;
-            if (estForm.pension) {
+            if (pension) {
                 const pensionCharges = grossPercent * percents.pension;
                 otherDeductions += pensionCharges;
             }
 
-            if (estForm.paid_fast_forward) {
+            if (pff) {
                 const pffCharges = grossPercent * percents.paid_fast_forward;
                 otherDeductions += pffCharges;
             }
 
-            if (estForm.social_charges) {
+            if (socialCharges) {
                 const socialCharge = grossPercent * percents.social_charges;
                 otherDeductions += socialCharge;
             }
 
             let newNetPayable = newGrossIncome - otherDeductions;
 
-            if (estForm.membership_type?.toLowerCase() == 'premium' && estForm.hours_worked >= 130) {
+            if (membershipType?.toLowerCase() == 'premium' && hoursWorked >= 130) {
                 const discount = grossPercent * percents.premium_discount;
                 newNetPayable += discount;
             }
@@ -138,81 +190,43 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
         }
 
     }, [
-        estForm.hourly_rate,
-        estForm.hours_worked,
-        estForm.pension,
-        estForm.paid_fast_forward,
-        estForm.social_charges,
-        estForm.membership_type,
+        hourlyRate,
+        hoursWorked,
+        pension,
+        pff,
+        socialCharges,
+        membershipType,
     ])
 
-    async function updateEstForm(event: any) {
-        const name: keyof estimationFormType = event.target.name;
-        const value = event.target.value;
-
-        const newFormData: any = {};
-        if (name == 'pension' || name == 'social_charges' || name == 'paid_fast_forward') {
-            newFormData[name] = estForm[name] == true ? false : true;
-        } else {
-            if (name == 'membership_type' && estForm.hours_worked < 130) {
-                newFormData[name] = 'Basic';
-            } else {
-                newFormData[name] = value;
-            }
-        }
-
-        console.log('updateEstForm: ', value, name)
-
-        setestForm((prevForm) => {
-            return {
-                ...prevForm,
-                ...newFormData
-            }
-        })
-    }
-
-    const [device, setDevice] = React.useState<deviceType>({})
-    
-    React.useEffect(() => {
-        setTimeout(() => {
-            const navigator = window?.navigator
-            setDevice({
-                appCodeName: navigator.appCodeName ?? '',
-                appName: navigator.appName ?? '',
-                appVersion: navigator.appVersion ?? '',
-                userAgent: navigator.userAgent ?? ''
-            });
-        }, 1000);
-    }, [])
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         try {
             const formData: any = {
-                membership_type: estForm.membership_type,
-                hourly_rate: parseInt(estForm.hourly_rate).toFixed(2),
-                hours_worked: estForm.hours_worked,
-                age: estForm.age,
-                pension: estForm.pension,
-                social_charges: estForm.social_charges,
-                paid_fast_forward: estForm.paid_fast_forward,
-                expenses: (parseInt(estForm.expenses + '') || 0).toFixed(2),
-                name: estForm.name,
-                email: estForm.email,
-                phone_number: estForm.phone_number,
-                country_id: estForm.country_id,
+                membership_type: membershipType,
+                hourly_rate: hourlyRate.toFixed(2),
+                hours_worked: hoursWorked,
+                age: age,
+                pension: pension,
+                social_charges: socialCharges,
+                paid_fast_forward: pff,
+                expenses: (parseInt(expense + '') || 0).toFixed(2),
+                name: userForm.name,
+                email: userForm.email,
+                phone_number: userForm.phone_number,
+                country_id: userForm.country_id,
                 device: device
             };
             console.log('form data: ', formData);
             const response = await submitEstimationForm({ ...formData })
-            console.log('form data response: ', response.data);
-            if (response && response.success) {
-                alert('Form successfully submitted, we will get back to you');
-                window.location.reload();
-            } else {
-                alert('Server error, please try after some time.')
-            }
+            console.log('form data response: ', response);
+            //   if(response && response.success) {
+            //     alert('Form successfully submitted, we will get back to you');
+            //     window.location.reload();
+            //   } else {
+            //     alert('Server error, please try after some time.')
+            //   }
             // console.log('form response: ', response)
         } catch (error) {
             console.log('form error: ', error)
@@ -223,10 +237,10 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
         e.preventDefault();
 
         if (
-            !estForm.membership_type ||
-            estForm.hourly_rate === undefined || parseInt(estForm.hourly_rate) < 1 ||
-            estForm.hours_worked === undefined || estForm.hours_worked < 1 ||
-            estForm.age === undefined || estForm.age < 18
+            !membershipType ||
+            hourlyRate === undefined || hourlyRate < 1 ||
+            hoursWorked === undefined || hoursWorked < 1 ||
+            age === undefined || age < 18
         ) {
             alert('Please fill in all required fields correctly before proceeding.');
             return;
@@ -248,21 +262,22 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                     <div className="*:text-base *:font-semibold">
                         <label className="label">Membership</label>
                         <div className="flex flex-row gap-2 my-2">
-                            
                             {membershipOptions.map((option, index) => {
+
+                                const isPremiumDisabled = hoursWorked <= 130 && option.value === "premium"; 
 
                                 return (
                                     <label
                                         key={index}
                                         htmlFor={`membership-${index}`}
                                         className={`cursor-pointer flex flex-grow max-w-[49%] justify-between rounded-xl py-4 px-3 border 
-                                                    ${estForm.membership_type === option.value ? 'border-teal-500' : 'border-gray-200'}
-                                                    ${option.disabled ? 'opacity-10 cursor-not-allowed border-red-950' : ''}
+                                                    ${watch('membership') === option.value ? 'border-teal-500' : 'border-gray-200'}
+                                                    ${isPremiumDisabled ? 'opacity-10 cursor-not-allowed border-red-950' : ''}
                                                 `}
                                     >
                                         <div className="space-y-3">
-                                            <div>{estForm.membership_type === option.value ? option.iconSelected : option.icon}</div>
-                                            <div className={`${estForm.membership_type === option.value ? 'text-teal-500' : 'text-gray-600'}`}>
+                                            <div>{watch('membership') === option.value ? option.iconSelected : option.icon}</div>
+                                            <div className={`${watch('membership') === option.value ? 'text-teal-500' : 'text-gray-600'}`}>
                                                 {option.label}
                                             </div>
                                         </div>
@@ -272,10 +287,9 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                                 type="radio"
                                                 id={`membership-${index}`}
                                                 value={option.value}
-                                                onChange={updateEstForm}
-                                                name='membership_type'
-                                                className={`radio ${estForm.membership_type === option.value ? 'checked:bg-teal-500' : ''}`}
-                                                checked={estForm.membership_type === option.value}
+                                                {...register('membership')}
+                                                className={`radio ${watch('membership') === option.value ? 'checked:bg-teal-500' : ''}`}
+                                                disabled={isPremiumDisabled}
                                             />
                                         </div>
                                     </label>
@@ -297,14 +311,13 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                         </div>
                                         <input
                                             type="number"
-                                            name="hourly_rate"
-                                            onChange={updateEstForm}
-                                            value={parseInt(estForm.hourly_rate) > 0 ? estForm.hourly_rate : ''}
+                                            {...register("hourly_Rate", { valueAsNumber: true })}
+                                            value={hourlyRate}
                                             className="w-full focus:outline-none border border-l-0 border-gray-300 rounded-r-lg px-3 py-2"
                                             step={0.01}
                                         />
                                     </div>
-                                    {estForm.hourly_rate !== undefined && parseInt(estForm.hourly_rate) < 1 && (
+                                    {hourlyRate !== undefined && hourlyRate < 1 && (
                                         <p className="text-red-500">Hourly rate must be at least 1.00</p>
                                     )}
                                 </div>
@@ -317,14 +330,13 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                         </div>
                                         <input
                                             type="number"
-                                            name="hours_worked"
-                                            onChange={updateEstForm}
-                                            value={estForm.hours_worked > 0 ? estForm.hours_worked : ''}
+                                            {...register("hours_Worked", { valueAsNumber: true })}
+                                            value={hoursWorked}
                                             className="w-full focus:outline-none border border-l-0 border-gray-300 rounded-r-lg px-3 py-2"
                                         />
                                     </div>
 
-                                    {estForm.hours_worked !== undefined && estForm.hours_worked < 1 && (
+                                    {hoursWorked !== undefined && hoursWorked < 1 && (
                                         <p className="text-red-500">Hours worked must be at least 1</p>
                                     )}
                                 </div>
@@ -337,13 +349,11 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                             <div>
                                 <input
                                     type="number"
-                                    name="age"
-                                    onChange={updateEstForm}
-                                    value={estForm.age > 0 ? estForm.age : ''}
+                                    {...register("age", { valueAsNumber: true })}
                                     className="w-full focus:outline-none border border-gray-300 rounded-lg px-3 py-2"
                                 />
 
-                                {estForm.age !== undefined && estForm.age < 18 && (
+                                {age !== undefined && age < 18 && (
                                     <p className="text-red-500">Age must be at least 18</p>
                                 )}
                             </div>
@@ -352,22 +362,14 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         <div className="items-center">
                             <div className="">Social Charge</div>
                             <label className="cursor-pointer flex items-center">
-                                <input type="checkbox" className="checkbox"
-                                    name="social_charges"
-                                    onChange={updateEstForm}
-                                    checked={estForm.social_charges}
-                                />
+                                <input type="checkbox" {...register('payroll_Tax_Credit')} className="checkbox" />
                             </label>
                         </div>
 
                         <div className="items-center">
                             <div className="">PFF</div>
                             <label className="cursor-pointer flex items-center">
-                                <input type="checkbox"
-                                    // checked={estForm.paid_fast_forward} 
-                                    className="checkbox"
-                                    name="paid_fast_forward"
-                                    onChange={updateEstForm} />
+                                <input type="checkbox" {...register('socially_Insured')} className="checkbox" />
                                 <small className="ml-2 font-normal">Paid Fast Forward (In 3 Days)</small>
                             </label>
                         </div>
@@ -375,9 +377,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         <div className="items-center">
                             <div className="">Pension</div>
                             <label className="cursor-pointer flex items-center">
-                                <input type="checkbox" checked={estForm.pension} className="checkbox"
-                                    name="pension"
-                                    onChange={updateEstForm} />
+                                <input type="checkbox" {...register('disability')} className="checkbox" />
                             </label>
                         </div>
 
@@ -389,13 +389,14 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                 </div>
                                 <input
                                     type="number"
-                                    value={parseInt(estForm.expenses) > 0 ? estForm.expenses : ''}
-                                    name="expenses"
-                                    onChange={updateEstForm}
+                                    {...register("expense", { valueAsNumber: true })}
                                     className="lg:w-full focus:outline-none border border-l-0 border-gray-300 rounded-r-lg px-3 py-2"
                                     step={0.01}
                                 />
                             </div>
+                            {expense !== undefined && expense < 0 && (
+                                <p className="text-red-500">Expenses must be at least 0.00</p>
+                            )}
                         </div>
                     </div>
 
@@ -468,8 +469,8 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                 <input
                                     type="text"
                                     id="name"
-                                    value={estForm.name}
-                                    onChange={updateEstForm}
+                                    value={userForm.name}
+                                    onChange={updateUserFormInputs}
                                     name="name"
                                     className="peer h-10 w-full border border-gray-300 rounded-lg px-3 pt-3 pb-2 focus:outline-none focus:border-primary"
                                     placeholder=" "
@@ -486,8 +487,8 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                 <input
                                     type="tel"
                                     id="phone"
-                                    value={estForm.phone_number}
-                                    onChange={updateEstForm}
+                                    value={userForm.phone_number}
+                                    onChange={updateUserFormInputs}
                                     name="phone_number"
                                     className="peer h-10 w-full border border-gray-300 rounded-lg px-3 pt-3 pb-2 focus:outline-none focus:border-primary"
                                     placeholder=" "
@@ -507,8 +508,8 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                 <input
                                     type="email"
                                     id="email"
-                                    value={estForm.email}
-                                    onChange={updateEstForm}
+                                    value={userForm.email}
+                                    onChange={updateUserFormInputs}
                                     name="email"
                                     className="peer h-10 w-full border border-gray-300 rounded-lg px-3 pt-3 pb-2 focus:outline-none focus:border-primary"
                                     placeholder=" "
@@ -525,8 +526,8 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                             <div className="relative w-full">
                                 <select
                                     id="countryCode"
-                                    value={estForm.country_id}
-                                    onChange={updateEstForm}
+                                    value={userForm.country_id}
+                                    onChange={updateUserFormInputs}
                                     name="country_id"
                                     className="p-2 w-full border border-gray-300 bg-white rounded-lg"
                                 >

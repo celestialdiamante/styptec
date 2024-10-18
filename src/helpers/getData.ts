@@ -1,6 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { URLS } from "./URLs";
 
+export type typeOfFormSettings = {
+    premium_discount: number,
+    pension: number,
+    paid_fast_forward: number,
+    social_charges: number,
+    service_charge: number,
+};
 export async function getFormData() {
     const pageUrl = URLS.FORM_DATA;
     // fetch data
