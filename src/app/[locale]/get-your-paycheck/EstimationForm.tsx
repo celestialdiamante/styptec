@@ -11,6 +11,9 @@ import { MdOutlineSimCardDownload } from 'react-icons/md';
 import { typeOfFormSettings } from '@/helpers/getData';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import { URLS } from '@/helpers/URLs';
+import Swal from 'sweetalert2';
+import Loader from '@/components/Loader';
 
 interface Country {
     id: number;
@@ -26,7 +29,9 @@ type deviceType = {
     userAgent?: string
 }
 
-const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }) => {
+const EstimationForm = ({ form_settings, params }: { form_settings: typeOfFormSettings, params: { locale: string } }) => {
+
+    const [loading, setLoading] = React.useState(false);
 
     const lang = useTranslations('estimationForm');
 
@@ -165,7 +170,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
             }
         }
 
-        console.log('updateEstForm: ', value, name)
+        // console.log('updateEstForm: ', value, name)
 
         setestForm((prevForm) => {
             return {
@@ -191,6 +196,8 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+        closeModal();
+        setLoading(true);
 
         try {
             const formData: any = {
@@ -206,23 +213,80 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                 email: estForm.email,
                 phone_number: estForm.phone_number,
                 country_id: estForm.country_id,
-                device: device
+                device: device,
+                language: params.locale
             };
-            console.log('form data: ', formData);
+            // console.log('form data: ', formData);
             const response = await submitEstimationForm({ ...formData })
-            console.log('form data response: ', response.data);
+            console.log('form data response: ', response);
+            setLoading(false);
             if (response && response.success) {
-                alert('Form successfully submitted, we will get back to you');
-                window.location.reload();
+                if (response.pdf_base64) {
+                    // Decode base64 back into binary data
+                    const byteCharacters = atob(response.pdf_base64); // Decode base64 string
+                    const byteNumbers = new Array(byteCharacters.length);
+                    for (let i = 0; i < byteCharacters.length; i++) {
+                        byteNumbers[i] = byteCharacters.charCodeAt(i);
+                    }
+                    const byteArray = await new Uint8Array(byteNumbers);
+
+                    // Create a Blob from the binary data
+                    const blob = new Blob([byteArray], { type: 'application/pdf' });
+                    const url = window.URL.createObjectURL(blob);
+
+                    // Trigger the download
+                    const link = document.createElement('a');
+                    link.href = url;
+                    const fileName = 'estimation-' + Date.now() + '.pdf'; // Use timestamp as filename
+                    link.setAttribute('download', fileName); // Set the file name
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+
+                    // Clean up the URL
+                    window.URL.revokeObjectURL(url);
+                }
+                const estimationID = response.estimation.id;
+                const pdfUrl = URLS.DOWNLOAD_PDF + estimationID;
+                Swal.fire({
+                    title: "<strong>PDF downloading ...</strong>",
+                    icon: "success",
+                    html: `You PDF will be download soon <br />, Click the <a href="${pdfUrl}" class="text-blue-700 font-semibold" target="_blank">link</a> if download not started.`
+                }).then(() => {
+                    // After successfully downloading, reload the page or navigate to a new URL
+                    // Option 1: Reload the current page
+                    // window.location.reload();
+
+                    setLoading(false);
+                    // Option 2: Redirect to another URL (uncomment the following line if needed)
+                    window.location.href = '/';
+                })
             } else {
-                alert('Server error, please try after some time.')
+                setLoading(false);
+                Swal.fire({
+                    icon: "error",
+                    title: "Error",
+                    text: response.message ? response.message : 'Server error, please try after some time.',
+                });
             }
             // console.log('form response: ', response)
         } catch (error) {
+            setLoading(false);
+            // Swal.fire({
+            //     icon: "error",
+            //     title: "Error",
+            //     text: response.message ? response.message : 'Server error, please try after some time.',
+            // });
             console.log('form error: ', error)
         }
     };
 
+    const closeModal = () =>{
+        const modal = document?.getElementById('my_modal');
+        if (modal instanceof HTMLDialogElement) {
+            modal.close();
+        }
+    }
     const openModal = (e: any) => {
         e.preventDefault();
 
@@ -246,6 +310,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
 
     return (
         <div className="grid lg:grid-cols-6 gap-6">
+            {loading && <Loader />}
             <div className="col-span-3 p-4 bg-base-100 relative rounded-2xl border border-gray-50 shadow-xl">
                 <div>
 
@@ -408,13 +473,13 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
             <div className="col-span-3 p-4 rounded-lg">
                 <div>
                     <h3 className="lg:text-[40px] lg:leading-[48px] font-bold   mb-4">
-                    {lang('leftSection.title')}
+                        {lang('leftSection.title')}
                     </h3>
                     <p className="text-base lg:text-lg text-black mb-2 last:mb-0">
-                    {lang('leftSection.description')}
+                        {lang('leftSection.description')}
                     </p>
                     <p className="text-base lg:text-lg text-black mb-2 last:mb-0">
-                    {lang('leftSection.description2')}
+                        {lang('leftSection.description2')}
                     </p>
 
                     <div className="flex flex-col mt-6 bg-white rounded-2xl shadow-xl border border-gray-200">
@@ -436,10 +501,10 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         <div className="flex flex-col mt-auto px-6 pb-6 rounded-b-2xl pt-6 rounded-t-xl lg:rounded-t-none 
                                     bg-gradient-to-r from-teal-300 via-green-200 to-amber-200">
                             <p className="text-[24px] leading-[32px] font-bold text-white">
-                            {lang('leftSection.workingWithoutChamber')}
+                                {lang('leftSection.workingWithoutChamber')}
                             </p>
                             <p className="text-base mb-2">
-                            {lang('leftSection.workersPreceded')}
+                                {lang('leftSection.workersPreceded')}
                             </p>
                             <div className="flex gap-4 mt-4">
                                 <button
@@ -547,7 +612,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
 
                     <div className="flex flex-grow justify-center">
                         <button className="btn btn-primary text-white btn-sm w-full" onClick={handleSubmit}>
-                            {lang('estimationForm.downloadButton')}
+                            {lang('downloadButton')}
                             <MdOutlineSimCardDownload />
                         </button>
                     </div>
