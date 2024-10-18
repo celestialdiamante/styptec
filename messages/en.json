@@ -1,4 +1,20 @@
 {
+    "home": {
+        "aboutUsSection": {
+            "title": "Styptec helps you with invoicing",
+            "description": "Styptec was founded in 2012 by Edward Belgraver to support the growing group of self-employed persons who want to work on an assignment-based basis, short-term or long-term, without any hassle. With a team of highly committed colleagues, we work to provide an optimal service and a platform that supports our clients to work without a Commercial Registration number or VAT number. In recent years, we have grown to 95.913 customers whom we are delighted to support with professional partners and high service levels.",
+            "buttonText": "Explore More"
+        },
+        "bannerSection": {
+            "title": "Check out the options without obligation.",
+            "description": "Styptec helps you with invoicing and deduction of all compulsory taxes and offers you insurance, training, and many extra benefits. You get the best deals."
+        },
+        "callToAction": {
+            "title": "Check out the options without obligation.",
+            "subtitle": "Register in 10 seconds and see how easy it is. No strings attached.",
+            "buttonText": "Register for free"
+        }
+    },
     "heroSection": {
         "heading": "We combine your earnings to",
         "subheading": "optimal results with",
@@ -21,13 +37,15 @@
         "satisfaction": "Our customer satisfaction on",
         "klantenvertellen": "Klantenvertellen"
     },
-    "aboutUsSection": {
-        "title": "Styptec helps you with invoicing",
-        "description": "Styptec was founded in 2012 by Edward Belgraver to support the growing group of self-employed persons who want to work on an assignment-based basis, short-term or long-term, without any hassle. With a team of highly committed colleagues, we work to provide an optimal service and a platform that supports our clients to work without a Commercial Registration number or VAT number. In recent years, we have grown to 95.913 customers whom we are delighted to support with professional partners and high service levels.",
-        "buttonText": "Explore More"
-    },
     "videoSection": {
-        "title": "Learn here how we can help you!"
+        "title": "Styptec Helps You Manage Your Income",
+        "features": [
+            "Before it is on your account, everything is paid. So what do you really deserve? It starts with your gross salary. You pay wage tax on this.",
+            "You have no control over all these costs. Isn't that crazy? Styptec is for modern workers who themselves take control of their income.",
+            "Two important things are always well organized with us. Your taxes have been paid properly. And any long-term illness is covered.",
+            "So no more surprises afterwards. Are you already an entrepreneur? Then this is also something for you. Because you don't have to do any administration with us.",
+            "As an employee you receive a salary every month. But your net salary is not the amount that you cost. Because you don't have to do any administration with us."
+        ]
     },
     "pricing": {
         "title": "Carefree freelancing with our memberships!",
@@ -76,10 +94,6 @@
             }
         }
     },
-    "bannerSection": {
-        "title": "Check out the options without obligation.",
-        "description": "Styptec helps you with invoicing and deduction of all compulsory taxes and offers you insurance, training, and many extra benefits. You get the best deals."
-    },
     "whyChoose": {
         "freelancersTitle": "Why freelancers should use Styptec?",
         "freelancers": [
@@ -119,9 +133,206 @@
         ],
         "buttonText": "Curious about us?"
     },
-    "callToAction": {
-        "title": "Check out the options without obligation.",
-        "subtitle": "Register in 10 seconds and see how easy it is. No strings attached.",
-        "buttonText": "Register for free"
+    "aboutUs": {
+        "pageHeader": "Curious about us?",
+        "ourStory": {
+            "title": "Our story",
+            "description": "Styptec was founded in 2012 by Edward Belgraver to support the growing group of self-employed persons who want to work on an assignment-based basis, short-term or long-term, without any hassle. With a team of highly committed colleagues, we work to provide an optimal service and a platform that supports our clients to work without a Commercial Registration number or VAT number. In recent years, we have grown to 95.913 customers whom we are delighted to support with professional partners and high service levels."
+        },
+        "mission": {
+            "title": "Mission",
+            "description": "Styptec wants to be there for everyone who wants to have full control, insight in and control over their income, where Styptec is the partner in working autonomously from job to job."
+        },
+        "vision": {
+            "title": "Vision",
+            "description": "Styptec wants to be known nationwide by modern self-employed persons, clients and stakeholders as the natural, but above all reliable choice to take care of income during the career."
+        },
+        "solution": {
+            "title": "Our solution",
+            "description": "Styptec helps self-employed persons by invoicing their job and taking care of the social and fiscal obligations and securities in advance. This way, administration is taken care of and there are no surprises afterwards. We also offer many extra benefits, such as savings schemes, disability insurance, and training partnerships."
+        },
+        "callToAction": {
+            "title": "Check out the options without obligation.",
+            "subtitle": "Register in 10 seconds and see how easy it is. No strings attached.",
+            "buttonText": "Register for free"
+        }
+    },
+    "howItWorks": {
+        "pageHeader": "How does Styptec work?",
+        "features": {
+            "takeControl": {
+                "subtitle": "Take control",
+                "title": "Become a BOSS",
+                "description": "Who doesn’t dream of being a freelancer? Being free and choosing only the jobs you like. Nobody likes blue envelopes of the Dutch Tax Authority and what does working for your own account and at your own risk mean? At Styptec, we help you work for the jobs you want, without the hassle of these blue envelopes. All your affairs arranged in one place."
+            },
+            "carefreeWork": {
+                "subtitle": "Carefree work",
+                "title": "No strings attached",
+                "description": "We want you to be able to work without worries. See our video where we explain what we can expect from each other. You can use our services as long as you like. Styptec provides total peace of mind: apart from your taxes, your social securities are also well arranged. You will never face any surprises."
+            },
+            "modelAgreement": {
+                "subtitle": "Model agreement",
+                "title": "Make sound agreements",
+                "description": "At Styptec, we think it is important to make good agreements with your client. In your account you can easily create and sign our standard model. Of course, you can also work with your own agreement, which you can add online. Our standard model is based on the approved “No authority” model agreement of the Dutch Tax Authority."
+            },
+            "sendInvoice": {
+                "subtitle": "Send invoice",
+                "title": "Invoicing",
+                "description": "We take total care over your administration and, through your secured account, you simply send an invoice to your client in accordance with the agreements you have made. Sending an invoice takes just 2 minutes! All taxes and insurances are also taken care of directly by us. The net payment follows one working day after your client has paid, you receive your money quickly and easily. And if you want, we can often pay the invoice in advance, so you get your money even faster. We help you save time and stress!"
+            },
+            "completelyCarefree": {
+                "subtitle": "Completely carefree",
+                "title": "Payment",
+                "description": "With Styptec, we take care of all the hassle. We make sure your administration and all legally required taxes are paid in advance. The best known is income tax. We also take care of the VAT and healthcare law (Zvw). In your account, you can set everything up the way you like it, including retirement savings and reserves. At the beginning of the year, you will receive a clear annual statement from us. Make unlimited free calculations and see what you can earn!"
+            },
+            "noSurprises": {
+                "subtitle": "No surprises",
+                "title": "Insurance and mutuality savings scheme",
+                "description": "If you work, you may still run into problems (without your fault). In collaboration with Avéro Achmea, we have excellent occupational disability insurance, which we make compulsory up to the age of 62 and when your income exceeds EUR 3,750 in three months. We also have a mutuality savings scheme (schenkkring) with 2-year cover and as a regular customer, you are automatically insured through AIG for accidents (up to EUR 100,000). So no surprises, even if things do not go according to plan."
+            }
+        },
+        "callToAction": {
+            "title": "Check out the options without obligation.",
+            "subtitle": "Register in 10 seconds and see how easy it is. No strings attached.",
+            "buttonText": "Register for free"
+        }
+    },
+    "forEntrepreneurs": {
+        "pageHeader": "How does Styptec work?",
+        "features": {
+            "hiringSolution": {
+                "subtitle": "Discover the benefits",
+                "title": "Your hiring problem solved!",
+                "description": "More and more people are discovering the advantages of freelance work. However, it sounds easier than it is. Think of all the rules, the administration, the risks and everything else involved. If a freelancer hasn’t got it right, it also affects you as a client. Recommend us so that both your contractor and you avoid any risk. With Styptec, everything is well regulated: no surprises afterwards!"
+            },
+            "guaranteedWellArranged": {
+                "subtitle": "Transparent and honest",
+                "title": "Guaranteed well arranged",
+                "description": "When you recommend Styptec, you know where you stand and you are assured that everything is well regulated. No legal hassle with the Dutch Tax Authority, uncertainty about agreements or surprises afterwards. Styptec has a G-account and a tax declaration of payment history, so you can be sure that everything is 100% in order for you and your contractors."
+            },
+            "modelAgreement": {
+                "subtitle": "Model agreement",
+                "title": "Make sound agreements",
+                "description": "At Styptec, we think it is important to make good agreements with your client. In your account you can easily create and sign our standard model. Of course, you can also work with your own agreement, which you can add online. Our standard model is based on the approved “No authority” model agreement of the Dutch Tax Authority."
+            },
+            "payment": {
+                "subtitle": "Completely carefree",
+                "title": "Payment",
+                "description": "Styptec takes care of the administration for contractors and adds value such as offering insurance, training, and the possibility of pension accrual and reserves; but is not involved in the terms and conditions the contractor agrees with their client. After payment of the invoice, we will pay the contractor net after deduction of all compulsory taxes. With Styptec, you can truly reward people in a fair and transparent way, without the risks involved of hiring self-employed persons."
+            },
+            "noSurprises": {
+                "subtitle": "Everything well arranged",
+                "title": "No surprises",
+                "description": "With Styptec, all legal payments are always made. It is a pleasant feeling to know that things are really well regulated. We always have an up-to-date declaration of payment history and, for extra security, a G-account. If contractors use our services more often, we offer accident and death insurance free of charge. And we require our contractors to take out occupational disability insurance if their turnover is substantial. That way, you as a client also know that your contractors are well insured and have excellent insurance coverage."
+            },
+            "recommendation": {
+                "subtitle": "Recommend us",
+                "title": "Your recommendation is worth gold",
+                "description": "Whether your contractors have one client or several, work a lot or a little, and whether the job lasts longer than one year or not, Styptec provides the solution to arrange your hiring properly.",
+                "listItem1": "Modern self-employed persons will thank you for the recommendation, our modern self-employed persons give us an average rating of a 9.6",
+                "listItem2": "With a client account on Styptec, we offer you a clear overview of all your contractors and invoices."
+            }
+        },
+        "callToAction": {
+            "title": "Check out the options without obligation.",
+            "subtitle": "Register in 10 seconds and see how easy it is. No strings attached.",
+            "buttonText": "Register for free"
+        }
+    },
+    "getYourPaycheck": {
+        "pageHeader": "Get Your Paycheck"
+    },
+    "estimationForm": {
+        "membership": {
+            "label": "Membership"
+        },
+        "features": {
+            "earning": {
+                "label": "Earnings"
+            },
+            "hourlyRate": {
+                "label": "Hourly Rate"
+            },
+            "hoursWorked": {
+                "label": "Hours Worked"
+            },
+            "age": {
+                "label": "Age"
+            },
+            "socialCharge": {
+                "label": "Social Charge"
+            },
+            "pff": {
+                "label": "PFF"
+            },
+            "pension": {
+                "label": "Pension"
+            },
+            "expenses": {
+                "label": "Expenses"
+            }
+        },
+        "messages": {
+            "hourlyRateError": "Hourly rate must be at least 1.00",
+            "hoursWorkedError": "Hours worked must be at least 1",
+            "ageError": "Age must be at least 18"
+        },
+        "leftSection": {
+            "title": "Because you deserve more",
+            "description": "See immediately what you earn net? Select all options and decide for yourself what is important to you.",
+            "description2": "3% Extra discount is applicable on premium membership whose working hours 130 or above.",
+            "invoiceAmount": "Invoice amount",
+            "grossIncome": "Gross Income",
+            "netPayout": "Net payout",
+            "workingWithoutChamber": "Working without a Chamber of Commerce or VAT number",
+            "workersPreceded": "95,761 workers already preceded you.",
+            "button": "Calculate Paycheck"
+        },
+        "modal": {
+            "title": "Get Your Invoice",
+            "description": "Simply provide us your details and your invoice will be on its way! 🚀",
+            "nameLabel": "Name",
+            "phoneLabel": "Phone No.",
+            "emailLabel": "Email"
+        },
+        "downloadButton": "Download Estimated PDF"
+    },
+    "reviews": {
+        "pageHeader": "Our Reviews",
+        "reviewsList": {
+            "top": "Top!",
+            "reviewContent": "Excellent service and support from the team.",
+            "reviewerName": "John Doe",
+            "reviewerDetails": "Customer since 2020"
+        }
+    },
+    "pricesMemberships": {
+        "pageHeader": "Prices and memberships",
+        "featuresSection": {
+            "subtitle": "The best deal",
+            "title": "Memberships and prizes",
+            "description": "Discover our prices and memberships here: Manage all your business and tax obligations effortlessly from one personal dashboard. Enjoy exclusive benefits such as personal insurance, professional training, and unique deals, all arranged seamlessly and reliably by us and our expert partners. Experience the freedom of carefree entrepreneurship. Create an account now without obligation and for free to discover our unique dashboard and all the benefits."
+        },
+        "callToAction": {
+            "title": "Create an account now without obligation and for free",
+            "subtitle": "Register in 10 seconds and discover our unique dashboard and all the benefits and experience for yourself how easy it works.",
+            "buttonText": "Sign up for free"
+        }
+    },
+    "contactUs": {
+        "pageHeader": "Contact us",
+        "contactDetails": {
+            "heading": "Contact details",
+            "mainOffice": "STYPTEC B.V.",
+            "mainOfficeAddress": "Main office:",
+            "visitingAddress": "Visiting address:",
+            "email": "Email:",
+            "email_2": "Email 2:",
+            "openingHours": {
+                "title": "Opening hours",
+                "mondayToFriday": "Monday - Friday: 09:00 - 17:30",
+                "weekend": "Saturday - Sunday: Closed"
+            }
+        }
     }
 }

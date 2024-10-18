@@ -1,4 +1,20 @@
 {
+    "home": {
+        "aboutUsSection": {
+            "title": "Styptec helpt je met facturering",
+            "description": "Styptec is in 2012 opgericht door Edward Belgraver om de groeiende groep zelfstandigen te ondersteunen die op basis van opdrachten, kort- of langetermijn, zonder gedoe willen werken. Met een team van hooggeëngageerde collega's werken we aan het bieden van een optimale service en een platform dat onze klanten ondersteunt om zonder een Handelsregistratienummer of btw-nummer te werken. In de afgelopen jaren zijn we gegroeid naar 95.913 klanten die we graag ondersteunen met professionele partners en hoge serviceniveaus.",
+            "buttonText": "Verken Meer"
+        },
+        "bannerSection": {
+            "title": "Bekijk de opties zonder verplichtingen.",
+            "description": "Styptec helpt je met facturering en het inhouden van alle verplichte belastingen en biedt je verzekering, training en vele extra voordelen. Je krijgt de beste aanbiedingen."
+        },
+        "callToAction": {
+            "title": "Bekijk de opties zonder verplichtingen.",
+            "subtitle": "Registreer binnen 10 seconden en ontdek hoe eenvoudig het is. Geen verplichtingen.",
+            "buttonText": "Registreer gratis"
+        }
+    },
     "heroSection": {
         "heading": "We combineren je inkomsten tot",
         "subheading": "optimale resultaten met",
@@ -11,11 +27,6 @@
         "grossAmountLabel": "Bruto factuurbedrag",
         "netAmountLabel": "Netto bedrag",
         "calculateButton": "Bereken betaling"
-    },
-    "aboutUsSection": {
-        "title": "Styptec helpt je met facturering",
-        "description": "Styptec is in 2012 opgericht door Edward Belgraver om de groeiende groep zelfstandigen te ondersteunen die op basis van opdrachten, kort- of langetermijn, zonder gedoe willen werken. Met een team van hooggeëngageerde collega's werken we aan het bieden van een optimale service en een platform dat onze klanten ondersteunt om zonder een Handelsregistratienummer of btw-nummer te werken. In de afgelopen jaren zijn we gegroeid naar 95.913 klanten die we graag ondersteunen met professionele partners en hoge serviceniveaus.",
-        "buttonText": "Verken Meer"
     },
     "stats": {
         "trustedBy": "Vertrouwd door",
@@ -76,10 +87,6 @@
             }
         }
     },
-    "bannerSection": {
-        "title": "Bekijk de opties zonder verplichtingen.",
-        "description": "Styptec helpt je met facturering en het inhouden van alle verplichte belastingen en biedt je verzekering, training en vele extra voordelen. Je krijgt de beste aanbiedingen."
-    },
     "whyChoose": {
         "freelancersTitle": "Waarom freelancers Styptec moeten gebruiken?",
         "freelancers": [
@@ -119,9 +126,206 @@
         ],
         "buttonText": "Benieuwd naar ons?"
     },
-    "callToAction": {
-        "title": "Bekijk de opties zonder verplichtingen.",
-        "subtitle": "Registreer binnen 10 seconden en ontdek hoe eenvoudig het is. Geen verplichtingen.",
-        "buttonText": "Registreer gratis"
+    "aboutUs": {
+        "pageHeader": "Benieuwd naar ons?",
+        "ourStory": {
+            "title": "Ons verhaal",
+            "description": "Styptec werd in 2012 opgericht door Edward Belgraver om de groeiende groep zelfstandigen te ondersteunen die op opdrachtbasis wil werken, kort of lang, zonder gedoe. Met een toegewijd team bieden we optimale service en een platform dat klanten ondersteunt om zonder KvK-nummer of btw-nummer te werken. In de afgelopen jaren zijn we gegroeid tot 95.913 klanten, die we met plezier ondersteunen."
+        },
+        "mission": {
+            "title": "Missie",
+            "description": "Styptec wil er zijn voor iedereen die volledige controle wil over zijn inkomen, waarbij Styptec de partner is voor autonoom werken."
+        },
+        "vision": {
+            "title": "Visie",
+            "description": "Styptec wil landelijk bekend staan als de betrouwbare keuze voor het verzorgen van inkomen tijdens de carrière voor moderne zelfstandigen."
+        },
+        "solution": {
+            "title": "Onze oplossing",
+            "description": "Styptec helpt zelfstandigen door hun werk te factureren en zorgt voor de sociale en fiscale verplichtingen. We bieden ook extra voordelen zoals spaarregelingen, arbeidsongeschiktheidsverzekeringen en samenwerkingen voor trainingen."
+        },
+        "callToAction": {
+            "title": "Ontdek de mogelijkheden zonder verplichtingen.",
+            "subtitle": "Registreer je in 10 seconden en zie hoe eenvoudig het is. Geen verplichtingen.",
+            "buttonText": "Registreer gratis"
+        }
+    },
+    "howItWorks": {
+        "pageHeader": "Hoe werkt Styptec?",
+        "features": {
+            "takeControl": {
+                "subtitle": "Neem controle",
+                "title": "Word een BOSS",
+                "description": "Wie droomt er niet van om freelancer te zijn? Vrij zijn en alleen de klussen kiezen die je leuk vindt. Niemand houdt van blauwe enveloppen van de Belastingdienst, en wat betekent het om voor eigen rekening en risico te werken? Bij Styptec helpen we je om te werken aan de klussen die je wilt, zonder de rompslomp van deze blauwe enveloppen. Al je zaken geregeld op één plek."
+            },
+            "carefreeWork": {
+                "subtitle": "Zorgeloos werken",
+                "title": "Geen verplichtingen",
+                "description": "We willen dat je zonder zorgen kunt werken. Bekijk onze video waarin we uitleggen wat we van elkaar kunnen verwachten. Je kunt onze diensten gebruiken zolang je wilt. Styptec zorgt voor totale gemoedsrust: naast je belastingen zijn ook je sociale zekerheden goed geregeld. Je komt nooit voor verrassingen te staan."
+            },
+            "modelAgreement": {
+                "subtitle": "Modelovereenkomst",
+                "title": "Maak goede afspraken",
+                "description": "Bij Styptec vinden we het belangrijk om goede afspraken te maken met je opdrachtgever. In je account kun je gemakkelijk ons standaardmodel opstellen en ondertekenen. Natuurlijk kun je ook werken met je eigen overeenkomst, die je online kunt toevoegen. Ons standaardmodel is gebaseerd op de goedgekeurde 'Geen gezag' modelovereenkomst van de Belastingdienst."
+            },
+            "sendInvoice": {
+                "subtitle": "Verstuur factuur",
+                "title": "Facturering",
+                "description": "Wij zorgen volledig voor je administratie en via je beveiligde account verstuur je eenvoudig een factuur naar je klant volgens de gemaakte afspraken. Het versturen van een factuur duurt slechts 2 minuten! Alle belastingen en verzekeringen worden ook direct door ons geregeld. De netto betaling volgt één werkdag nadat je klant heeft betaald, je ontvangt je geld snel en eenvoudig. En als je wilt, kunnen we de factuur vaak van tevoren betalen, zodat je je geld nog sneller ontvangt. We helpen je tijd en stress te besparen!"
+            },
+            "completelyCarefree": {
+                "subtitle": "Volledig zorgeloos",
+                "title": "Betaling",
+                "description": "Bij Styptec zorgen we voor alle rompslomp. We zorgen ervoor dat je administratie en alle wettelijk verplichte belastingen vooraf worden betaald. De bekendste is de inkomstenbelasting. We regelen ook de btw en de Zorgverzekeringswet (Zvw). In je account kun je alles instellen zoals je wilt, inclusief pensioenopbouw en reserveringen. Aan het begin van het jaar ontvang je van ons een helder jaaroverzicht. Maak onbeperkt gratis berekeningen en zie wat je kunt verdienen!"
+            },
+            "noSurprises": {
+                "subtitle": "Geen verrassingen",
+                "title": "Verzekering en schenkkring",
+                "description": "Als je werkt, kun je alsnog tegen problemen aanlopen (zonder jouw schuld). In samenwerking met Avéro Achmea hebben we uitstekende arbeidsongeschiktheidsverzekeringen, die we verplicht stellen tot de leeftijd van 62 jaar en wanneer je inkomen in drie maanden meer dan EUR 3.750 bedraagt. We hebben ook een schenkkring met een dekking van 2 jaar en als vaste klant ben je automatisch verzekerd bij AIG voor ongevallen (tot EUR 100.000). Geen verrassingen, zelfs niet als het niet volgens plan verloopt."
+            }
+        },
+        "callToAction": {
+            "title": "Ontdek de mogelijkheden zonder verplichtingen.",
+            "subtitle": "Registreer je in 10 seconden en zie hoe eenvoudig het is. Geen verplichtingen.",
+            "buttonText": "Registreer gratis"
+        }
+    },
+    "forEntrepreneurs": {
+        "pageHeader": "Hoe werkt Styptec?",
+        "features": {
+            "hiringSolution": {
+                "subtitle": "Ontdek de voordelen",
+                "title": "Uw wervingsprobleem opgelost!",
+                "description": "Steeds meer mensen ontdekken de voordelen van freelance werk. Het klinkt echter makkelijker dan het is. Denk aan alle regels, de administratie, de risico's en alles wat erbij komt kijken. Als een freelancer het niet goed voor elkaar heeft, heeft dit ook invloed op u als klant. Raad ons aan zodat zowel uw opdrachtnemer als u elk risico vermijdt. Bij Styptec is alles goed geregeld: geen verrassingen achteraf!"
+            },
+            "guaranteedWellArranged": {
+                "subtitle": "Transparant en eerlijk",
+                "title": "Garantie dat alles goed geregeld is",
+                "description": "Als u Styptec aanbeveelt, weet u waar u aan toe bent en bent u ervan verzekerd dat alles goed is geregeld. Geen juridisch gedoe met de Belastingdienst, onzekerheid over afspraken of verrassingen achteraf. Styptec heeft een G-rekening en een belastingverklaring van betalingshistorie, zodat u zeker weet dat alles 100% in orde is voor u en uw opdrachtnemers."
+            },
+            "modelAgreement": {
+                "subtitle": "Modelovereenkomst",
+                "title": "Maak goede afspraken",
+                "description": "Bij Styptec vinden we het belangrijk om goede afspraken te maken met uw opdrachtgever. In uw account kunt u eenvoudig ons standaardmodel opstellen en ondertekenen. Natuurlijk kunt u ook werken met uw eigen overeenkomst, die u online kunt toevoegen. Ons standaardmodel is gebaseerd op de goedgekeurde 'Geen gezag' modelovereenkomst van de Belastingdienst."
+            },
+            "payment": {
+                "subtitle": "Volledig zorgeloos",
+                "title": "Betaling",
+                "description": "Styptec zorgt voor de administratie van opdrachtnemers en biedt toegevoegde waarde zoals het aanbieden van verzekeringen, opleidingen en de mogelijkheid van pensioenopbouw en reserveringen; maar is niet betrokken bij de voorwaarden die de opdrachtnemer met zijn klant afspreekt. Na betaling van de factuur betalen wij de opdrachtnemer netto na aftrek van alle verplichte belastingen. Met Styptec kunt u mensen echt belonen op een eerlijke en transparante manier, zonder de risico's van het inhuren van zelfstandigen."
+            },
+            "noSurprises": {
+                "subtitle": "Alles goed geregeld",
+                "title": "Geen verrassingen",
+                "description": "Bij Styptec worden alle wettelijke betalingen altijd gedaan. Het is een prettig gevoel om te weten dat alles echt goed geregeld is. We hebben altijd een actuele betalingsverklaring en voor extra zekerheid een G-rekening. Als opdrachtnemers vaker gebruik maken van onze diensten, bieden we een gratis ongevallen- en overlijdensverzekering aan. En we verplichten onze opdrachtnemers een arbeidsongeschiktheidsverzekering af te sluiten als hun omzet aanzienlijk is. Zo weet u als klant ook dat uw opdrachtnemers goed verzekerd zijn en over uitstekende verzekeringsdekking beschikken."
+            },
+            "recommendation": {
+                "subtitle": "Beveel ons aan",
+                "title": "Uw aanbeveling is goud waard",
+                "description": "Of uw opdrachtnemers nu één of meerdere klanten hebben, veel of weinig werken, en of de opdracht langer dan één jaar duurt of niet, Styptec biedt de oplossing om uw werving goed te regelen.",
+                "listItem1": "Moderne zelfstandigen zullen u bedanken voor de aanbeveling, onze moderne zelfstandigen geven ons een gemiddelde beoordeling van een 9,6",
+                "listItem2": "Met een klantaccount op Styptec bieden wij u een duidelijk overzicht van al uw opdrachtnemers en facturen."
+            }
+        },
+        "callToAction": {
+            "title": "Ontdek de mogelijkheden zonder verplichtingen.",
+            "subtitle": "Registreer u in 10 seconden en zie hoe eenvoudig het is. Geen verplichtingen.",
+            "buttonText": "Registreer gratis"
+        }
+    },
+    "getYourPaycheck": {
+        "pageHeader": "Ontvang uw salaris"
+    },
+    "estimationForm": {
+        "membership": {
+            "label": "Lidmaatschap"
+        },
+        "features": {
+            "earning": {
+                "label": "Inkomsten"
+            },
+            "hourlyRate": {
+                "label": "Uurtarief"
+            },
+            "hoursWorked": {
+                "label": "Uren gewerkt"
+            },
+            "age": {
+                "label": "Leeftijd"
+            },
+            "socialCharge": {
+                "label": "Sociale kosten"
+            },
+            "pff": {
+                "label": "PFF"
+            },
+            "pension": {
+                "label": "Pensioen"
+            },
+            "expenses": {
+                "label": "Uitgaven"
+            }
+        },
+        "messages": {
+            "hourlyRateError": "Uurtarief moet minimaal 1,00 zijn",
+            "hoursWorkedError": "Uren gewerkt moeten minimaal 1 zijn",
+            "ageError": "Leeftijd moet minimaal 18 zijn"
+        },
+        "leftSection": {
+            "title": "Omdat je meer verdient",
+            "description": "Direct zien wat je netto verdient? Selecteer alle opties en bepaal zelf wat voor u belangrijk is.",
+            "description2": "3% Extra korting is van toepassing op premium lidmaatschap met werkuren van 130 uur of hoger.",
+            "invoiceAmount": "Factuurbedrag",
+            "grossIncome": "Bruto inkomen",
+            "netPayout": "Netto uitbetaling",
+            "workingWithoutChamber": "Werken zonder een Kamer van Koophandel of BTW-nummer",
+            "workersPreceded": "95.761 werknemers zijn je al voorgegaan.",
+            "button": "Bereken Loon"
+        },
+        "modal": {
+            "title": "Ontvang uw factuur",
+            "description": "Geef eenvoudig uw gegevens op en uw factuur is onderweg! 🚀",
+            "nameLabel": "Naam",
+            "phoneLabel": "Telefoonnummer",
+            "emailLabel": "E-mail"
+        },
+        "downloadButton": "Download Geschatte PDF"
+    },
+    "reviews": {
+        "pageHeader": "Onze Beoordelingen",
+        "reviewsList": {
+            "top": "Top!",
+            "reviewContent": "Uitstekende service en ondersteuning van het team.",
+            "reviewerName": "Jan Jansen",
+            "reviewerDetails": "Klant sinds 2020"
+        }
+    },
+    "pricesMemberships": {
+        "pageHeader": "Prijzen en lidmaatschappen",
+        "featuresSection": {
+            "subtitle": "De beste deal",
+            "title": "Lidmaatschappen en prijzen",
+            "description": "Ontdek hier onze prijzen en lidmaatschappen: Beheer al uw zakelijke en belastingverplichtingen moeiteloos vanuit één persoonlijk dashboard. Geniet van exclusieve voordelen zoals persoonlijke verzekering, professionele training en unieke aanbiedingen, allemaal naadloos en betrouwbaar geregeld door ons en onze expertpartners. Ervaar de vrijheid van zorgeloos ondernemerschap. Maak nu een account aan zonder verplichtingen en gratis om ons unieke dashboard en alle voordelen te ontdekken."
+        },
+        "callToAction": {
+            "title": "Maak nu een account aan zonder verplichtingen en gratis",
+            "subtitle": "Registreer in 10 seconden en ontdek ons unieke dashboard en alle voordelen en ervaar zelf hoe gemakkelijk het werkt.",
+            "buttonText": "Gratis aanmelden"
+        }
+    },
+    "contactUs": {
+        "pageHeader": "Neem contact met ons op",
+        "contactDetails": {
+            "heading": "Contactgegevens",
+            "mainOffice": "STYPTEC B.V.",
+            "mainOfficeAddress": "Hoofdvestiging: ",
+            "visitingAddress": "Bezoekadres: ",
+            "email": "E-mail:",
+            "email_2": "E-mail 2:",
+            "openingHours": {
+                "title": "Openingstijden",
+                "mondayToFriday": "Maandag - Vrijdag: 09:00 - 17:30",
+                "weekend": "Zaterdag - Zondag: Gesloten"
+            }
+        }
     }
 }

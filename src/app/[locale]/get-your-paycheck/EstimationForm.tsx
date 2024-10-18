@@ -10,6 +10,7 @@ import { countries } from '@/Lib/countries';
 import { MdOutlineSimCardDownload } from 'react-icons/md';
 import { typeOfFormSettings } from '@/helpers/getData';
 import { useSearchParams } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 
 interface Country {
     id: number;
@@ -26,6 +27,9 @@ type deviceType = {
 }
 
 const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }) => {
+
+    const lang = useTranslations('estimationForm');
+
     const searchParams = useSearchParams();
 
     const percents = form_settings;
@@ -69,7 +73,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
     });
 
     React.useEffect(() => {
-        
+
         if (estForm.hours_worked < 130) {
             setMembershipOptions((prevData) => {
                 return [
@@ -172,7 +176,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
     }
 
     const [device, setDevice] = React.useState<deviceType>({})
-    
+
     React.useEffect(() => {
         setTimeout(() => {
             const navigator = window?.navigator
@@ -246,9 +250,9 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                 <div>
 
                     <div className="*:text-base *:font-semibold">
-                        <label className="label">Membership</label>
+                        <label className="label">{lang('membership.label')}</label>
                         <div className="flex flex-row gap-2 my-2">
-                            
+
                             {membershipOptions.map((option, index) => {
 
                                 return (
@@ -287,10 +291,10 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
 
                     <div className="text-base font-semibold grid grid-cols-1 gap-5 *:grid *:grid-cols-2 mt-4">
                         <div className="items-center">
-                            <div className="">Earnings</div>
+                            <div className="">{lang('earning.label')}</div>
                             <div className="flex flex-grow gap-3">
                                 <div>
-                                    <label className="label text-sm">Hourly Rate</label>
+                                    <label className="label text-sm">{lang('hourlyRate.label')}</label>
                                     <div className="flex items-center">
                                         <div className="text-gray-500 border border-gray-300 rounded-l-lg px-1 py-2">
                                             <LuEuro size={24} className="py-1" />
@@ -305,12 +309,12 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                         />
                                     </div>
                                     {estForm.hourly_rate !== undefined && parseInt(estForm.hourly_rate) < 1 && (
-                                        <p className="text-red-500">Hourly rate must be at least 1.00</p>
+                                        <p className="text-red-500">{lang('messages.hourlyRateError')}</p>
                                     )}
                                 </div>
 
                                 <div>
-                                    <label className="label text-sm">Hours Worked</label>
+                                    <label className="label text-sm">{lang('hoursWorked.label')}</label>
                                     <div className="flex items-center">
                                         <div className="text-gray-500 border border-gray-300 rounded-l-lg px-1 py-2">
                                             <CiTimer size={24} className="py-1" />
@@ -325,7 +329,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                     </div>
 
                                     {estForm.hours_worked !== undefined && estForm.hours_worked < 1 && (
-                                        <p className="text-red-500">Hours worked must be at least 1</p>
+                                        <p className="text-red-500">{lang('messages.hoursWorkedError')}</p>
                                     )}
                                 </div>
 
@@ -333,7 +337,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         </div>
 
                         <div className="items-center">
-                            <label className="label text-sm">Age</label>
+                            <label className="label text-sm">{lang('age.label')}</label>
                             <div>
                                 <input
                                     type="number"
@@ -344,13 +348,13 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                 />
 
                                 {estForm.age !== undefined && estForm.age < 18 && (
-                                    <p className="text-red-500">Age must be at least 18</p>
+                                    <p className="text-red-500">{lang('messages.ageError')}</p>
                                 )}
                             </div>
                         </div>
 
                         <div className="items-center">
-                            <div className="">Social Charge</div>
+                            <div className="">{lang('socialCharge.label')}</div>
                             <label className="cursor-pointer flex items-center">
                                 <input type="checkbox" className="checkbox"
                                     name="social_charges"
@@ -361,7 +365,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         </div>
 
                         <div className="items-center">
-                            <div className="">PFF</div>
+                            <div className="">{lang('pff.label')}</div>
                             <label className="cursor-pointer flex items-center">
                                 <input type="checkbox"
                                     // checked={estForm.paid_fast_forward} 
@@ -373,7 +377,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         </div>
 
                         <div className="items-center">
-                            <div className="">Pension</div>
+                            <div className="">{lang('pension.label')}</div>
                             <label className="cursor-pointer flex items-center">
                                 <input type="checkbox" checked={estForm.pension} className="checkbox"
                                     name="pension"
@@ -382,7 +386,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         </div>
 
                         <div className="items-center">
-                            <label className="label text-sm">Expenses</label>
+                            <label className="label text-sm">{lang('expenses.label')}</label>
                             <div className="flex items-center">
                                 <div className="text-gray-500 border border-gray-300 rounded-l-lg px-1 py-2">
                                     <LuEuro size={24} className="py-1" />
@@ -404,27 +408,27 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
             <div className="col-span-3 p-4 rounded-lg">
                 <div>
                     <h3 className="lg:text-[40px] lg:leading-[48px] font-bold   mb-4">
-                        Because you deserve more
+                    {lang('leftSection.title')}
                     </h3>
                     <p className="text-base lg:text-lg text-black mb-2 last:mb-0">
-                        See immediately what you earn net? Select all options and decide for yourself what is important to you.
+                    {lang('leftSection.description')}
                     </p>
                     <p className="text-base lg:text-lg text-black mb-2 last:mb-0">
-                        3% Extra discount is applicable on premium membership whose working hours 130 or above.
+                    {lang('leftSection.description2')}
                     </p>
 
                     <div className="flex flex-col mt-6 bg-white rounded-2xl shadow-xl border border-gray-200">
                         <div className="flex justify-between p-6 lg:p-6 lg:!pb-4">
                             <div className="flex flex-col">
-                                <p className="text-sm   mb-2">Invoice amount</p>
+                                <p className="text-sm   mb-2">{lang('leftSection.invoiceAmount')}</p>
                                 <p className="text-base font-semibold  ">€ {invoiceAmount.toFixed(2)}</p>
                             </div>
                             <div className="flex flex-col">
-                                <p className="text-sm   mb-2">Gross Income</p>
+                                <p className="text-sm   mb-2">{lang('leftSection.grossIncome')}</p>
                                 <p className="text-base font-semibold  ">€ {grossIncome.toFixed(2)}</p>
                             </div>
                             <div className="flex flex-col">
-                                <p className="text-sm   mb-2">Net payout</p>
+                                <p className="text-sm   mb-2">{lang('leftSection.netPayout')}</p>
                                 <p className="text-[24px] leading-[32px] font-bold  ">€ {netPayable.toFixed(2)}</p>
                             </div>
                         </div>
@@ -432,10 +436,10 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         <div className="flex flex-col mt-auto px-6 pb-6 rounded-b-2xl pt-6 rounded-t-xl lg:rounded-t-none 
                                     bg-gradient-to-r from-teal-300 via-green-200 to-amber-200">
                             <p className="text-[24px] leading-[32px] font-bold text-white">
-                                Working without a Chamber of Commerce or VAT number
+                            {lang('leftSection.workingWithoutChamber')}
                             </p>
                             <p className="text-base mb-2">
-                                95,761 workers already preceded you.
+                            {lang('leftSection.workersPreceded')}
                             </p>
                             <div className="flex gap-4 mt-4">
                                 <button
@@ -443,7 +447,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                     className="btn btn-primary text-white"
                                     onClick={openModal}
                                 >
-                                    Calculate Paycheck
+                                    {lang('leftSection.button')}
                                     <FaChevronRight />
                                 </button>
 
@@ -458,8 +462,8 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                         <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
                     </form>
 
-                    <h4 className="font-bold text-lg">Get Your Invoice</h4>
-                    <p>Simply provide us your details and your invoice <br />will be on its way! 🚀</p>
+                    <h4 className="font-bold text-lg">{lang('modal.title')}</h4>
+                    <p>{lang('modal.description')}</p>
 
                     <div className="my-8 space-y-4">
                         <div className="flex gap-4">
@@ -478,7 +482,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                     htmlFor="name"
                                     className="absolute left-2 -top-2.5 bg-white px-1 text-sm text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-primary"
                                 >
-                                    Name
+                                    {lang('modal.nameLabel')}
                                 </label>
                             </div>
                             {/* Phone Field */}
@@ -496,7 +500,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                     htmlFor="phone"
                                     className="absolute left-2 -top-2.5 bg-white px-1 text-sm text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-primary"
                                 >
-                                    Phone No.
+                                    {lang('modal.phoneLabel')}
                                 </label>
                             </div>
                         </div>
@@ -517,7 +521,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
                                     htmlFor="email"
                                     className="absolute left-2 -top-2.5 bg-white px-1 text-sm text-gray-500 transition-all peer-placeholder-shown:top-2.5 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-400 peer-focus:-top-2.5 peer-focus:text-sm peer-focus:text-primary"
                                 >
-                                    Email
+                                    {lang('modal.emailLabel')}
                                 </label>
                             </div>
 
@@ -543,7 +547,7 @@ const EstimationForm = ({ form_settings }: { form_settings: typeOfFormSettings }
 
                     <div className="flex flex-grow justify-center">
                         <button className="btn btn-primary text-white btn-sm w-full" onClick={handleSubmit}>
-                            Download Estimated PDF
+                            {lang('estimationForm.downloadButton')}
                             <MdOutlineSimCardDownload />
                         </button>
                     </div>

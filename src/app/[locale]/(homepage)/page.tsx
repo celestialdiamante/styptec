@@ -45,9 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default function Home() {
-  const about = useTranslations('aboutUsSection');
-  const lang = useTranslations('bannerSection');
-  const cta = useTranslations('callToAction');
+  const lang = useTranslations('home');
 
   return (
     <>
@@ -70,12 +68,12 @@ export default function Home() {
                         <div className="border-b mb-2">
                             <div>
                                 <p className="text-base text-primary font-semibold">About Us</p>
-                                <h4 className="text-2xl md:text-3xl font-bold">{about('title')}</h4>
+                                <h4 className="text-2xl md:text-3xl font-bold">{lang('aboutUsSection.title')}</h4>
                             </div>
                         </div>
-                        <p className="mb-2">{about('description')}</p>
+                        <p className="mb-2">{lang('aboutUsSection.description')}</p>
                         <div className="mt-6">
-                            <button className="btn btn-primary text-white">{about('buttonText')} <FaChevronRight /></button>
+                            <button className="btn btn-primary text-white">{lang('aboutUsSection.buttonText')} <FaChevronRight /></button>
                         </div>
                     </div>
                 </div>
@@ -89,10 +87,10 @@ export default function Home() {
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-10 gap-6">
                 <div className="md:col-span-7">
                     <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                        {lang('title')}
+                        {lang('bannerSection.title')}
                     </h3>
                     <p className="text-base md:text-lg lg:max-w-2xl mb-10">
-                        {lang('description')}
+                        {lang('bannerSection.description')}
                     </p>
                 </div>
 
@@ -105,9 +103,9 @@ export default function Home() {
       <WhyChoose />
       <Testimonial />
       <CallToAction
-        title={cta('title')}
-        subtitle="Register in 10 seconds and see how easy it is. No strings attached."
-        buttonText="Register for free"
+        title={lang('callToAction.title')}
+        subtitle={lang('callToAction.subtitle')}
+        buttonText={lang('callToAction.buttonText')}
         buttonLink="/register"
       />
     </>

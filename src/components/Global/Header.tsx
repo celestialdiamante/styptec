@@ -79,7 +79,7 @@ const Header = () => {
                             </li>
                         ))}
                         <li>
-                            <Link className={isActive('/calculate-your-benefit') ? 'text-primary' : ''} href="/calculate-your-benefit">
+                            <Link className={isActive('/get-your-paycheck') ? 'text-primary' : ''} href="/get-your-paycheck">
                                 GET YOUR PAYCHECK
                             </Link>
                         </li>
@@ -138,7 +138,7 @@ const Header = () => {
                         </li>
                     ))}
                     <li>
-                        <Link className={isActive('/calculate-your-benefit') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/calculate-your-benefit">
+                        <Link className={isActive('/get-your-paycheck') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/get-your-paycheck">
                             GET YOUR PAYCHECK
                         </Link>
                     </li>

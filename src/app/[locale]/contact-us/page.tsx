@@ -5,6 +5,7 @@ import { contactInfoType, getContactData } from '@/helpers/getData';
 import getPageMetadata from '@/helpers/getPageMetadata';
 import { Metadata } from 'next';
 import { URLS } from '@/helpers/URLs';
+import { useTranslations } from 'next-intl';
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -37,14 +38,17 @@ export async function generateMetadata(): Promise<Metadata> {
   }
 }
 
-const ContactUs = async () => {
+
+  export default async function ContactUs () {
+
+  const lang = await useTranslations('contactUs');
 
   const contactInfo : contactInfoType = await getContactData();
 
 
   return (
     <>
-      <PageHeader title="Contact us" />
+      <PageHeader title={lang('pageHeader')} />
 
       <section className="py-16">
         <div className="container mx-auto">
@@ -53,15 +57,15 @@ const ContactUs = async () => {
               <ContactForm />
             </div>
             <div className="md:col-span-5 p-6">
-              <h3 className="text-lg font-bold">Contact details</h3>
+              <h3 className="text-lg font-bold">{lang('contactDetails.heading')}</h3>
 
               <p className="my-2">
-                STYPTEC B.V. <br />
-                <span className="font-bold">Hoofdvestiging:</span> {contactInfo?.address} <br />
+              {lang('contactDetails.mainOffice')} <br />
+                <span className="font-bold">{lang('contactDetails.mainOfficeAddress')}</span> {contactInfo?.address} <br />
               </p>
 
               <p className="my-2">
-                <span className="font-bold">Bezoekadres:</span> {contactInfo?.address_2}
+                <span className="font-bold">{lang('contactDetails.visitingAddress')}</span> {contactInfo?.address_2}
               </p>
 
               <p>
@@ -77,9 +81,9 @@ const ContactUs = async () => {
                   </a>
                 </p>
               }
-              <h4 className="text-lg font-bold mt-6">Opening hours</h4>
-              <p>Monday - Friday: 09:00 - 17:30</p>
-              <p>Saturday - Sunday: Closed</p>
+              <h4 className="text-lg font-bold mt-6">{lang('contactDetails.openingHours.title')}</h4>
+              <p>{lang('contactDetails.openingHours.mondayToFriday')}</p>
+              <p>{lang('contactDetails.openingHours.weekend')}</p>
             </div>
           </div>
         </div>
@@ -87,5 +91,3 @@ const ContactUs = async () => {
     </>
   );
 };
-
-export default ContactUs;

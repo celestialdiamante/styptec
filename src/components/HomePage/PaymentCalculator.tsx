@@ -51,7 +51,7 @@ const PaymentCalculator = ({form_settings}:{form_settings:typeOfFormSettings}) =
     
     const handleCalculateClick = () => {
         
-        const urlToGo = '/calculate-your-benefit?hourly_rate='+hourlyRate+'&hours_worked='+hoursWorked;
+        const urlToGo = '/get-your-paycheck?hourly_rate='+hourlyRate+'&hours_worked='+hoursWorked;
         
         router.push(urlToGo);
     };
