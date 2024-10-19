@@ -4,6 +4,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react';
 import { FaChevronDown } from 'react-icons/fa';
+// import Switcher from './Switcher';
 
 interface Language {
     code: string;
@@ -15,7 +16,7 @@ interface Language {
 
 const Header = () => {
 
-      const lang = useTranslations('header');
+    const lang = useTranslations('header');
 
     const pathname = usePathname();
 
@@ -38,7 +39,8 @@ const Header = () => {
         },
     ];
 
-    const [language, setLanguage] = React.useState<Language>(languages[0]);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    // const [language, setLanguage] = React.useState<Language>(languages[0]);
 
     const navItems = [
         {
@@ -57,6 +59,7 @@ const Header = () => {
     ];
 
 
+    const [language, setLanguage] = React.useState<Language>(languages[0]);
 
     return (
         <div className="container navbar bg-base-100 z-[99999]">
@@ -174,6 +177,7 @@ const Header = () => {
                             {lang('contactUs')}
                         </Link>
                     </li>
+                    
                 </ul>
 
                 <div className="dropdown dropdown-hover hidden md:flex">
@@ -194,6 +198,8 @@ const Header = () => {
                     </ul>
                    
                 </div>
+
+                {/* <Switcher languages={languages} /> */}
             </div>
 
             {/*  */}

@@ -67,49 +67,31 @@
     },
     "pricing": {
         "title": "Carefree freelancing with our memberships!",
-        "description": "Discover our exclusive memberships...",
-        "memberships": {
-            "basic": {
-                "title": "Basic",
-                "subtitle": "— No cure no pay",
-                "price": "€ 0,-",
-                "features": [
-                    "Your invoicing and taxes arranged",
-                    "You pay 6% commission per remuneration",
-                    "Excellent and affordable",
-                    "Group health insurance with ONVZ",
-                    "Customer storytelling gives us a 9.6"
-                ],
-                "button": "View all benefits"
-            },
-            "premium": {
-                "title": "Premium",
-                "subtitle": "— Arranged carefree",
-                "price": "€ 39,95,-",
-                "features": [
-                    "All benefits basic membership",
-                    "You pay 3% commission per payment",
-                    "Liability insurance and more",
-                    "€25 per month cashback on health insurance",
-                    "Unlimited training at GoodHabitz",
-                    "Your membership is reimbursed tax-free"
-                ],
-                "badge": "Most chosen",
-                "button": "View all benefits"
-            },
-            "all_in": {
-                "title": "All-in",
-                "subtitle": "— Perfectly arranged",
-                "price": "€ 99,95,-",
-                "features": [
-                    "All benefits premium membership",
-                    "You do not pay any commission per payment",
-                    "Professional liability insurance",
-                    "€350 budget for coaching and training",
-                    "Invitations to exclusive outings"
-                ],
-                "button": "View all benefits"
-            }
+        "basic": {
+            "title": "Basic",
+            "subtitle": "— No cure no pay",
+            "features": [
+                "Your invoicing and taxes arranged",
+                "You pay 6% commission per remuneration",
+                "Excellent and affordable",
+                "Group health insurance with ONVZ",
+                "Customer storytelling gives us a 9.6",
+                "Customer storytelling gives us a 9.6"
+            ],
+            "button": "View all benefits"
+        },
+        "premium": {
+            "title": "Premium",
+            "subtitle": "— Arranged carefree",
+            "features": [
+                "All benefits of basic membership",
+                "You pay 3% commission per payment",
+                "Liability insurance and more",
+                "€25 per month cashback on health insurance",
+                "Unlimited training at GoodHabitz",
+                "Your membership is reimbursed tax-free"
+            ],
+            "button": "View all benefits"
         }
     },
     "whyChoose": {
@@ -312,9 +294,9 @@
             "description": "Simply provide us your details and your invoice will be on its way! 🚀",
             "nameLabel": "Name",
             "phoneLabel": "Phone No.",
-            "emailLabel": "Email"
-        },
-        "downloadButton": "Download Estimated PDF"
+            "emailLabel": "Email",
+            "downloadButton": "Download Estimated PDF"
+        }
     },
     "reviews": {
         "pageHeader": "Our Reviews",
@@ -353,5 +335,23 @@
                 "weekend": "Saturday - Sunday: Closed"
             }
         }
+    },
+    "footer": {
+        "generalInfo": "General information",
+        "kvk": "KVK",
+        "vat": "VAT",
+        "iban": "IBAN",
+        "quickLinks": "Quick Links",
+        "calculateBenefit": "Calculate your benefit",
+        "aboutUs": "About us",
+        "howItWorks": "How does Styptec work",
+        "gameRules": "Game Rules",
+        "pricing": "Pricing",
+        "policies": "Policies",
+        "stayUpdated": "Stay up to date",
+        "headOffice": "Hoofdvestiging",
+        "visitAddress": "Bezoekadres",
+        "designedBy": "Designed and powered by",
+        "company": "STYPTEC B.V."
     }
 }

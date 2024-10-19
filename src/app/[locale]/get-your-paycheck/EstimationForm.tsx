@@ -12,8 +12,8 @@ import { typeOfFormSettings } from '@/helpers/getData';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import { URLS } from '@/helpers/URLs';
-import Swal from 'sweetalert2';
 import Loader from '@/components/Loader';
+import Swal from 'sweetalert2';
 
 interface Country {
     id: number;
@@ -281,7 +281,7 @@ const EstimationForm = ({ form_settings, params }: { form_settings: typeOfFormSe
         }
     };
 
-    const closeModal = () =>{
+    const closeModal = () => {
         const modal = document?.getElementById('my_modal');
         if (modal instanceof HTMLDialogElement) {
             modal.close();
@@ -612,7 +612,7 @@ const EstimationForm = ({ form_settings, params }: { form_settings: typeOfFormSe
 
                     <div className="flex flex-grow justify-center">
                         <button className="btn btn-primary text-white btn-sm w-full" onClick={handleSubmit}>
-                            {lang('downloadButton')}
+                            {lang('modal.downloadButton')}
                             <MdOutlineSimCardDownload />
                         </button>
                     </div>

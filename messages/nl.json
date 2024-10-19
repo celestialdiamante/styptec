@@ -56,53 +56,42 @@
         "klantenvertellen": "Klantenvertellen"
     },
     "videoSection": {
-        "title": "Leer hier hoe we u kunnen helpen!"
+        "title": "Leer hier hoe we u kunnen helpen!",
+        "features": [
+            "Voordat het op uw rekening staat, is alles betaald. Dus wat verdien je echt? Het begint met uw brutoloon. U betaalt hier loonbelasting over.",
+            "U heeft geen controle over al deze kosten. Is dat niet gek? Styptec is er voor moderne werknemers die zelf de controle nemen over hun inkomen.",
+            "Twee belangrijke zaken zijn bij ons altijd goed geregeld. Uw belastingen zijn correct betaald. En eventuele langdurige ziekte is gedekt.",
+            "Dus geen verrassingen achteraf. Bent u al ondernemer? Dan is dit ook iets voor jou. Omdat u bij ons geen administratie hoeft te doen.",
+            "Als werknemer ontvangt u elke maand een salaris. Maar uw nettosalaris is niet het bedrag dat u kost."
+        ]
     },
     "pricing": {
         "title": "Zorgeloos freelancen met onze lidmaatschappen!",
-        "description": "Ontdek onze exclusieve lidmaatschappen...",
-        "memberships": {
-            "basic": {
-                "title": "Basis",
-                "subtitle": "— Geen cure, geen pay",
-                "price": "€ 0,-",
-                "features": [
-                    "Uw facturering en belastingen geregeld",
-                    "U betaalt 6% commissie per vergoeding",
-                    "Uitstekend en betaalbaar",
-                    "Groepszorgverzekering bij ONVZ",
-                    "Klantverhalen geven ons een 9,6"
-                ],
-                "button": "Bekijk alle voordelen"
-            },
-            "premium": {
-                "title": "Premium",
-                "subtitle": "— Zorgeloos geregeld",
-                "price": "€ 39,95,-",
-                "features": [
-                    "Alle voordelen van het basislidmaatschap",
-                    "U betaalt 3% commissie per betaling",
-                    "Aansprakelijkheidsverzekering en meer",
-                    "€25 per maand cashback op zorgverzekering",
-                    "Onbeperkt trainen bij GoodHabitz",
-                    "Uw lidmaatschap wordt belastingvrij vergoed"
-                ],
-                "badge": "Meest gekozen",
-                "button": "Bekijk alle voordelen"
-            },
-            "all_in": {
-                "title": "All-in",
-                "subtitle": "— Perfect geregeld",
-                "price": "€ 99,95,-",
-                "features": [
-                    "Alle voordelen van het premiummembership",
-                    "U betaalt geen commissie per betaling",
-                    "Professionele aansprakelijkheidsverzekering",
-                    "€350 budget voor coaching en training",
-                    "Uitnodigingen voor exclusieve uitjes"
-                ],
-                "button": "Bekijk alle voordelen"
-            }
+        "basic": {
+            "title": "Basis",
+            "subtitle": "— No cure no pay",
+            "features": [
+                "Uw facturatie en belastingen geregeld",
+                "U betaalt 6% commissie per vergoeding",
+                "Uitstekend en betaalbaar",
+                "Groepsziekteverzekering bij ONVZ",
+                "Klantenverhalen geven ons een 9,6",
+                "Klantenverhalen geven ons een 9,6"
+            ],
+            "button": "Bekijk alle voordelen"
+        },
+        "premium": {
+            "title": "Premium",
+            "subtitle": "— Zorgeloos geregeld",
+            "features": [
+                "Alle voordelen van het basislidmaatschap",
+                "U betaalt 3% commissie per betaling",
+                "Aansprakelijkheidsverzekering en meer",
+                "€25 per maand cashback op de zorgverzekering",
+                "Onbeperkte trainingen bij GoodHabitz",
+                "Uw lidmaatschap wordt belastingvrij vergoed"
+            ],
+            "button": "Bekijk alle voordelen"
         }
     },
     "whyChoose": {
@@ -305,9 +294,9 @@
             "description": "Geef eenvoudig uw gegevens op en uw factuur is onderweg! 🚀",
             "nameLabel": "Naam",
             "phoneLabel": "Telefoonnummer",
-            "emailLabel": "E-mail"
-        },
-        "downloadButton": "Download Geschatte PDF"
+            "emailLabel": "E-mail",
+            "downloadButton": "Download Geschatte PDF"
+        }
     },
     "reviews": {
         "pageHeader": "Onze Beoordelingen",
@@ -346,5 +335,23 @@
                 "weekend": "Zaterdag - Zondag: Gesloten"
             }
         }
+    },
+    "footer": {
+        "generalInfo": "Algemene informatie",
+        "kvk": "KVK",
+        "vat": "BTW",
+        "iban": "IBAN",
+        "quickLinks": "Snelle Links",
+        "calculateBenefit": "Bereken uw voordeel",
+        "aboutUs": "Over ons",
+        "howItWorks": "Hoe werkt Styptec",
+        "gameRules": "Spelregels",
+        "pricing": "Prijzen",
+        "policies": "Beleid",
+        "stayUpdated": "Blijf op de hoogte",
+        "headOffice": "Hoofdvestiging",
+        "visitAddress": "Bezoekadres",
+        "designedBy": "Ontworpen en aangedreven door",
+        "company": "STYPTEC B.V."
     }
 }

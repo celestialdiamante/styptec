@@ -3,6 +3,8 @@ import { submitContactForm } from '@/helpers/postData';
 import React from 'react';
 import { FaChevronRight } from 'react-icons/fa';
 import { z } from 'zod';
+import Swal from 'sweetalert2';
+import Loader from '@/components/Loader';
 
 const contactSchema = z.object({
   name: z.string().min(1, { message: 'Name is required' }),
@@ -21,6 +23,9 @@ interface FormErrors {
 }
 
 const ContactForm = () => {
+
+  const [loading, setLoading] = React.useState(false);
+
   const [formData, setFormData] = React.useState({
     name: '',
     email: '',
@@ -38,7 +43,6 @@ const ContactForm = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
     setFormData((prev) => ({ ...prev, [id]: value }));
-
     setErrors((prev) => ({ ...prev, [id]: '' }));
   };
 
@@ -46,16 +50,32 @@ const ContactForm = () => {
     e.preventDefault();
 
     try {
+      // Frontend validation
       const data = await contactSchema.parseAsync(formData);
+
+      // Start loader
+      setLoading(true);
+
+      // Backend submission
       const response = await submitContactForm({
         name: data.name,
         email: data.email,
         phone_number: data.phone_number,
         message: data.message,
       });
+
+      // Stop loader after the response
+      setLoading(false);
+
+      // Show success alert if submission is successful
       if (response && response.success) {
-        alert('Form successfully submitted, we will get back to you');
-        
+        Swal.fire({
+          icon: 'success',
+          title: 'Form successfully submitted!',
+          text: 'We will get back to you shortly.',
+          confirmButtonText: 'OK',
+        });
+        // Clear form
         setFormData({
           name: '',
           email: '',
@@ -63,10 +83,20 @@ const ContactForm = () => {
           message: '',
         });
       } else {
-        alert('Server error, please try after some time.');
+        // Backend error
+        Swal.fire({
+          icon: 'error',
+          title: 'Submission failed!',
+          text: 'Server error, please try again later.',
+          confirmButtonText: 'OK',
+        });
       }
     } catch (error) {
+      // Stop loader on error
+      setLoading(false);
+
       if (error instanceof z.ZodError) {
+        // Frontend validation error handling
         const newErrors: FormErrors = {
           name: '',
           email: '',
@@ -79,14 +109,31 @@ const ContactForm = () => {
         });
 
         setErrors(newErrors);
+
+        // Display alert for frontend validation errors
+        Swal.fire({
+          icon: 'error',
+          title: 'Validation Error!',
+          text: 'Please check your input fields and try again.',
+          confirmButtonText: 'OK',
+        });
       } else {
-        console.log('form error: ', error);
+        // Unknown error
+        Swal.fire({
+          icon: 'error',
+          title: 'Unexpected Error!',
+          text: 'An unexpected error occurred, please try again.',
+          confirmButtonText: 'OK',
+        });
+
+        console.error('Form submission error: ', error);
       }
     }
   };
 
   return (
     <div>
+      {loading && <Loader />}
       <h2 className="text-2xl font-bold mb-2">Contact Us</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
@@ -152,8 +199,10 @@ const ContactForm = () => {
           />
           {errors.message && <p className="text-red-500">{errors.message}</p>}
         </div>
-        <button type="submit" className="btn btn-primary text-white">
-          Send
+
+
+        <button type="submit" className="btn btn-primary text-white" disabled={loading}>
+          {loading ? 'Submitting...' : 'Send'}
           <FaChevronRight />
         </button>
       </form>
