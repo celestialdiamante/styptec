@@ -15,7 +15,7 @@ const HeroSection = ({ params }: any) => {
 
             <div className="container relative z-0 ">
                 <Image
-                    className="absolute -z-50 -top-16 -end-60"
+                    className="hidden lg:block absolute -z-50 -top-16 -end-60"
                     src="/images/hero/Character01.png"
                     alt=""
                     height={1000}

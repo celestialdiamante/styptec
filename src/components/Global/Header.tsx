@@ -120,12 +120,17 @@ const Header = () => {
                     </ul>
                 </div>
                 <Link href="/">
-                    <Image src="/STYPTEC_Logo-01.png" alt="STYPTEC_Logo" height={150} width={150} />
+                    <Image
+                        className="ml-20 sm:ml-52 lg:ml-0 w-auto h-8"
+                        src="/STYPTEC_Logo-01.png"
+                        alt="STYPTEC_Logo"
+                        height={150}
+                        width={250} />
                 </Link>
             </div>
 
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+            <div className="w-[50%] justify-end lg:justify-normal lg:w-auto lg:navbar-center lg:flex">
+                <ul className="menu menu-horizontal px-1 hidden lg:flex">
                     <li>
                         <Link className={isActive('/') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/">
                             {lang('home')}
@@ -179,7 +184,7 @@ const Header = () => {
 
                 </ul>
 
-                <div className="dropdown dropdown-hover hidden md:flex">
+                <div className="dropdown flex justify-end">
                     <Link href="#" className="btn btn-ghost flex items-center">
                         <span className="mr-1">{languages.find(lang => lang.code === currentLocale)?.emoji}</span>
                         <FaChevronDown className="ml-1" />

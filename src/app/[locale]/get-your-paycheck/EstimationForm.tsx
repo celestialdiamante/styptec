@@ -355,9 +355,9 @@ const EstimationForm = ({ form_settings, params }: { form_settings: typeOfFormSe
 
 
                     <div className="text-base font-semibold grid grid-cols-1 gap-5 *:grid *:grid-cols-2 mt-4">
-                        <div className="items-center">
+                        <div className="">
                             <div className="">{lang('features.earning.label')}</div>
-                            <div className="flex flex-grow gap-3">
+                            <div className="flex flex-col md:flex-row flex-grow gap-3">
                                 <div>
                                     <label className="label text-sm">{lang('features.hourlyRate.label')}</label>
                                     <div className="flex items-center">
@@ -461,7 +461,7 @@ const EstimationForm = ({ form_settings, params }: { form_settings: typeOfFormSe
                                     value={parseInt(estForm.expenses) > 0 ? estForm.expenses : ''}
                                     name="expenses"
                                     onChange={updateEstForm}
-                                    className="lg:w-full focus:outline-none border border-l-0 border-gray-300 rounded-r-lg px-3 py-2"
+                                    className="w-full focus:outline-none border border-l-0 border-gray-300 rounded-r-lg px-3 py-2"
                                     step={0.01}
                                 />
                             </div>
