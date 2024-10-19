@@ -1,10 +1,9 @@
 "use client";
-import { Link, usePathname } from '@/i18n/routing';
-import { useTranslations } from 'next-intl';
+import { Link, usePathname, useRouter } from '@/i18n/routing';
+import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react';
 import { FaChevronDown } from 'react-icons/fa';
-// import Switcher from './Switcher';
 
 interface Language {
     code: string;
@@ -13,12 +12,12 @@ interface Language {
 }
 
 
-
 const Header = () => {
 
     const lang = useTranslations('header');
-
     const pathname = usePathname();
+    const router = useRouter();
+    const currentLocale = useLocale();
 
     const isActive = (href: string) => pathname === href;
 
@@ -39,8 +38,6 @@ const Header = () => {
         },
     ];
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    // const [language, setLanguage] = React.useState<Language>(languages[0]);
 
     const navItems = [
         {
@@ -58,8 +55,10 @@ const Header = () => {
         },
     ];
 
-
-    const [language, setLanguage] = React.useState<Language>(languages[0]);
+    //language switcher
+    const handleLanguageChange = (newLang: 'en' | 'nl') => {
+        router.push(pathname, { locale: newLang });
+    };
 
     return (
         <div className="container navbar bg-base-100 z-[99999]">
@@ -177,29 +176,29 @@ const Header = () => {
                             {lang('contactUs')}
                         </Link>
                     </li>
-                    
+
                 </ul>
 
                 <div className="dropdown dropdown-hover hidden md:flex">
                     <Link href="#" className="btn btn-ghost flex items-center">
-                        <span className="mr-1">{language.emoji}</span>
+                        <span className="mr-1">{languages.find(lang => lang.code === currentLocale)?.emoji}</span>
                         <FaChevronDown className="ml-1" />
                     </Link>
                     <ul className="dropdown-content menu bg-base-100 rounded-box z-50 p-2 shadow">
                         {languages.map((lang) => (
                             <li key={lang.code}>
-                                <Link href="#" onClick={() => setLanguage(lang)} className="flex items-center">
+                                <button
+                                    onClick={() => handleLanguageChange(lang.code as 'en' | 'nl')}
+                                    className="flex items-center"
+                                >
                                     <span className="mr-2">{lang.emoji}</span>
                                     {lang.label}
-                                </Link>
+                                </button>
                             </li>
                         ))}
-                        
                     </ul>
-                   
                 </div>
 
-                {/* <Switcher languages={languages} /> */}
             </div>
 
             {/*  */}
