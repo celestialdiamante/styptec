@@ -1,15 +1,15 @@
 {
     "header": {
-        "home": "Home",
-        "aboutUs": "Over ons",
+        "home": "HOME",
+        "aboutUs": "OVER ONS",
         "howItWorks": {
             "main": "HOE WERKT STYPTEC",
             "freelancer": "Voor Freelancer",
             "entrepreneur": "Voor Ondernemers"
         },
         "getPaycheck": "ONTDEK JE LOONSTROOK",
-        "reviews": "BEOORDELINGEN",
-        "pricing": "PRIJZEN",
+        "payrolling": "PAYROLLING",
+        "freelanceWork": "FREELANCE WORK",
         "contactUs": "CONTACT ONS",
         "language": {
             "label": "Taal",
@@ -20,7 +20,7 @@
     "home": {
         "aboutUsSection": {
             "title": "Styptec helpt je met facturering",
-            "description": "Styptec is in 2012 opgericht door Edward Belgraver om de groeiende groep zelfstandigen te ondersteunen die op basis van opdrachten, kort- of langetermijn, zonder gedoe willen werken. Met een team van hooggeëngageerde collega's werken we aan het bieden van een optimale service en een platform dat onze klanten ondersteunt om zonder een Handelsregistratienummer of btw-nummer te werken. In de afgelopen jaren zijn we gegroeid naar 95.913 klanten die we graag ondersteunen met professionele partners en hoge serviceniveaus.",
+            "description": "We combineren jouw inkomsten voor optimale resultaten met ultieme vrijheid. Bij elke opdracht helpt Styptec je met facturatie en het inhouden van alle verplichte belastingen, en bieden we je verzekering, training en vele extra voordelen. Je krijgt de beste deals, zonder de rompslomp van administratie, handelsregistratienummer of btw-nummer. Kortom, werken zonder gedoe. Wij zijn het team van Styptec – fijn om kennis te maken!Als de verbindende schakel. We brengen ondernemers en hun doelen dichter bij elkaar, waarbij het ondernemerschap altijd centraal staat. STYPTEC is een organisatie die zich richt op het ontlasten van zowel freelancers als bedrijven die gebruikmaken van payrolling. Hoewel de website van STYPTEC momenteel in aanbouw is biedt het bedrijf verschillende diensten aan om de administratieve en juridische lasten voor freelancers en opdrachtgevers te verminderen.",
             "buttonText": "Verken Meer"
         },
         "bannerSection": {
@@ -94,6 +94,36 @@
             "button": "Bekijk alle voordelen"
         }
     },
+    "testimonials": {
+        "title": "Wat onze klanten zeggen",
+        "list": [
+            {
+                "quote": "Als freelancer in Nederland heeft de eenvoud van factureren en snelle betalingen echt mijn manier van werken veranderd. Zeer aan te bevelen!",
+                "name": "Sanne de Vries",
+                "position": "Grafisch Ontwerper"
+            },
+            {
+                "quote": "De ondersteuning van het platform voor Nederlandse belastingregels heeft me zoveel tijd bespaard. Perfect voor elke beginnende freelancer hier.",
+                "name": "Mark Jansen",
+                "position": "Webontwikkelaar"
+            },
+            {
+                "quote": "Met de geboden flexibiliteit en tools is het beheren van meerdere klanten nog nooit zo eenvoudig geweest. Een echte game-changer voor freelancers zoals ik.",
+                "name": "Lisa van der Meer",
+                "position": "Content Schrijver"
+            },
+            {
+                "quote": "De inzichten en hulpmiddelen hebben me geholpen mijn freelancebedrijf te laten groeien en tegelijkertijd te voldoen aan de Nederlandse wetgeving.",
+                "name": "Thomas Bakker",
+                "position": "Digital Marketeer"
+            },
+            {
+                "quote": "Snel factureren en klantenbeheer hebben freelancen in Nederland soepel en stressvrij gemaakt.",
+                "name": "Emma Visser",
+                "position": "Fotograaf"
+            }
+        ]
+    },
     "whyChoose": {
         "freelancersTitle": "Waarom freelancers Styptec moeten gebruiken?",
         "freelancers": [
@@ -137,7 +167,8 @@
         "pageHeader": "Benieuwd naar ons?",
         "ourStory": {
             "title": "Ons verhaal",
-            "description": "Styptec werd in 2012 opgericht door Edward Belgraver om de groeiende groep zelfstandigen te ondersteunen die op opdrachtbasis wil werken, kort of lang, zonder gedoe. Met een toegewijd team bieden we optimale service en een platform dat klanten ondersteunt om zonder KvK-nummer of btw-nummer te werken. In de afgelopen jaren zijn we gegroeid tot 95.913 klanten, die we met plezier ondersteunen."
+            "description": "We combineren jouw inkomsten voor optimale resultaten met ultieme vrijheid. Bij elke opdracht helpt Styptec je met facturatie en het inhouden van alle verplichte belastingen, en bieden we je verzekering, training en vele extra voordelen. Je krijgt de beste deals, zonder de rompslomp van administratie, handelsregistratienummer of btw-nummer. Kortom, werken zonder gedoe. Wij zijn het team van Styptec – fijn om kennis te maken!Als de verbindende schakel. We brengen ondernemers en hun doelen dichter bij elkaar, waarbij het ondernemerschap altijd centraal staat. STYPTEC is een organisatie die zich richt op het ontlasten van zowel freelancers als bedrijven die gebruikmaken van payrolling. Hoewel de website van STYPTEC momenteel in aanbouw is biedt het bedrijf verschillende diensten aan om de administratieve en juridische lasten voor freelancers en opdrachtgevers te verminderen.",
+            "buttonText": "Verken Meer"
         },
         "mission": {
             "title": "Missie",
@@ -353,5 +384,215 @@
         "visitAddress": "Bezoekadres",
         "designedBy": "Ontworpen en aangedreven door",
         "company": "STYPTEC B.V."
+    },
+    "payrolling": {
+        "pageHeader": "Payrolling",
+        "payrolling": {
+            "title": "Wat is payrolling?",
+            "description": "Met payrolling kunnen bedrijven de administratieve en juridische verplichtingen van werkgeven uitbesteden aan een payrollorganisatie. Het biedt bedrijven een flexibele en risicoloze manier om hun personeelsbestand te beheren, terwijl werknemers op tijd worden betaald en de juiste voordelen ontvangen."
+        },
+        "sectionTitles": {
+            "howItWorks": "Hoe werkt payrolling?",
+            "benefits": "Voordelen van payrolling",
+            "disadvantages": "Nadelen van payrolling",
+            "legislation": "Wetgeving over payrolling",
+            "differencesTable": "Verschillen tussen Payrolling en Freelance Werk"
+        },
+        "payrollWork": [
+            {
+                "title": "Werving en selectie",
+                "description": "Het oorspronkelijke bedrijf (de klant) selecteert de werknemers die via payrolling worden ingezet."
+            },
+            {
+                "title": "Contract",
+                "description": "De payrollorganisatie neemt de werknemer formeel in dienst. Met andere woorden, de werknemer heeft een arbeidsovereenkomst met de payrollorganisatie, niet met het oorspronkelijke bedrijf."
+            },
+            {
+                "title": "Verloning en administratie",
+                "description": "De payrollorganisatie verzorgt de salarisbetalingen, administratie van verlofdagen, pensioenbetalingen, medische kosten en alle andere zaken die horen bij het werkgeverschap."
+            },
+            {
+                "title": "Kosten",
+                "description": "Het oorspronkelijke bedrijf betaalt een tarief aan de payrollorganisatie, dat meestal bestaat uit de loonkosten van de werknemer plus een percentage voor de diensten van de payrollorganisatie."
+            }
+        ],
+        "benefits": [
+            {
+                "title": "Flexibiliteit",
+                "description": "Payrolling maakt het voor bedrijven gemakkelijker om hun personeelsbestand flexibel in te richten zonder vast te zitten aan langdurige arbeidsovereenkomsten."
+            },
+            {
+                "title": "Lagere risico's",
+                "description": "Omdat het payrollbedrijf formeel de werkgever is, wordt het oorspronkelijke bedrijf ontlast van financiële risico's zoals doorbetaling van loon bij ziekte en risico's van arbeidsconflicten."
+            },
+            {
+                "title": "Kostenbesparing",
+                "description": "Het uitbesteden van administratieve taken kan tijd en kosten besparen, vooral voor kleine en middelgrote bedrijven."
+            },
+            {
+                "title": "Vermindering van administratieve last",
+                "description": "De payrollorganisatie neemt alle administratieve taken over, zodat de werkgever meer tijd en middelen kan besteden aan zijn kernactiviteiten."
+            }
+        ],
+        "disadvantages": [
+            {
+                "title": "Kosten",
+                "description": "Hoewel payrolling kosteneffectief kan zijn door risico's en administratieve lasten te verminderen, kan het uiteindelijk duurder zijn dan een directe aanstelling vanwege de vergoeding die door de payrollorganisatie wordt berekend."
+            },
+            {
+                "title": "Beperkte binding",
+                "description": "Werknemers op payrollbasis voelen zich soms minder verbonden met het bedrijf waarvoor ze werken omdat de payrollorganisatie hun officiële werkgever is."
+            },
+            {
+                "title": "Beperkte arbeidsvoorwaarden",
+                "description": "Voor werknemers kunnen de arbeidsvoorwaarden verschillen van reguliere werknemers, afhankelijk van de afspraken met de payrollorganisatie."
+            }
+        ],
+        "legislation": {
+            "title": "Wetgeving over payrolling",
+            "description": "Sinds 2020 is de Wet Arbeidsmarkt in Balans (WAB) van kracht. Deze wet geeft payrollwerknemers recht op dezelfde arbeidsvoorwaarden als vaste werknemers binnen het bedrijf, inclusief pensioenopbouw. De payrollorganisatie moet daarom ook een adequaat pensioen regelen voor de werknemers die via hen werken."
+        },
+        "table": {
+            "headers": [
+                "Aspect",
+                "Payrolling",
+                "Freelance"
+            ],
+            "rows": [
+                {
+                    "aspect": "Werkgever",
+                    "payrolling": "Payrollbedrijf",
+                    "freelance": "Geen (zelfstandig ondernemer)"
+                },
+                {
+                    "aspect": "Inkomen",
+                    "payrolling": "Vast salaris via payroll",
+                    "freelance": "Afhankelijk van opdrachten"
+                },
+                {
+                    "aspect": "Verantwoordelijkheden",
+                    "payrolling": "Payrollbedrijf draagt juridische verantwoordelijkheid",
+                    "freelance": "Freelancer is verantwoordelijk voor zijn of haar eigen"
+                },
+                {
+                    "aspect": "Sociale zekerheid",
+                    "payrolling": "Ja, geregeld via payrollbedrijf",
+                    "freelance": "Nee, moet door de freelancer zelf worden geregeld"
+                },
+                {
+                    "aspect": "Flexibiliteit",
+                    "payrolling": "Enige flexibiliteit, maar vaak in een dienstverbandmodel",
+                    "freelance": "Volledige flexibiliteit en onafhankelijkheid"
+                }
+            ]
+        },
+        "conclusion": {
+            "title": "Conclusie",
+            "description": "Payroll en freelance werk bieden elk unieke voordelen, afhankelijk van de wensen van de werknemer of zelfstandige en de aard van het werk. Bedrijven die flexibiliteit zoeken zonder werkgeversrisico kunnen profiteren van payroll, terwijl individuen die graag zelfstandig werken en hun eigen opdrachten kiezen, profiteren van freelance werk. Beide opties vereisen kennis van regelgeving om binnen de kaders te blijven en optimaal te profiteren van de mogelijkheden die ze bieden."
+        }
+    },
+    "freelanceWork": {
+        "pageHeader": "Freelance Werk",
+        "sectionTitles": {
+            "howDoesItWork": "Hoe werkt freelancen?",
+            "benefitsOfPayrolling": "Voordelen van payrolling",
+            "disadvantagesOfPayrolling": "Nadelen van payrolling",
+            "differencesTable": "Verschillen Tussen Payrolling en Freelance Werk",
+            "legislation": "Wetgeving over freelance werk"
+        },
+        "featuresSection": {
+            "freelanceWork": {
+                "title": "Freelance werk",
+                "description": "Freelance werk, ook wel bekend als zelfstandig ondernemerschap, is een vorm van werk waarbij iemand diensten aanbiedt aan meerdere klanten als zelfstandig ondernemer, zonder een vast arbeidscontract. Freelancers werken meestal op projectbasis en worden per opdracht of per uur betaald. Ze zijn verantwoordelijk voor hun eigen bedrijfsvoering, facturering, belastingafdracht en verzekeringen."
+            },
+            "whyServices": {
+                "title": "Waarom deze diensten leveren",
+                "description": "STYPTEC wil zowel freelancers als klanten ontzorgen, zodat ze zich kunnen richten op hun kernactiviteiten zonder zich zorgen te maken over administratieve en juridische verplichtingen. Via uw beveiligde account kunt u eenvoudig een factuur aanmaken en naar uw klant sturen, geheel volgens de gemaakte afspraken. Het opstellen en verzenden van een factuur kost u slechts twee minuten. Wij verzorgen alle belastingzaken en verzekeringen direct voor u. U ontvangt de netto betaling zodra uw klant heeft betaald, zodat u snel over uw geld kunt beschikken. Indien gewenst kunnen wij ook de factuur voorschieten, zodat u nog sneller toegang heeft tot uw geld. Dit bespaart u tijd en vermindert stress."
+            },
+            "legislation": {
+                "title": "Wetgeving over freelance werk",
+                "description": "In Nederland wordt freelance werk gereguleerd door de Belastingdienst en de Kamer van Koophandel. Freelancers moeten ingeschreven staan bij de Kamer van Koophandel (KvK) en kunnen gebruik maken van de Verklaring Arbeidsrelatie (VAR) of de Wet Deregulering Beoordeling Arbeidsrelaties (DBA) om aan te tonen dat zij geen arbeidsrelatie hebben met hun opdrachtgevers. De regelgeving rondom freelancers blijft een aandachtspunt voor de overheid, met name om schijnzelfstandigheid te voorkomen."
+            }
+        },
+        "freelanceWorkSteps": [
+            {
+                "title": "Opdrachten verkrijgen",
+                "description": "Een freelancer vindt werk via direct contact met klanten, via freelance platforms of via netwerken."
+            },
+            {
+                "title": "Overeenkomst sluiten",
+                "description": "De freelancer en de klant sluiten een overeenkomst die het werk en de vergoeding vastlegt. Dit kan een opdrachtcontract of een mondelinge afspraak zijn."
+            },
+            {
+                "title": "Facturering en belasting",
+                "description": "Na voltooiing van het werk stuurt de freelancer een factuur naar de klant en zorgt voor de betaling van inkomstenbelasting en, afhankelijk van de situatie, omzetbelasting (btw)."
+            },
+            {
+                "title": "Aftrekposten",
+                "description": "Een freelancer is verantwoordelijk voor zijn eigen verzekering tegen arbeidsongeschiktheid, pensioenvoorziening en andere financiële risico's."
+            }
+        ],
+        "benefits": [
+            {
+                "title": "Onafhankelijkheid en flexibiliteit",
+                "description": "Freelancers hebben de vrijheid om hun eigen werktijden te bepalen, hun eigen opdrachten te kiezen en hun eigen tarief vast te stellen."
+            },
+            {
+                "title": "Diversiteit aan opdrachten",
+                "description": "Freelancers kunnen voor verschillende klanten werken, waardoor ze hun vaardigheden kunnen ontwikkelen en nieuwe ervaringen kunnen opdoen."
+            },
+            {
+                "title": "Belastingvoordelen",
+                "description": "Freelancers kunnen gebruik maken van verschillende belastingvoordelen zoals de zelfstandigenaftrek en startersaftrek, mits zij aan bepaalde voorwaarden voldoen."
+            }
+        ],
+        "disadvantages": [
+            {
+                "title": "Onzekerheid over inkomen",
+                "description": "Freelancers hebben geen vast inkomen en kunnen te maken krijgen met periodes waarin weinig werk beschikbaar is."
+            },
+            {
+                "title": "Geen Sociale Zekerheid",
+                "description": "Freelancers bouwen geen recht op werkloosheidsuitkeringen of ziektegeld op. Ze moeten hun eigen verzekeringen regelen, wat kosten met zich meebrengt."
+            }
+        ],
+        "table": {
+            "headers": [
+                "Aspect",
+                "Payrolling",
+                "Freelance"
+            ],
+            "rows": [
+                {
+                    "aspect": "Werkgever",
+                    "payrolling": "Payroll bedrijf",
+                    "freelance": "Geen (zelfstandig ondernemer)"
+                },
+                {
+                    "aspect": "Inkomen",
+                    "payrolling": "Vast salaris via payroll",
+                    "freelance": "Afhankelijk van opdrachten"
+                },
+                {
+                    "aspect": "Verantwoordelijkheden",
+                    "payrolling": "Payroll bedrijf draagt juridische verantwoordelijkheid",
+                    "freelance": "Freelancer is verantwoordelijk voor zijn of haar eigen"
+                },
+                {
+                    "aspect": "Sociale zekerheid",
+                    "payrolling": "Ja, geregeld via payroll bedrijf",
+                    "freelance": "Nee, moet door de freelancer zelf worden geregeld"
+                },
+                {
+                    "aspect": "Flexibiliteit",
+                    "payrolling": "Enige flexibiliteit, maar vaak in een dienstverbandmodel",
+                    "freelance": "Volledige flexibiliteit en onafhankelijkheid"
+                }
+            ]
+        },
+        "conclusion": {
+            "title": "Conclusie",
+            "description": "Payroll en freelance werk bieden elk unieke voordelen, afhankelijk van de wensen van de werknemer of zelfstandige en de aard van het werk. Bedrijven die flexibiliteit zoeken zonder werkgeversrisico kunnen profiteren van payroll, terwijl individuen die graag zelfstandig werken en hun eigen opdrachten kiezen, profiteren van freelance werk. Beide opties vereisen kennis van regelgeving om binnen de kaders te blijven en optimaal te profiteren van de mogelijkheden die ze bieden."
+        }
     }
 }

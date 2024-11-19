@@ -43,7 +43,7 @@ const WhyChoose = () => {
     ];
 
     const FeatureCard = ({ icon, title, description }: { icon: React.ReactNode, title: string, description: string }) => (
-        <div className="card shadow-lg bg-base-100 p-6 rounded-xl">
+        <div className="card border border-gray-50 shadow-lg bg-base-100 p-6 rounded-xl">
             <h3 className="text-xl font-semibold flex items-center mb-4">
                 <span className="mr-2 text-primary">{icon}</span>{title}
             </h3>
@@ -54,7 +54,7 @@ const WhyChoose = () => {
     return (
         <section className="py-6 md:py-16">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 px-4">
-                <div className="col-span-6 p-4 bg-[url('/images/SKYPTEC_Banner02.jpg')] bg-no-repeat bg-cover border border-gray-50 shadow-lg rounded-xl">
+                <div className="col-span-6 p-4 ">
                     <h3 className="text-2xl md:text-3xl font-bold mb-12">{lang('freelancersTitle')}</h3>
                     <div className="flex flex-col gap-6 ">
                         {featuresFreelancers.map((feature, idx) => <FeatureCard key={idx} {...feature} />)}
@@ -63,8 +63,9 @@ const WhyChoose = () => {
                         <button className="btn btn-primary text-white">{lang('buttonText')}</button>
                     </div> */}
                 </div>
-
-                <div className="col-span-6 p-4 bg-[url('/images/SKYPTEC_Banner02.jpg')] bg-no-repeat bg-cover border border-gray-50 shadow-lg rounded-xl">
+                {/* bg-[url('/images/SKYPTEC_Banner02.jpg')] bg-no-repeat bg-cover border border-gray-50 shadow-lg rounded-xl
+                bg-[url('/images/SKYPTEC_Banner02.jpg')] bg-no-repeat bg-cover border border-gray-50 shadow-lg rounded-xl */}
+                <div className="col-span-6 p-4 ">
                     <h3 className="text-2xl md:text-3xl font-bold mb-12">{lang('clientsTitle')}</h3>
                     <div className="flex flex-col gap-6">
                         {featuresClients.map((feature, idx) => <FeatureCard key={idx} {...feature} />)}

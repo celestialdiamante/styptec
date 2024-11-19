@@ -1,6 +1,5 @@
 import { contactInfoType, getContactData, getPolicyPages } from '@/helpers/getData';
 import { Link } from '@/i18n/routing'
-// import { useLocale } from 'next-intl';
 import { getTranslations } from 'next-intl/server';
 import React from 'react'
 import { FaFacebook, FaGoogle, FaTwitter } from 'react-icons/fa';
@@ -12,11 +11,10 @@ type policyPagesType = {
 };
 
 
-const Footer = async () => {
-  const lang = await getTranslations('footer');
-  // const locale = useLocale(); //async component issue
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  // const locale = lang.locale;  //type error
+const Footer = async ({locale}:any) => {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const lang:any = await getTranslations('footer');
 
   const policyPages: policyPagesType[] = await getPolicyPages();
   const contactInfo: contactInfoType = await getContactData();
@@ -88,8 +86,8 @@ const Footer = async () => {
                   return (
                     <p key={page.slug}>
                       <Link className="inline-flex gap-x-2 text-white hover:text-gray-200 focus:outline-none focus:text-gray-200" href={`/policy/${page.slug}`}>
-                        {/* {locale === 'en' ? page.title_en : page.title} */}
-                        {page.title}
+                        {locale === 'en' ? page.title_en : page.title}
+                        {/* {page.title} */}
                       </Link>
                     </p>
                   )

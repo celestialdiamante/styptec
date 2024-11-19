@@ -1,9 +1,15 @@
 "use client"
+import { useTranslations } from 'next-intl';
 import React from 'react'
 import { IoMdQuote, IoMdStar } from 'react-icons/io'
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 
+interface Testimonial {
+    quote: string;
+    name: string;
+    position: string;
+  }
 const responsive = {
     superLargeDesktop: {
         breakpoint: { max: 4000, min: 3000 },
@@ -15,7 +21,7 @@ const responsive = {
     },
     tablet: {
         breakpoint: { max: 1024, min: 464 },
-        items: 2
+        items: 3
     },
     mobile: {
         breakpoint: { max: 464, min: 0 },
@@ -23,40 +29,17 @@ const responsive = {
     }
 };
 
-const testimonials = [
-    {
-        quote: "The most well-known dummy text is the Lorem Ipsum, which is said to have originated in the 16th century.",
-        name: "Christa Smith",
-        position: "Manager",
-    },
-    {
-        quote: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.  which is said to have originated in the 16th century.",
-        name: "John Doe",
-        position: "CEO",
-    },
-    {
-        quote: "When an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        name: "Jane Doe",
-        position: "Developer",
-    },
-    {
-        quote: "It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
-        name: "Michael Roe",
-        position: "Designer",
-    },
-    {
-        quote: "It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.",
-        name: "Chris Lee",
-        position: "Marketer",
-    }
-];
 
 export default function Testimonial() {
+  const lang = useTranslations('testimonials');
+
+  const testimonials : Testimonial[] = lang.raw('list');
+
     return (
         <section className="py-6 md:py-16">
             <div className="container mx-auto text-center mt-10 mb-10 lg:mb-14">
                 <h3 className="text-center text-2xl md:text-3xl font-bold text-gray-800 mb-12">
-                    What our customers say
+                    {lang('title')}
                 </h3>
                 <div>
                     <Carousel
@@ -67,7 +50,7 @@ export default function Testimonial() {
                         autoPlaySpeed={3000}
                         infinite={true}
                     >
-                        {testimonials.map((testimonial, index) => (
+                        {testimonials.map((testimonial, index:number)=> (
                             <div key={index} className="rounded-xl border border-gray-50 shadow-lg m-6 p-6 bg-white space-y-3">
                                 <IoMdQuote className="text-5xl text-primary mx-auto" />
                                 <p className="text-gray-600 text-center line-clamp-3"> &quot;{testimonial.quote}&quot;</p>

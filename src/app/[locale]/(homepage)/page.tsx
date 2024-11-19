@@ -1,6 +1,5 @@
 import CallToAction from "@/components/HomePage/CallToAction";
 import HeroSection from "@/components/HomePage/HeroSection";
-import Pricing from "@/components/HomePage/Pricing";
 import Stats from "@/components/HomePage/Stats";
 import Testimonial from "@/components/HomePage/Testimonial";
 import VideoSection from "@/components/HomePage/VideoSection";
@@ -82,7 +81,7 @@ export default async function Home({ params }: any) {
         </section>
         
       <VideoSection />
-      <Pricing />
+      {/* <Pricing /> */}
 
       <section className="py-6 md:py-16 bg-[url('/images/SKYPTEC_Banner01.jpg')] bg-no-repeat bg-cover">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-10 gap-6">

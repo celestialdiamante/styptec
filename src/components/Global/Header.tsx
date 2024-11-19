@@ -21,9 +21,9 @@ const Header = () => {
 
     const isActive = (href: string) => pathname === href;
 
-    const isParentActive = (links: { href: string }[]) => {
-        return links.some(link => isActive(link.href));
-    };
+    // const isParentActive = (links: { href: string }[]) => {
+    //     return links.some(link => isActive(link.href));
+    // };
 
     const languages: Language[] = [
         {
@@ -39,21 +39,21 @@ const Header = () => {
     ];
 
 
-    const navItems = [
-        {
-            label: lang('howItWorks.main'),
-            links: [
-                {
-                    label: lang('howItWorks.freelancer'),
-                    href: '/how-does-it-work'
-                },
-                {
-                    label: lang('howItWorks.entrepreneur'),
-                    href: '/how-does-it-work-for-entrepreneurs'
-                },
-            ],
-        },
-    ];
+    // const navItems = [
+    //     {
+    //         label: lang('howItWorks.main'),
+    //         links: [
+    //             {
+    //                 label: lang('howItWorks.freelancer'),
+    //                 href: '/how-does-it-work'
+    //             },
+    //             {
+    //                 label: lang('howItWorks.entrepreneur'),
+    //                 href: '/how-does-it-work-for-entrepreneurs'
+    //             },
+    //         ],
+    //     },
+    // ];
 
     //language switcher
     const handleLanguageChange = (newLang: 'en' | 'nl') => {
@@ -80,7 +80,7 @@ const Header = () => {
                                 {lang('aboutUs')}
                             </Link>
                         </li>
-                        {navItems.map(({ label, links }) => (
+                        {/* {navItems.map(({ label, links }) => (
                             <li key={label}>
                                 <span>{label}</span>
                                 <ul className="p-2">
@@ -96,20 +96,20 @@ const Header = () => {
                                     ))}
                                 </ul>
                             </li>
-                        ))}
+                        ))} */}
                         <li>
                             <Link className={isActive('/get-your-paycheck') ? 'text-primary' : ''} href="/get-your-paycheck">
                                 {lang('getPaycheck')}
                             </Link>
                         </li>
                         <li>
-                            <Link className={isActive('/reviews') ? 'text-primary' : ''} href="/reviews">
-                                {lang('reviews')}
+                            <Link className={isActive('/payrolling') ? 'text-primary' : ''} href="/payrolling">
+                                {lang('Payrolling')}
                             </Link>
                         </li>
                         <li>
-                            <Link className={isActive('/pricing') ? 'text-primary' : ''} href="/pricing">
-                                {lang('pricing')}
+                            <Link className={isActive('/freelance-work') ? 'text-primary' : ''} href="/freelance-work">
+                                {lang('freelanceWork')}
                             </Link>
                         </li>
                         <li>
@@ -141,7 +141,7 @@ const Header = () => {
                             {lang('aboutUs')}
                         </Link>
                     </li>
-                    {navItems.map(({ label, links }) => (
+                    {/* {navItems.map(({ label, links }) => (
                         <li key={label} className="dropdown dropdown-hover hover:bg-none">
                             <div tabIndex={0} className={isParentActive(links) ? 'text-primary font-semibold' : 'hover:text-primary font-semibold  hover:bg-white focus:bg-white cursor-pointer flex items-center'}>
                                 {label}
@@ -160,20 +160,20 @@ const Header = () => {
                                 ))}
                             </ul>
                         </li>
-                    ))}
+                    ))} */}
                     <li>
                         <Link className={isActive('/get-your-paycheck') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/get-your-paycheck">
                             {lang('getPaycheck')}
                         </Link>
                     </li>
                     <li>
-                        <Link className={isActive('/reviews') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/reviews">
-                            {lang('reviews')}
+                        <Link className={isActive('/payrolling') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/payrolling">
+                            {lang('payrolling')}
                         </Link>
                     </li>
                     <li>
-                        <Link className={isActive('/pricing') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/pricing">
-                            {lang('pricing')}
+                        <Link className={isActive('/freelance-work') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/freelance-work">
+                            {lang('freelanceWork')}
                         </Link>
                     </li>
                     <li>

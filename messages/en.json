@@ -1,15 +1,15 @@
 {
     "header": {
-        "home": "Home",
-        "aboutUs": "About Us",
+        "home": "HOME",
+        "aboutUs": "ABOUT US",
         "howItWorks": {
             "main": "HOW STYPTEC WORKS",
             "freelancer": "For Freelancer",
             "entrepreneur": "For Entrepreneurs"
         },
         "getPaycheck": "GET YOUR PAYCHECK",
-        "reviews": "REVIEWS",
-        "pricing": "PRICING",
+        "payrolling": "PAYROLLING",
+        "freelanceWork": "FREELANCE WORK",
         "contactUs": "CONTACT US",
         "language": {
             "label": "Language",
@@ -20,7 +20,7 @@
     "home": {
         "aboutUsSection": {
             "title": "Styptec helps you with invoicing",
-            "description": "Styptec was founded in 2012 by Edward Belgraver to support the growing group of self-employed persons who want to work on an assignment-based basis, short-term or long-term, without any hassle. With a team of highly committed colleagues, we work to provide an optimal service and a platform that supports our clients to work without a Commercial Registration number or VAT number. In recent years, we have grown to 95.913 customers whom we are delighted to support with professional partners and high service levels.",
+            "description": "We combine your income for optimal results with ultimate freedom. With every assignment, Styptec helps you with invoicing and withholding all mandatory taxes, and we offer you insurance, training and many additional benefits. You'll get the best deals, without the hassle of administration, trade registration number, or VAT number. In short, work without hassle. We are the team at Styptec – great to meet you! As the connecting link. We bring entrepreneurs and their goals closer together, always with entrepreneurship at the centre. STYPTEC is an organization that focuses on relieving both freelancers and companies that use payrolling. Although the STYPTEC website is currently under construction, the company offers various services to reduce the administrative and legal burden for freelancers and clients.",
             "buttonText": "Explore More"
         },
         "bannerSection": {
@@ -94,6 +94,36 @@
             "button": "View all benefits"
         }
     },
+    "testimonials": {
+        "title": "What our customers say",
+        "list": [
+            {
+                "quote": "As a freelancer in the Netherlands, the simplicity of invoicing and fast payments has truly changed the way I work. Highly recommended!",
+                "name": "Sanne de Vries",
+                "position": "Graphic Designer"
+            },
+            {
+                "quote": "The platform's support for Dutch tax regulations saved me so much time. It's perfect for any freelancer starting out here.",
+                "name": "Mark Jansen",
+                "position": "Web Developer"
+            },
+            {
+                "quote": "With the flexibility and tools provided, managing multiple clients has never been easier. A game-changer for freelancers like me.",
+                "name": "Lisa van der Meer",
+                "position": "Content Writer"
+            },
+            {
+                "quote": "The insights and resources available have helped me grow my freelance business while staying compliant with Dutch laws.",
+                "name": "Thomas Bakker",
+                "position": "Digital Marketer"
+            },
+            {
+                "quote": "Quick invoicing and client management have made freelancing in the Netherlands smooth and stress-free.",
+                "name": "Emma Visser",
+                "position": "Photographer"
+            }
+        ]
+    },
     "whyChoose": {
         "freelancersTitle": "Why freelancers should use Styptec?",
         "freelancers": [
@@ -136,12 +166,13 @@
     "aboutUs": {
         "pageHeader": "Curious about us?",
         "ourStory": {
-            "title": "Our story",
-            "description": "Styptec was founded in 2012 by Edward Belgraver to support the growing group of self-employed persons who want to work on an assignment-based basis, short-term or long-term, without any hassle. With a team of highly committed colleagues, we work to provide an optimal service and a platform that supports our clients to work without a Commercial Registration number or VAT number. In recent years, we have grown to 95.913 customers whom we are delighted to support with professional partners and high service levels."
+            "title": "Who We Are",
+            "description": "We combine your income for optimal results with ultimate freedom. With every assignment, Styptec helps you with invoicing and withholding all mandatory taxes, and we offer you insurance, training and many additional benefits. You'll get the best deals, without the hassle of administration, trade registration number, or VAT number. In short, work without hassle. We are the team at Styptec – great to meet you! As the connecting link. We bring entrepreneurs and their goals closer together, always with entrepreneurship at the centre. STYPTEC is an organization that focuses on relieving both freelancers and companies that use payrolling. Although the STYPTEC website is currently under construction, the company offers various services to reduce the administrative and legal burden for freelancers and clients."
         },
         "mission": {
-            "title": "Mission",
-            "description": "Styptec wants to be there for everyone who wants to have full control, insight in and control over their income, where Styptec is the partner in working autonomously from job to job."
+            "title": "Our Core Value",
+            "subtitle": "We are ready for entrepreneurs, large and small.",
+            "description": "Styptec is there for entrepreneurs who want to hire staff, but do not have the time, knowledge or resources to take care of the associated administration. By handing over the legal employment and the associated responsibilities to us, we take that worry off your hands. Payrolling and freelance work are two popular ways to organize flexibility in work, both for employers and for employees or the self-employed. Both forms offer different advantages, but are also bound by different laws and regulations. Below is a detailed explanation of both forms and their differences."
         },
         "vision": {
             "title": "Vision",
@@ -353,5 +384,213 @@
         "visitAddress": "Bezoekadres",
         "designedBy": "Designed and powered by",
         "company": "STYPTEC B.V."
+    },
+    "payrolling": {
+        "pageHeader": "Payrolling",
+        "payrolling": {
+            "title": "What is payrolling?",
+            "description": "Payrolling allows companies to outsource the administrative and legal obligations of employment to a third-party payroll organization. It provides companies with a flexible and low-risk way to manage their workforce while ensuring employees are paid on time and receive appropriate benefits."
+        },
+        "sectionTitles": {
+            "howItWorks": "How does payrolling work?",
+            "benefits": "Benefits of payrolling",
+            "disadvantages": "Disadvantages of payrolling",
+            "differencesTable": "Differences Between Payrolling and Freelance Work"
+        },
+        "payrollWork": [
+            {
+                "title": "Recruitment and selection",
+                "description": "The original company (the client) selects the employees who will be deployed via payrolling."
+            },
+            {
+                "title": "Contract",
+                "description": "The payroll organization formally hires the employee. In other words, the employee has an employment contract with the payroll organization, not with the original company."
+            },
+            {
+                "title": "Remuneration and administration",
+                "description": "The payroll organization takes care of salary payments, administration of leave days, pension payments, medical expenses and all other matters that come with being an employer."
+            },
+            {
+                "title": "Cost",
+                "description": "The original company pays a rate to the payroll organization, which usually consists of the employee's payroll costs plus a percentage for the payroll organization's services."
+            }
+        ],
+        "benefits": [
+            {
+                "title": "Flexibility",
+                "description": "Payrolling makes it easier for companies to flexibly structure their workforce without being locked into long-term employment contracts."
+            },
+            {
+                "title": "Lower risks",
+                "description": "Because the payroll company assumes formal employment, the original company is relieved of financial risks such as continued payment of wages in the event of illness and risks of employment law conflicts."
+            },
+            {
+                "title": "Cost savings",
+                "description": "Outsourcing administrative tasks can save time and costs, especially for small and medium-sized businesses."
+            },
+            {
+                "title": "Reduction of administrative burden",
+                "description": "The payroll organization takes over all administrative tasks, allowing the employer to devote more time and resources to its core activities."
+            }
+        ],
+        "disadvantages": [
+            {
+                "title": "Cost",
+                "description": "While payrolling can be cost-effective by reducing risk and administrative burden, it can ultimately be more expensive than a direct appointment, due to the fee charged by the payroll organization."
+            },
+            {
+                "title": "Limited bonding",
+                "description": "Payroll-based employees sometimes feel less connected to the company they work for because the payroll company is their official employer."
+            },
+            {
+                "title": "Limited terms of employment",
+                "description": "For employees, terms of employment may differ from regular employees, depending on the agreements with the payroll organization."
+            }
+        ],
+        "legislation": {
+            "title": "Legislation on payrolling",
+            "description": "The Balanced Labour Market Act (WAB) has been in force since 2020. This law entitles payroll employees to the same terms of employment as permanent employees within the company, including pension accrual. The payroll organisation must therefore also provide an adequate pension for the employees who work through them."
+        },
+        "table": {
+            "headers": [
+                "Aspect",
+                "Payrolling",
+                "Freelance"
+            ],
+            "rows": [
+                {
+                    "aspect": "Employer",
+                    "payrolling": "Payroll company",
+                    "freelance": "None (self-employed)"
+                },
+                {
+                    "aspect": "Income",
+                    "payrolling": "Fixed salary via payroll",
+                    "freelance": "Dependent on assignments"
+                },
+                {
+                    "aspect": "Responsibilities",
+                    "payrolling": "Payroll company takes legal responsibility",
+                    "freelance": "Freelancer is responsible for his or her own"
+                },
+                {
+                    "aspect": "Social security",
+                    "payrolling": "Yes, arranged through payroll company",
+                    "freelance": "No, must be arranged by the freelancer himself"
+                },
+                {
+                    "aspect": "Flexibility",
+                    "payrolling": "Some flexibility, but often in an employed model",
+                    "freelance": "Full flexibility and independence"
+                }
+            ]
+        },
+        "conclusion": {
+            "title": "Conclusion",
+            "description": "Payrolling and freelance work each offer unique benefits, depending on the wishes of the employee or self-employed person and the nature of the work. Companies looking for flexibility without the employer risk can benefit from payrolling, while individuals who like to work autonomously and choose their own assignments benefit from freelance work. Both options require regulatory knowledge to stay within the frameworks and take full advantage of the opportunities they offer."
+        }
+    },
+    "freelanceWork": {
+        "pageHeader": "Freelance Work",
+        "sectionTitles": {
+            "howDoesItWork": "How does freelancing work?",
+            "benefitsOfPayrolling": "Benefits of payrolling",
+            "disadvantagesOfPayrolling": "Disadvantages of payrolling",
+            "differencesTable": "Differences Between Payrolling and Freelance Work"
+        },
+        "featuresSection": {
+            "freelanceWork": {
+                "title": "Freelance work",
+                "description": "Freelance work, also known as self-employment, is a form of work in which a person offers services to multiple clients as a self-employed person, without a permanent employment contract. Freelancers typically work on a project-by-project basis and are paid per assignment or hour. They are responsible for their own business operations, billing, tax remittance, and insurance."
+            },
+            "whyServices": {
+                "title": "Why providing these services",
+                "description": "STYPTEC aims to unburden both freelancers and clients, so that they can focus on their core activities without worrying about administrative and legal obligations. Via your secure account, you can easily create an invoice and send it to your client, entirely in accordance with the agreements made. Preparing and sending an invoice will only take you two minutes. We take care of all tax matters and insurances directly for you. You will receive the net payment immediately after your client has paid, so that you can get your money quickly. If desired, we can also advance the invoice, giving you even faster access to your money. This will save you time and reduce stress."
+            },
+            "legislation": {
+                "title": "Legislation on freelance work",
+                "description": "In the Netherlands, freelance work is regulated by the Tax and Customs Administration and the Chamber of Commerce. Freelancers must be registered with the Chamber of Commerce (KvK) and can use the Declaration of Employment Relationship (VAR) or the Deregulation Assessment of Employment Relations Act (DBA) to demonstrate that they do not have an employment relationship with their clients. The regulations surrounding freelancers remain a point of attention for the government, especially to prevent bogus self-employment."
+            }
+        },
+        "freelanceWorkSteps": [
+            {
+                "title": "Assignment acquisition",
+                "description": "A freelancer finds work through direct contact with clients, through freelancing platforms, or through networking."
+            },
+            {
+                "title": "Service agreement",
+                "description": "The freelancer and the client enter into an agreement that stipulates the work and compensation. This can be an assignment contract or a verbal agreement."
+            },
+            {
+                "title": "Invoicing and tax",
+                "description": "After completion of the work, the freelancer sends an invoice to the client and takes care of the payment of income tax and, depending on the situation, sales tax (VAT)."
+            },
+            {
+                "title": "Deductibles",
+                "description": "A freelancer is responsible for their own insurance against disability, pension provision, and other financial risks."
+            }
+        ],
+        "benefits": [
+            {
+                "title": "Independence and flexibility",
+                "description": "Freelancers have the freedom to set their own working hours, choose their own assignments, and set their own rate."
+            },
+            {
+                "title": "Diversity of assignments",
+                "description": "Freelancers can work for a variety of clients, which gives them the opportunity to develop their skills and gain new experiences."
+            },
+            {
+                "title": "Tax benefits",
+                "description": "Freelancers can take advantage of various tax benefits such as the self-employment deduction and start-up deduction, provided they meet certain conditions."
+            }
+        ],
+        "disadvantages": [
+            {
+                "title": "Uncertainty about income",
+                "description": "Freelancers do not have a fixed income and may face periods when little work is available."
+            },
+            {
+                "title": "No Social Security",
+                "description": "Freelancers do not accrue entitlement to unemployment benefits or sick pay. They have to arrange their own insurance, which comes at a cost."
+            }
+        ],
+        "table": {
+            "headers": [
+                "Aspect",
+                "Payrolling",
+                "Freelance"
+            ],
+            "rows": [
+                {
+                    "aspect": "Employer",
+                    "payrolling": "Payroll company",
+                    "freelance": "None (self-employed)"
+                },
+                {
+                    "aspect": "Income",
+                    "payrolling": "Fixed salary via payroll",
+                    "freelance": "Dependent on assignments"
+                },
+                {
+                    "aspect": "Responsibilities",
+                    "payrolling": "Payroll company takes legal responsibility",
+                    "freelance": "Freelancer is responsible for his or her own"
+                },
+                {
+                    "aspect": "Social security",
+                    "payrolling": "Yes, arranged through payroll company",
+                    "freelance": "No, must be arranged by the freelancer himself"
+                },
+                {
+                    "aspect": "Flexibility",
+                    "payrolling": "Some flexibility, but often in an employed model",
+                    "freelance": "Full flexibility and independence"
+                }
+            ]
+        },
+        "conclusion": {
+            "title": "Conclusion",
+            "description": "Payrolling and freelance work each offer unique benefits, depending on the wishes of the employee or self-employed person and the nature of the work. Companies looking for flexibility without the employer risk can benefit from payrolling, while individuals who like to work autonomously and choose their own assignments benefit from freelance work. Both options require regulatory knowledge to stay within the frameworks and take full advantage of the opportunities they offer."
+        }
     }
 }

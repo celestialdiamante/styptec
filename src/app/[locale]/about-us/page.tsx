@@ -3,7 +3,7 @@ import FeaturesSection from '@/components/Global/FeaturesSection';
 import PageHeader from '@/components/Global/PageHeader';
 import CallToAction from '@/components/HomePage/CallToAction';
 import { FaArrowsUpDownLeftRight } from 'react-icons/fa6';
-import { GiMagnifyingGlass } from 'react-icons/gi';
+// import { GiMagnifyingGlass } from 'react-icons/gi';
 import { LuRocket } from 'react-icons/lu';
 import { useTranslations } from 'next-intl';
 
@@ -17,28 +17,32 @@ const AboutUsPage = () => {
       <FeaturesSection
         title={lang('ourStory.title')}
         description={lang('ourStory.description')}
-        imageUrl="/images/13655.jpg"
+        imageUrl="/images/2884.jpg"
         imageLeft={false}
         IconComponent={FaArrowsUpDownLeftRight}
       />
 
       <section>
-        <div className="container grid md:grid-cols-2 grid-cols-1 gap-6">
-          <div className="bg-gradient-to-l from-teal-300 via-green-200 to-amber-200 p-0.5 rounded-xl shadow-lg">
+        <div className="container">
+        {/* bg-gradient-to-l from-teal-300 via-green-200 to-amber-200 p-0.5 rounded-xl shadow-lg */}
+          <div className="">
             <div className="flex flex-col gap-2 bg-white px-8 py-4 rounded-xl">
-              <div className="flex justify-center">
+              <div className="flex justify-start gap-6">
                 <div className="border p-3 shadow-sm mb-1 bg-gray-100 border-gray-100 rounded-xl">
                   <LuRocket className="size-10 text-amber-300" />
                 </div>
+                <div className="border-b flex-grow">
+                  <h4 className="text-2xl md:text-3xl font-bold">{lang('mission.title')}</h4>
+                  <p className="text-lg font-semibold mb-2">{lang('mission.subtitle')}</p>
+                </div>
               </div>
               <div>
-                <h4 className="text-2xl md:text-3xl text-center font-bold">{lang('mission.title')}</h4>
-                <p className="text-center mb-2">{lang('mission.description')}</p>
+                <p className="mb-2 text-justify">{lang('mission.description')}</p>
               </div>
             </div>
           </div>
 
-          <div className="bg-gradient-to-r from-teal-300 via-green-200 to-amber-200 p-0.5 rounded-xl shadow-lg">
+          {/* <div className="bg-gradient-to-r from-teal-300 via-green-200 to-amber-200 p-0.5 rounded-xl shadow-lg">
             <div className="flex flex-col gap-2 bg-white px-8 py-4 rounded-xl">
               <div className="flex justify-center">
                 <div className="border p-3 shadow-sm mb-1 bg-gray-100 border-gray-100 rounded-xl">
@@ -50,7 +54,7 @@ const AboutUsPage = () => {
                 <p className="text-center mb-2">{lang('vision.description')}</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
 
