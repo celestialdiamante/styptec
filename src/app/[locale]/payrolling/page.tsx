@@ -2,6 +2,15 @@ import FeaturesSection from '@/components/Global/FeaturesSection';
 import PageHeader from '@/components/Global/PageHeader';
 import { useTranslations } from 'next-intl';
 import React from 'react';
+import { CgMenuMotion } from 'react-icons/cg';
+import { FaUserTie } from 'react-icons/fa';
+import { FaArrowUpRightDots, FaMoneyBillTrendUp } from 'react-icons/fa6';
+import { GiReceiveMoney } from 'react-icons/gi';
+import { MdOutlineEuro } from 'react-icons/md';
+import { PiCloudWarning } from 'react-icons/pi';
+import { RiAdminLine, RiUser2Line } from 'react-icons/ri';
+import { SiGitconnected } from 'react-icons/si';
+import { TbReceiptEuro } from 'react-icons/tb';
 
 
 export default function Payrolling() {
@@ -10,52 +19,63 @@ export default function Payrolling() {
 
     const PayrollWork = [
         {
+            icon: <FaArrowUpRightDots className="text-primary size-6" />,
             title: lang('payrollWork.0.title'),
             description: lang('payrollWork.0.description'),
         },
         {
+            icon: <FaMoneyBillTrendUp className="text-primary size-6" />,
             title: lang('payrollWork.1.title'),
             description: lang('payrollWork.1.description'),
         },
         {
+            icon: <FaUserTie className="text-primary size-6" />,
             title: lang('payrollWork.2.title'),
             description: lang('payrollWork.2.description'),
         },
         {
+            icon: <GiReceiveMoney className="text-primary size-6" />,
             title: lang('payrollWork.3.title'),
             description: lang('payrollWork.3.description'),
         },
     ]
     const Benefits = [
         {
+            icon: <CgMenuMotion className="text-primary size-6 mb-3" />,
             title: lang('benefits.0.title'),
             description: lang('benefits.0.description'),
         },
         {
+            icon: <PiCloudWarning className="text-primary size-6 mb-3" />,
             title: lang('benefits.1.title'),
             description: lang('benefits.1.description'),
         },
         {
+            icon: <TbReceiptEuro className="text-primary size-6 mb-3" />,
             title: lang('benefits.2.title'),
             description: lang('benefits.2.description'),
         },
         {
+            icon: <RiAdminLine className="text-primary size-6 mb-3" />,
             title: lang('benefits.3.title'),
             description: lang('benefits.3.description'),
         },
     ]
     const Disadvantages = [
         {
+            icon: <MdOutlineEuro className="text-primary size-6 mb-3" />,
             title: lang('disadvantages.0.title'),
             description: lang('disadvantages.0.description'),
         },
         {
-            title: lang('disadvantages.0.title'),
-            description: lang('disadvantages.0.description'),
+            icon: <SiGitconnected className="text-primary size-6 mb-3" />,
+            title: lang('disadvantages.1.title'),
+            description: lang('disadvantages.1.description'),
         },
         {
-            title: lang('disadvantages.0.title'),
-            description: lang('disadvantages.0.description'),
+            icon: <RiUser2Line className="text-primary size-6 mb-3" />,
+            title: lang('disadvantages.2.title'),
+            description: lang('disadvantages.2.description'),
         },
     ]
     const table = {
@@ -100,62 +120,27 @@ export default function Payrolling() {
             <FeaturesSection
                 title={lang('payrolling.title')}
                 description={lang('payrolling.description')}
-                imageUrl="/images/2923.jpg"
-                imageLeft={false}
+                imageUrl="/images/Banner02.webp"
+                imageLeft={true}
             />
 
-            <section>
+            <section className="bg-secondary/10">
                 <div className="container py-10 md:py-16">
-                    <h3 className="text-2xl md:text-3xl text-center font-bold mb-12">{lang('sectionTitles.howItWorks')}</h3>
-                    <div className="grid grid-cols-1 md:grid-cols-6 gap-6">
-                        {PayrollWork.map((item, index) => (
-                            <div
-                                key={index}
-                                className="md:col-span-3 card bg-base-100 w-full shadow-xl"
-                            >
-                                <div className="card-body">
-                                    <h3 className="card-title">{item.title}</h3>
-                                    <p>{item.description}</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-
-            <section className="py-6 md:py-16">
-                <div className="container mx-auto grid grid-cols-1 md:grid-cols-12 gap-6 px-4">
-
-                    <div className="col-span-6 p-4">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-12">{lang('sectionTitles.benefits')}</h3>
-                        <div className="flex flex-col gap-6">
-                            {Benefits.map((item, index) => (
-                                <div
-                                    key={index}
-                                    className="card border border-gray-50 shadow-lg bg-base-100 p-6 rounded-xl"
-                                >
-                                    <h3 className="text-xl font-semibold flex items-center mb-4">
-                                        {item.title}
-                                    </h3>
-                                    <p>{item.description}</p>
-                                </div>
-                            ))}
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+                        <div className="flex items-center">
+                            <h3 className="text-2xl lg:text-4xl text-center md:text-start font-bold mb-12">{lang('sectionTitles.howItWorks')}</h3>
                         </div>
-                    </div>
-
-                    <div className="col-span-6 p-4">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-12">{lang('sectionTitles.disadvantages')}</h3>
-                        <div className="flex flex-col gap-6">
-                            {Disadvantages.map((item, index) => (
+                        <div className="md:col-span-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {PayrollWork.map((item, index) => (
                                 <div
                                     key={index}
-                                    className="card border border-gray-50 shadow-lg bg-base-100 p-6 rounded-xl"
+                                    className="group card bg-base-100 w-full shadow-xl hover:shadow-primary/20 hover:bg-primary"
                                 >
-                                    <h3 className="text-xl font-semibold flex items-center mb-4">
-                                        {item.title}
-                                    </h3>
-                                    <p>{item.description}</p>
+                                    <div className="card-body *:hover:text-white">
+                                        {item.icon}
+                                        <h3 className="card-title ">{item.title}</h3>
+                                        <p>{item.description}</p>
+                                    </div>
                                 </div>
                             ))}
                         </div>
@@ -166,9 +151,60 @@ export default function Payrolling() {
             <FeaturesSection
                 title={lang('legislation.title')}
                 description={lang('legislation.description')}
-                imageUrl="/images/2923.jpg"
+                imageUrl="/images/Banner03.webp"
                 imageLeft={true}
             />
+
+            <section className="bg-secondary/10 py-6 md:py-16">
+                <div className="container px-4 space-y-4 divide-y-2 divide-primary">
+
+                    <div className="grid grid-cols-1 md:grid-cols-5 gap-6 p-4">
+                        <div className="">
+                            <h3 className="text-2xl md:text-3xl text-center md:text-start font-bold mb-12">{lang('sectionTitles.benefits')}</h3>
+                        </div>
+                        <div className="md:col-span-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {Benefits.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="group card border border-gray-50 shadow-lg bg-base-100 hover:border-primary hover:shadow-primary/20 hover:bg-primary p-6 rounded-xl"
+                                >
+                                    <div className="*:group-hover:text-white">
+                                        {item.icon}
+                                        <h3 className="text-xl font-semibold flex items-center mb-3">
+                                            {item.title}
+                                        </h3>
+                                        <p>{item.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-5 p-4">
+                        <div className="">
+                            <h3 className="text-2xl md:text-3xl font-bold mb-12">{lang('sectionTitles.disadvantages')}</h3>
+                        </div>
+                        <div className="md:col-span-4 grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {Disadvantages.map((item, index) => (
+                                <div
+                                    key={index}
+                                    className="group card border border-gray-50 shadow-lg bg-base-100 hover:border-primary hover:shadow-primary/20 hover:bg-primary p-6 rounded-xl"
+                                >
+                                    <div className="*:group-hover:text-white">
+                                        {item.icon}
+                                        <h3 className="text-xl font-semibold flex items-center mb-3">
+                                            {item.title}
+                                        </h3>
+                                        <p>{item.description}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
 
             <section className="py-6 md:py-16">
                 <div className="container mx-auto px-4">
@@ -198,18 +234,35 @@ export default function Payrolling() {
                 </div>
             </section>
 
-            <section className="py-10 md:py-16">
-                <div className="container px-4">
-                    <div className="max-w-3xl ">
-                        <h3 className="text-2xl md:text-3xl font-bold mb-6 ">
-                            {lang('conclusion.title')}
-                        </h3>
-                        <p className="text-justify">
-                            {lang('conclusion.description')}
-                        </p>
+            <section className="relative bg-[url('/images/background-01.jpg')] bg-no-repeat bg-cover py-10 md:py-16">
+
+                <div className="absolute inset-0 bg-white/60 z-0"></div>
+
+                <div className="container px-4 relative z-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+                        <div>
+                            <h3 className="text-2xl md:text-3xl font-bold mb-6">
+                                {lang('conclusion.title')}
+                            </h3>
+                            <p className="text-justify">
+                                {lang('conclusion.description')}
+                            </p>
+                        </div>
+
+
+                        <div className="hidden md:flex justify-center">
+                            <img
+                                src="/images/Conclusion01.webp"
+                                alt="alt text"
+                                className="h-72"
+                            />
+                        </div>
                     </div>
                 </div>
             </section>
+
+
         </>
     )
 }

@@ -104,7 +104,7 @@ const Header = () => {
                         </li>
                         <li>
                             <Link className={isActive('/payrolling') ? 'text-primary' : ''} href="/payrolling">
-                                {lang('Payrolling')}
+                                {lang('payrolling')}
                             </Link>
                         </li>
                         <li>
@@ -162,7 +162,7 @@ const Header = () => {
                         </li>
                     ))} */}
                     <li>
-                        <Link className={isActive('/get-your-paycheck') ? 'text-primary font-semibold hover:bg-white focus:bg-white' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/get-your-paycheck">
+                        <Link className={isActive('/get-your-paycheck') ? 'text-primary font-semibold hover:bg-white focus:bg-white ' : 'hover:text-primary font-semibold hover:bg-white focus:bg-white'} href="/get-your-paycheck">
                             {lang('getPaycheck')}
                         </Link>
                     </li>
