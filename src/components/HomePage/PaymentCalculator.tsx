@@ -57,8 +57,8 @@ const PaymentCalculator = ({ form_settings, params }: { form_settings: typeOfFor
     // };
 
     return (
-        <div className="grid md:grid-cols-12 grid-cols-1 z-10">
-            <div className="md:col-span-full lg:col-span-11">
+        <div className="absolute -bottom-14 left-[50%] -translate-x-[50%] z-10 lg:w-[80%]">
+            <div className="container">
                 <form action={`/${params.locale}/get-your-paycheck`} className="lg:flex flex-col lg:flex-row justify-center gap-4 bg-white p-4 lg:p-6 rounded-3xl shadow-lg">
                     <div className="flex flex-col mb-4 lg:mb-0">
                         <label className="font-semibold mb-1">{lang('hourlyRateLabel')}</label>

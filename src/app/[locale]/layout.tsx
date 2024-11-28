@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import Header from "@/components/Global/Header";
 import Footer from "@/components/Global/Footer";
+// import CopyInterceptor from "@/components/Global/CopyInterceptor";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,6 +34,7 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
+      {/* <CopyInterceptor /> */}
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

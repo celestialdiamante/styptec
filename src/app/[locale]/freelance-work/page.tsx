@@ -1,7 +1,7 @@
+import React from 'react';
 import FeaturesSection from '@/components/Global/FeaturesSection';
 import PageHeader from '@/components/Global/PageHeader';
 import { useTranslations } from 'next-intl';
-import React from 'react';
 import { CgMenuMotion } from 'react-icons/cg';
 import { FaUserTie } from 'react-icons/fa';
 import { FaArrowUpRightDots, FaMoneyBillTrendUp } from 'react-icons/fa6';

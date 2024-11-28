@@ -1,5 +1,4 @@
 import CallToAction from "@/components/HomePage/CallToAction";
-import HeroSection from "@/components/HomePage/HeroSection";
 import Stats from "@/components/HomePage/Stats";
 import Testimonial from "@/components/HomePage/Testimonial";
 import VideoSection from "@/components/HomePage/VideoSection";
@@ -11,6 +10,7 @@ import Image from "next/image";
 import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { getTranslations } from "next-intl/server";
+import HeroSection from "@/components/HomePage/HeroSection";
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -57,7 +57,7 @@ export default async function Home({ params }: any) {
                 <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-8">
                     <div className="col-span-6 relative order-first">
                         <Image
-                            src="/images/13655.jpg"
+                            src="/images/thumb03.jpg"
                             className="rounded-3xl shadow-md"
                             alt=""
                             height={700}

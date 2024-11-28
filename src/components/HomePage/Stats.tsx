@@ -6,7 +6,7 @@ const Stats = () => {
     const lang = useTranslations('stats');
 
     return (
-        <section className="py-6 md:py-16">
+        <section className="mt-10 py-6 md:py-16">
             <div className="container grid lg:grid-cols-12 grid-cols-1 gap-2 ">
                 <div className="lg:col-span-4 border border-gray-100 rounded-xl sm:rounded-none sm:rounded-l-2xl py-3 px-3 md:px-0 flex items-start md:items-center md:justify-center gap-2">
                     <div className="flex items-center">

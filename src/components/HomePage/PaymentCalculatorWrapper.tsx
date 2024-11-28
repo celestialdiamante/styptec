@@ -1,3 +1,4 @@
+// "use server"
 import React from 'react'
 import { getFormData } from '@/helpers/getData';
 import PaymentCalculator from './PaymentCalculator';
