@@ -71,7 +71,7 @@ export default function HeroSlides() {
         >
             {/* {slides.map((slide, index: number) => ( */}
             <section
-                className={`bg-[url('/images/Banner-03.jpg')] relative w-full lg:h-[480px] flex items-center overflow-hidden bg-no-repeat bg-cover bg-center rounded-3xl py-8 h-auto mx-2`}
+                className={`bg-[url('/images/Banner-03.jpg')] relative w-full lg:h-[480px] flex items-center overflow-hidden bg-no-repeat bg-cover bg-center md:rounded-3xl py-8 h-[450px] md:mx-2`}
             >
                 {/* <div className="absolute inset-0 bg-black opacity-40 z-0 rounded-3xl md:rounded-[40px]" /> */}
                 <div className="container relative z-0 ">
@@ -89,7 +89,7 @@ export default function HeroSlides() {
             </section>
 
             <section
-                className={`bg-[url('/images/Banner-04.jpg')] relative w-full lg:h-[480px] flex items-center overflow-hidden bg-no-repeat bg-cover bg-center rounded-3xl py-8 h-auto mx-2`}
+                className={`bg-[url('/images/Banner-04.jpg')] relative w-full lg:h-[480px] flex items-center overflow-hidden bg-no-repeat bg-cover bg-center md:rounded-3xl py-8 h-[450px] md:mx-2`}
             >
                 {/* <div className="absolute inset-0 bg-black opacity-40 z-0 rounded-3xl md:rounded-[40px]" /> */}
                 <div className="container relative z-0 ">
@@ -107,7 +107,7 @@ export default function HeroSlides() {
             </section>
 
             <section
-                className={`bg-[url('/images/Banner-05.jpg')] relative w-full lg:h-[480px] flex items-center overflow-hidden bg-no-repeat bg-cover bg-center rounded-3xl py-8 h-auto mx-2`}
+                className={`bg-[url('/images/Banner-05.jpg')] relative w-full lg:h-[480px] flex items-center overflow-hidden bg-no-repeat bg-cover bg-center md:rounded-3xl py-8 h-[450px] md:mx-2`}
             >
                 {/* <div className="absolute inset-0 bg-black opacity-40 z-0 rounded-3xl md:rounded-[40px]" /> */}
                 <div className="container relative z-0 ">
