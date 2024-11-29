@@ -25,8 +25,8 @@ const FeaturesSection = ({ subtitle, title, description, listItem1, listItem2, i
                             src={imageUrl}
                             className="rounded-3xl shadow-md"
                             alt=""
-                            height={700}
-                            width={1000} />
+                            height={600}
+                            width={900} />
                     </div>
 
                     <div className={`col-span-6 order-first ${imageLeft ? 'md:order-first' : 'md:order-last'}`}>

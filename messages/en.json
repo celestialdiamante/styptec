@@ -61,13 +61,10 @@
         "calculateButton": "Calculate payment"
     },
     "stats": {
-        "trustedBy": "Trusted by",
-        "customers": "customers",
-        "recommend": "would recommend us",
-        "basedOn": "based on",
-        "customerInterviews": "customer interviews",
-        "satisfaction": "Our customer satisfaction on",
-        "klantenvertellen": "Klantenvertellen"
+        "satisfiedFreelancer": "Satisfied Freelancer",
+        "customers": "Customer reference ratio",
+        "satisfaction": "Industries we serve",
+        "global": "Global connectivity"
     },
     "videoSection": {
         "title": "Styptec Helps You Manage Your Income",
@@ -370,7 +367,7 @@
         "contactDetails": {
             "heading": "Contact details",
             "mainOffice": "STYPTEC B.V.",
-            "mainOfficeAddress": "Main office:",
+            "mainOfficeAddress": "Headquarters:",
             "visitingAddress": "Visiting address:",
             "email": "Email:",
             "email_2": "Email 2:",

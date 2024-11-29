@@ -120,7 +120,7 @@ export default function Payrolling() {
             <FeaturesSection
                 title={lang('payrolling.title')}
                 description={lang('payrolling.description')}
-                imageUrl="/images/Banner02.webp"
+                imageUrl="/images/payrolling.jpg"
                 imageLeft={true}
             />
 
@@ -151,7 +151,7 @@ export default function Payrolling() {
             <FeaturesSection
                 title={lang('legislation.title')}
                 description={lang('legislation.description')}
-                imageUrl="/images/Banner03.webp"
+                imageUrl="/images/Legislation_payrolling.jpg"
                 imageLeft={true}
             />
 

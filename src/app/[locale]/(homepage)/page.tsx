@@ -83,7 +83,7 @@ export default async function Home({ params }: any) {
       <VideoSection />
       {/* <Pricing /> */}
 
-      <section className="py-6 md:py-16 bg-[url('/images/SKYPTEC_Banner01.jpg')] bg-no-repeat bg-cover">
+      <section className="py-6 md:py-16 bg-[url('/images/bannner_012.jpg')] bg-no-repeat bg-center bg-cover">
             <div className="container mx-auto grid grid-cols-1 md:grid-cols-10 gap-6">
                 <div className="md:col-span-7">
                     <h3 className="text-2xl md:text-3xl font-bold mb-2">

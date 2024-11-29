@@ -61,13 +61,10 @@
         "calculateButton": "Bereken betaling"
     },
     "stats": {
-        "trustedBy": "Vertrouwd door",
-        "customers": "klanten",
-        "recommend": "zou ons aanbevelen",
-        "basedOn": "gebaseerd op",
-        "customerInterviews": "klantinterviews",
-        "satisfaction": "Onze klanttevredenheid op",
-        "klantenvertellen": "Klantenvertellen"
+        "satisfiedFreelancer": "Tevreden Freelancer",
+        "customers": "Klantreferentieverhouding",
+        "satisfaction": "Industrieën die wij bedienen",
+        "global": "Wereldwijde connectiviteit"
     },
     "videoSection": {
         "title": "Leer hier hoe we u kunnen helpen!",

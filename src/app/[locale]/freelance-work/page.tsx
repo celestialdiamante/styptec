@@ -109,7 +109,7 @@ export default function FreelanceWork() {
             <FeaturesSection
                 title={lang('featuresSection.freelanceWork.title')}
                 description={lang('featuresSection.freelanceWork.description')}
-                imageUrl="/images/Banner04.webp"
+                imageUrl="/images/freelance.jpg"
                 imageLeft={false}
             />
 
@@ -141,7 +141,7 @@ export default function FreelanceWork() {
             <FeaturesSection
                 title={lang('featuresSection.whyServices.title')}
                 description={lang('featuresSection.whyServices.description')}
-                imageUrl="/images/Banner05.webp"
+                imageUrl="/images/meeting.jpg"
                 imageLeft={true}
             />
 
@@ -198,7 +198,7 @@ export default function FreelanceWork() {
             <FeaturesSection
                 title={lang('featuresSection.legislation.title')}
                 description={lang('featuresSection.legislation.description')}
-                imageUrl="/images/Banner03.webp"
+                imageUrl="/images/Legislation_freelance.jpg"
                 imageLeft={false}
             />
 
