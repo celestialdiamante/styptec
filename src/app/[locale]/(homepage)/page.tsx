@@ -11,6 +11,7 @@ import React from "react";
 import { FaChevronRight } from "react-icons/fa";
 import { getTranslations } from "next-intl/server";
 import HeroSection from "@/components/HomePage/HeroSection";
+import { Link } from "@/i18n/routing";
 
 export async function generateMetadata(): Promise<Metadata> {
 
@@ -72,7 +73,7 @@ export default async function Home({ params }: any) {
               </div>
               <p className="mb-2">{lang('aboutUsSection.description')}</p>
               <div className="mt-6">
-                <button className="btn btn-primary text-white">{lang('aboutUsSection.buttonText')} <FaChevronRight /></button>
+                <Link href="/about-us" className="btn btn-primary text-white">{lang('aboutUsSection.buttonText')} <FaChevronRight /></Link>
               </div>
             </div>
           </div>
