@@ -31,6 +31,31 @@
             "title": "Check out the options without obligation.",
             "subtitle": "Register in 10 seconds and see how easy it is. No strings attached.",
             "buttonText": "Contact Us"
+        },
+        "globalSection": {
+            "sectionTitle": "We Are Global",
+            "locations": {
+                "india": {
+                    "name": "India",
+                    "description": "Freelancing in India has become increasingly popular due to the rise of digital platforms."
+                },
+                "suriname": {
+                    "name": "Suriname",
+                    "description": "Freelancing in Suriname is still a growing trend, but with the increasing digitization of the global economy."
+                },
+                "aruba": {
+                    "name": "Aruba",
+                    "description": "Freelancing in Aruba is an increasingly viable option due to the country's strong digital infrastructure."
+                },
+                "sintMaarten": {
+                    "name": "Sint Maarten",
+                    "description": "Freelancing in Sint Maarten offers unique opportunities for professionals in a small, vibrant market."
+                },
+                "curacao": {
+                    "name": "Curaçao",
+                    "description": "Freelancing in Curaçao offers promising opportunities for individuals looking to work remotely."
+                }
+            }
         }
     },
     "heroSection": {

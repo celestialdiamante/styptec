@@ -105,11 +105,13 @@ export default async function Home({ params }: any) {
       <WhyChoose />
 
 
-      {/* <section className="mt-96 lg:mt-10 py-6 md:py-10">
-        <div className="container relative">
+      <section className="mt-96 lg:mt-10 py-6 md:py-10">
+        <div className="container relative ">
+          <p className="text-2xl md:text-3xl font-bold mb-8 text-center">{lang('globalSection.sectionTitle')}</p>
+
           <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-8">
 
-          <div className="col-span-6 relative order-first">
+            <div className="col-span-7 relative order-first">
               <Image
                 src="/images/Map02.webp"
                 className="rounded-3xl"
@@ -118,18 +120,77 @@ export default async function Home({ params }: any) {
                 width={1000} />
             </div>
 
-            <div className="col-span-6 order-last">
-              <div className="border-b mb-2">
-                <div>
-                  <p className="text-base text-primary font-semibold">Global</p>
-                  <h4 className="text-2xl md:text-3xl font-bold">{lang('aboutUsSection.title')}</h4>
+            <div className="col-span-5 order-last *:border-b border-gray-300">
+              <div className="grid grid-cols-8 gap-4">
+                <div className="col-span-1 flex items-center justify-center">
+                  <img
+                    className="h-auto w-10"
+                    src="/images/flag/india (1).png"
+                    alt="india" />
+                </div>
+                <div className="mt-2 col-span-7">
+                  <p className="text-lg text-primary font-semibold">{lang('globalSection.locations.india.name')}</p>
+                  <p className="">{lang('globalSection.locations.india.description')}</p>
                 </div>
               </div>
-              <p className="mb-2"></p>
+
+              <div className="grid grid-cols-8 gap-4">
+                <div className="col-span-1 flex items-center justify-center">
+                  <img
+                    className="h-auto w-10"
+                    src="/images/flag/suriname.png"
+                    alt="india" />
+                </div>
+                <div className="mt-2 col-span-7">
+                  <p className="text-lg text-primary font-semibold">{lang('globalSection.locations.suriname.name')}</p>
+                  <p className="">{lang('globalSection.locations.suriname.description')}</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-8 gap-4">
+                <div className="col-span-1 flex items-center justify-center">
+                  <img
+                    className="h-auto w-10"
+                    src="/images/flag/aruba.png"
+                    alt="india" />
+                </div>
+                <div className="mt-2 col-span-7">
+                  <p className="text-lg text-primary font-semibold">{lang('globalSection.locations.aruba.name')}</p>
+                  <p className="">{lang('globalSection.locations.aruba.description')}</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-8 gap-4">
+                <div className="col-span-1 flex items-center justify-center">
+                  <img
+                    className="h-auto w-10"
+                    src="/images/flag/sint-maarten.png"
+                    alt="india" />
+                </div>
+                <div className="mt-2 col-span-7">
+                  <p className="text-lg text-primary font-semibold">{lang('globalSection.locations.sintMaarten.name')}</p>
+                  <p className="">{lang('globalSection.locations.sintMaarten.description')}</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-8 gap-4">
+                <div className="col-span-1 flex items-center justify-center">
+                  <img
+                    className="h-auto w-10"
+                    src="/images/flag/curacao.png"
+                    alt="india" />
+                </div>
+                <div className="mt-2 col-span-7">
+                  <p className="text-lg text-primary font-semibold">{lang('globalSection.locations.curacao.name')}</p>
+                  <p className="">{lang('globalSection.locations.curacao.description')}</p>
+                </div>
+              </div>
+
+
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
 
       <Testimonial />
 

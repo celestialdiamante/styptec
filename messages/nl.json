@@ -13,7 +13,7 @@
         "contactUs": "CONTACT ONS",
         "language": {
             "label": "Taal",
-            "english": "Engels",
+            "english": "English",
             "dutch": "Nederlands"
         }
     },
@@ -31,6 +31,31 @@
             "title": "Bekijk de opties zonder verplichtingen.",
             "subtitle": "Registreer binnen 10 seconden en ontdek hoe eenvoudig het is. Geen verplichtingen.",
             "buttonText": "Registreer gratis"
+        },
+        "globalSection": {
+            "sectionTitle": "Wij Zijn Wereldwijd",
+            "locations": {
+                "india": {
+                    "name": "India",
+                    "description": "Freelancen in India is steeds populairder geworden door de opkomst van digitale platforms."
+                },
+                "suriname": {
+                    "name": "Suriname",
+                    "description": "Freelancen in Suriname is nog een groeiende trend, maar de digitalisering van de wereldeconomie neemt toe."
+                },
+                "aruba": {
+                    "name": "Aruba",
+                    "description": "Freelancen in Aruba wordt steeds levensvatbaarder dankzij de sterke digitale infrastructuur van het land."
+                },
+                "sintMaarten": {
+                    "name": "Sint Maarten",
+                    "description": "Freelancen in Sint Maarten biedt unieke kansen voor professionals in een kleine, levendige markt."
+                },
+                "curacao": {
+                    "name": "Curaçao",
+                    "description": "Freelancen in Curaçao biedt veelbelovende mogelijkheden voor mensen die op afstand willen werken."
+                }
+            }
         }
     },
     "heroSection": {
