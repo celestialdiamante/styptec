@@ -4,7 +4,7 @@ import PageHeader from '@/components/Global/PageHeader';
 import CallToAction from '@/components/HomePage/CallToAction';
 import { FaArrowsUpDownLeftRight } from 'react-icons/fa6';
 // import { GiMagnifyingGlass } from 'react-icons/gi';
-import { LuRocket } from 'react-icons/lu';
+import { LuNewspaper, LuRocket } from 'react-icons/lu';
 import { useTranslations } from 'next-intl';
 
 const AboutUsPage = () => {
@@ -17,14 +17,14 @@ const AboutUsPage = () => {
       <FeaturesSection
         title={lang('ourStory.title')}
         description={lang('ourStory.description')}
-        imageUrl="/images/2884.jpg"
+        imageUrl="/images/corporate_team.jpg"
         imageLeft={false}
         IconComponent={FaArrowsUpDownLeftRight}
       />
 
-      <section>
+      {/* <section>
         <div className="container">
-        {/* bg-gradient-to-l from-teal-300 via-green-200 to-amber-200 p-0.5 rounded-xl shadow-lg */}
+         bg-gradient-to-l from-teal-300 via-green-200 to-amber-200 p-0.5 rounded-xl shadow-lg 
           <div className="">
             <div className="flex flex-col gap-2 bg-white px-8 py-4 rounded-xl">
               <div className="flex justify-start gap-6">
@@ -42,7 +42,10 @@ const AboutUsPage = () => {
             </div>
           </div>
 
-          {/* <div className="bg-gradient-to-r from-teal-300 via-green-200 to-amber-200 p-0.5 rounded-xl shadow-lg">
+        
+        </div>
+      </section> */}
+      {/* <div className="bg-gradient-to-r from-teal-300 via-green-200 to-amber-200 p-0.5 rounded-xl shadow-lg">
             <div className="flex flex-col gap-2 bg-white px-8 py-4 rounded-xl">
               <div className="flex justify-center">
                 <div className="border p-3 shadow-sm mb-1 bg-gray-100 border-gray-100 rounded-xl">
@@ -55,14 +58,21 @@ const AboutUsPage = () => {
               </div>
             </div>
           </div> */}
-        </div>
-      </section>
+
+      <FeaturesSection
+        title={lang('mission.title')}
+        description={lang('mission.description')}
+        imageUrl="/images/Core_Value.jpg"
+        imageLeft={true}
+        IconComponent={LuRocket}
+      />
 
       <FeaturesSection
         title={lang('solution.title')}
         description={lang('solution.description')}
-        imageUrl="/images/13655.jpg"
-        imageLeft={true}
+        imageUrl="/images/corporate_office.jpg"
+        imageLeft={false}
+        IconComponent={LuNewspaper}
       />
 
       <CallToAction

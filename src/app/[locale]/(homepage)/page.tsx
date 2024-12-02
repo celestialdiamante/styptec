@@ -50,58 +50,89 @@ export default async function Home({ params }: any) {
   return (
     <>
       <HeroSection params={params} />
-      <Stats />
-     
-      <section className="py-6 md:py-10">
-            <div className="container relative">
-                <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-8">
-                    <div className="col-span-6 relative order-first">
-                        <Image
-                            src="/images/thumb03.jpg"
-                            className="rounded-3xl shadow-md"
-                            alt=""
-                            height={700}
-                            width={1000} />
-                    </div>
 
-                    <div className="col-span-6 order-last">
-                        <div className="border-b mb-2">
-                            <div>
-                                <p className="text-base text-primary font-semibold">About Us</p>
-                                <h4 className="text-2xl md:text-3xl font-bold">{lang('aboutUsSection.title')}</h4>
-                            </div>
-                        </div>
-                        <p className="mb-2">{lang('aboutUsSection.description')}</p>
-                        <div className="mt-6">
-                            <button className="btn btn-primary text-white">{lang('aboutUsSection.buttonText')} <FaChevronRight /></button>
-                        </div>
-                    </div>
-                </div>
+      <section className="mt-96 lg:mt-10 py-6 md:py-10">
+        <div className="container relative">
+          <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-8">
+            <div className="col-span-6 relative order-first">
+              <Image
+                src="/images/thumb03.jpg"
+                className="rounded-3xl shadow-md"
+                alt=""
+                height={700}
+                width={1000} />
             </div>
-        </section>
-        
+
+            <div className="col-span-6 order-last">
+              <div className="border-b mb-2">
+                <div>
+                  <p className="text-base text-primary font-semibold">About Us</p>
+                  <h4 className="text-2xl md:text-3xl font-bold">{lang('aboutUsSection.title')}</h4>
+                </div>
+              </div>
+              <p className="mb-2">{lang('aboutUsSection.description')}</p>
+              <div className="mt-6">
+                <button className="btn btn-primary text-white">{lang('aboutUsSection.buttonText')} <FaChevronRight /></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Stats />
+
       <VideoSection />
       {/* <Pricing /> */}
 
       <section className="py-6 md:py-16 bg-[url('/images/bannner_012.jpg')] bg-no-repeat bg-center bg-cover">
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-10 gap-6">
-                <div className="md:col-span-7">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-2">
-                        {lang('bannerSection.title')}
-                    </h3>
-                    <p className="text-base md:text-lg lg:max-w-2xl mb-10">
-                        {lang('bannerSection.description')}
-                    </p>
-                </div>
+        <div className="container mx-auto grid grid-cols-1 md:grid-cols-10 gap-6">
+          <div className="md:col-span-7">
+            <h3 className="text-2xl md:text-3xl font-bold mb-2">
+              {lang('bannerSection.title')}
+            </h3>
+            <p className="text-base md:text-lg lg:max-w-2xl mb-10">
+              {lang('bannerSection.description')}
+            </p>
+          </div>
 
-                <div className="md:col-span-3">
-                    <img src="" alt="" />
-                </div>
-            </div>
-        </section>
+          <div className="md:col-span-3">
+            <img src="" alt="" />
+          </div>
+        </div>
+      </section>
 
       <WhyChoose />
+
+
+      {/* <section className="mt-96 lg:mt-10 py-6 md:py-10">
+        <div className="container relative">
+          <div className="grid md:grid-cols-12 grid-cols-1 items-center gap-8">
+
+          <div className="col-span-6 relative order-first">
+              <Image
+                src="/images/Map02.webp"
+                className="rounded-3xl"
+                alt=""
+                height={700}
+                width={1000} />
+            </div>
+
+            <div className="col-span-6 order-last">
+              <div className="border-b mb-2">
+                <div>
+                  <p className="text-base text-primary font-semibold">Global</p>
+                  <h4 className="text-2xl md:text-3xl font-bold">{lang('aboutUsSection.title')}</h4>
+                </div>
+              </div>
+              <p className="mb-2"></p>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
       <Testimonial />
+
+
       <CallToAction
         title={lang('callToAction.title')}
         subtitle={lang('callToAction.subtitle')}
