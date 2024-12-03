@@ -9,7 +9,7 @@ import Loader from '@/components/Loader';
 const contactSchema = z.object({
   name: z.string().min(1, { message: 'Name is required' }),
   email: z.string().email({ message: 'Email is invalid' }),
-  phone_number: z.string().min(1, { message: 'Phone number is required' }).regex(/^\+?[1-9]\d{1,14}$/, {
+  phone_number: z.string().min(1, { message: 'Phone number is required' }).regex(/^\+?[0-9]\d{1,14}$/, {
     message: 'Phone number is invalid',
   }),
   message: z.string().min(1, { message: 'Message is required' }),
