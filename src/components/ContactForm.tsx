@@ -5,15 +5,8 @@ import { FaChevronRight } from 'react-icons/fa';
 import { z } from 'zod';
 import Swal from 'sweetalert2';
 import Loader from '@/components/Loader';
+import { useTranslations } from 'next-intl';
 
-const contactSchema = z.object({
-  name: z.string().min(1, { message: 'Name is required' }),
-  email: z.string().email({ message: 'Email is invalid' }),
-  phone_number: z.string().min(1, { message: 'Phone number is required' }).regex(/^\+?[0-9]\d{1,14}$/, {
-    message: 'Phone number is invalid',
-  }),
-  message: z.string().min(1, { message: 'Message is required' }),
-});
 
 interface FormErrors {
   name: string;
@@ -23,8 +16,19 @@ interface FormErrors {
 }
 
 const ContactForm = () => {
-
+  const lang = useTranslations('contactForm');
   const [loading, setLoading] = React.useState(false);
+
+
+  const contactSchema = z.object({
+    name: z.string().min(1, { message: lang('validation.nameRequired') }),
+    email: z.string().email({ message: lang('validation.emailInvalid') }),
+    phone_number: z.string()
+      .min(1, { message: lang('validation.phoneRequired') })
+      .regex(/^\+?[0-9]\d{1,14}$/, { message: lang('validation.phoneInvalid') }),
+    message: z.string().min(1, { message: lang('validation.messageRequired') }),
+  });
+
 
   const [formData, setFormData] = React.useState({
     name: '',
@@ -71,8 +75,8 @@ const ContactForm = () => {
       if (response && response.success) {
         Swal.fire({
           icon: 'success',
-          title: 'Form successfully submitted!',
-          text: 'We will get back to you shortly.',
+          title: lang('alerts.success.title'),
+          text: lang('alerts.success.text'),
           confirmButtonText: 'OK',
         });
         // Clear form
@@ -86,8 +90,8 @@ const ContactForm = () => {
         // Backend error
         Swal.fire({
           icon: 'error',
-          title: 'Submission failed!',
-          text: 'Server error, please try again later.',
+          title: lang('alerts.serverError.title'),
+          text: lang('alerts.serverError.text'),
           confirmButtonText: 'OK',
         });
       }
@@ -113,16 +117,16 @@ const ContactForm = () => {
         // Display alert for frontend validation errors
         Swal.fire({
           icon: 'error',
-          title: 'Validation Error!',
-          text: 'Please check your input fields and try again.',
+          title: lang('alerts.validationError.title'),
+          text: lang('alerts.validationError.text'),
           confirmButtonText: 'OK',
         });
       } else {
         // Unknown error
         Swal.fire({
           icon: 'error',
-          title: 'Unexpected Error!',
-          text: 'An unexpected error occurred, please try again.',
+          title: lang('alerts.unexpectedError.title'),
+          text: lang('alerts.unexpectedError.text'),
           confirmButtonText: 'OK',
         });
 
@@ -134,12 +138,12 @@ const ContactForm = () => {
   return (
     <div>
       {loading && <Loader />}
-      <h2 className="text-2xl font-bold mb-2">Contact Us</h2>
+      <h2 className="text-2xl font-bold mb-2">{lang('title')}</h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <label className="mb-1" htmlFor="name">
-            Name
+            {lang('nameLabel')}
           </label>
           <input
             type="text"
@@ -148,13 +152,14 @@ const ContactForm = () => {
             value={formData.name}
             onChange={handleChange}
             className={`w-full border border-gray-300 p-2 rounded-lg ${errors.name ? 'border-red-500' : ''}`}
-            placeholder="Your Name"
+            placeholder={lang('namePlaceholder')}
           />
-          {errors.name && <p className="text-red-500">{errors.name}</p>}
+          {errors.name && <p className="text-red-500">{lang('validation.nameRequired')}</p>}
+          {/* {errors.name} */}
         </div>
         <div>
           <label className="mb-1" htmlFor="email">
-            E-mail address
+            {lang('emailLabel')}
           </label>
           <input
             type="email"
@@ -163,14 +168,15 @@ const ContactForm = () => {
             value={formData.email}
             onChange={handleChange}
             className={`w-full border border-gray-300 p-2 rounded-lg ${errors.email ? 'border-red-500' : ''}`}
-            placeholder="Your Email"
+            placeholder={lang('emailPlaceholder')}
           />
-          {errors.email && <p className="text-red-500">{errors.email}</p>}
+          {errors.email && <p className="text-red-500">{lang('validation.emailInvalid')}</p>}
+          {/* {errors.email} */}
         </div>
 
         <div>
           <label className="mb-1" htmlFor="phone_number">
-            Phone number
+            {lang('phoneLabel')}
           </label>
           <input
             type="tel"
@@ -179,14 +185,15 @@ const ContactForm = () => {
             value={formData.phone_number}
             onChange={handleChange}
             className={`w-full border border-gray-300  p-2 rounded-lg ${errors.phone_number ? 'border-red-500' : ''}`}
-            placeholder="Your Phone Number"
+            placeholder={lang('phonePlaceholder')}
           />
-          {errors.phone_number && <p className="text-red-500">{errors.phone_number}</p>}
+          {errors.phone_number && <p className="text-red-500">{lang('validation.phoneRequired')}</p>}
+          {/* {errors.phone_number} */}
         </div>
 
         <div>
           <label className="mb-1" htmlFor="message">
-            Message
+            {lang('messageLabel')}
           </label>
           <textarea
             id="message"
@@ -195,14 +202,15 @@ const ContactForm = () => {
             onChange={handleChange}
             rows={4}
             className={`w-full border border-gray-300 p-2 rounded-lg ${errors.message ? 'border-red-500' : ''}`}
-            placeholder="Your Message"
+            placeholder={lang('messagePlaceholder')}
           />
-          {errors.message && <p className="text-red-500">{errors.message}</p>}
+          {errors.message && <p className="text-red-500">{lang('validation.messageRequired')}</p>}
+          {/* {errors.message} */}
         </div>
 
 
         <button type="submit" className="btn btn-primary text-white" disabled={loading}>
-          {loading ? 'Submitting...' : 'Send'}
+          {loading ? lang('submitButtonLoading') : lang('submitButton')}
           <FaChevronRight />
         </button>
       </form>

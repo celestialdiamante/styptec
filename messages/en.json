@@ -628,5 +628,43 @@
             "title": "Conclusion",
             "description": "Payrolling and freelance work each offer unique benefits, depending on the wishes of the employee or self-employed person and the nature of the work. Companies looking for flexibility without the employer risk can benefit from payrolling, while individuals who like to work autonomously and choose their own assignments benefit from freelance work. Both options require regulatory knowledge to stay within the frameworks and take full advantage of the opportunities they offer."
         }
+    },
+    "contactForm": {
+        "title": "Contact Us",
+        "nameLabel": "Name",
+        "emailLabel": "E-mail address",
+        "phoneLabel": "Phone number",
+        "messageLabel": "Message",
+        "namePlaceholder": "Your Name",
+        "emailPlaceholder": "Your Email",
+        "phonePlaceholder": "Your Phone Number",
+        "messagePlaceholder": "Your Message",
+        "submitButton": "Send",
+        "submitButtonLoading": "Submitting...",
+        "validation": {
+            "nameRequired": "Name is required",
+            "emailInvalid": "Email is invalid",
+            "phoneRequired": "Phone number is required",
+            "phoneInvalid": "Phone number is invalid",
+            "messageRequired": "Message is required"
+        },
+        "alerts": {
+            "success": {
+                "title": "Form successfully submitted!",
+                "text": "We will get back to you shortly."
+            },
+            "serverError": {
+                "title": "Submission failed!",
+                "text": "Server error, please try again later."
+            },
+            "validationError": {
+                "title": "Validation Error!",
+                "text": "Please check your input fields and try again."
+            },
+            "unexpectedError": {
+                "title": "Unexpected Error!",
+                "text": "An unexpected error occurred, please try again."
+            }
+        }
     }
 }

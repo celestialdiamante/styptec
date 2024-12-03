@@ -630,5 +630,43 @@
             "title": "Conclusie",
             "description": "Payroll en freelance werk bieden elk unieke voordelen, afhankelijk van de wensen van de werknemer of zelfstandige en de aard van het werk. Bedrijven die flexibiliteit zoeken zonder werkgeversrisico kunnen profiteren van payroll, terwijl individuen die graag zelfstandig werken en hun eigen opdrachten kiezen, profiteren van freelance werk. Beide opties vereisen kennis van regelgeving om binnen de kaders te blijven en optimaal te profiteren van de mogelijkheden die ze bieden."
         }
+    },
+    "contactForm": {
+        "title": "Neem contact met ons op",
+        "nameLabel": "Naam",
+        "emailLabel": "E-mailadres",
+        "phoneLabel": "Telefoonnummer",
+        "messageLabel": "Bericht",
+        "namePlaceholder": "Uw naam",
+        "emailPlaceholder": "Uw e-mailadres",
+        "phonePlaceholder": "Uw telefoonnummer",
+        "messagePlaceholder": "Uw bericht",
+        "submitButton": "Verzenden",
+        "submitButtonLoading": "Versturen...",
+        "validation": {
+            "nameRequired": "Naam is verplicht",
+            "emailInvalid": "E-mailadres is ongeldig",
+            "phoneRequired": "Telefoonnummer is verplicht",
+            "phoneInvalid": "Telefoonnummer is ongeldig",
+            "messageRequired": "Bericht is verplicht"
+        },
+        "alerts": {
+            "success": {
+                "title": "Formulier succesvol verzonden!",
+                "text": "We nemen binnenkort contact met u op."
+            },
+            "serverError": {
+                "title": "Verzenden mislukt!",
+                "text": "Serverfout, probeer het later opnieuw."
+            },
+            "validationError": {
+                "title": "Validatiefout!",
+                "text": "Controleer uw invoervelden en probeer het opnieuw."
+            },
+            "unexpectedError": {
+                "title": "Onverwachte fout!",
+                "text": "Er is een onverwachte fout opgetreden, probeer het opnieuw."
+            }
+        }
     }
 }
